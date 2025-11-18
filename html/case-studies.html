@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Case Studies | AI Pulse</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'Segoe UI', 'system-ui', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body data-page="case-studies" class="bg-white text-[#0A0F1C] font-sans">
+    <div class="min-h-screen flex flex-col">
+      <div id="site-navbar"></div>
+      <main id="page-content" class="flex-1 bg-white">
+        <div class="pt-20">
+          <!-- Hero Section -->
+          <section class="relative py-32 bg-gradient-to-br from-[#0A0F1C] via-[#1a1f3a] to-[#0A0F1C]">
+            <div class="absolute inset-0 opacity-20">
+              <div class="absolute top-20 left-20 w-72 h-72 bg-[#005CFF] rounded-full filter blur-3xl animate-pulse"></div>
+              <div class="absolute bottom-20 right-20 w-96 h-96 bg-[#7B3FFF] rounded-full filter blur-3xl animate-pulse"></div>
+            </div>
+            <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+              <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">
+                Real Results.
+                <span class="bg-gradient-to-r from-[#005CFF] to-[#7B3FFF] text-transparent bg-clip-text">Real Impact.</span>
+              </h1>
+              <p class="text-xl text-[#E7E9EF]">
+                Explore how we've helped businesses transform with intelligent technology solutions
+              </p>
+            </div>
+          </section>
+
+          <!-- Case Studies Grid -->
+          <section class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 border border-[#E7E9EF]" onclick="window.location.href='case-study.html?id=ai-dashboard'">
+                  <div class="relative h-64 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1759661966728-4a02e3c6ed91?w=800" alt="AI Analytics Dashboard" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0A0F1C]/80 to-transparent"></div>
+                    <div class="absolute top-4 right-4">
+                      <span class="px-4 py-2 bg-[#005CFF] text-white rounded-full text-sm">FinTech</span>
+                    </div>
+                  </div>
+                  <div class="p-8">
+                    <h3 class="text-2xl font-bold text-[#0A0F1C] mb-4 group-hover:text-[#005CFF] transition-colors">AI Analytics Dashboard for Financial Services</h3>
+                    <p class="text-[#4A5568] mb-6">Built an intelligent analytics platform processing 1M+ data points daily with real-time insights, reducing analysis time by 80%.</p>
+                    <button class="text-[#005CFF] flex items-center gap-2 group-hover:gap-3 transition-all">
+                      View Case Study
+                      <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 border border-[#E7E9EF]" onclick="window.location.href='case-study.html?id=ecommerce-platform'">
+                  <div class="relative h-64 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1660810731526-0720827cbd38?w=800" alt="E-Commerce Platform" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0A0F1C]/80 to-transparent"></div>
+                    <div class="absolute top-4 right-4">
+                      <span class="px-4 py-2 bg-[#005CFF] text-white rounded-full text-sm">Retail</span>
+                    </div>
+                  </div>
+                  <div class="p-8">
+                    <h3 class="text-2xl font-bold text-[#0A0F1C] mb-4 group-hover:text-[#005CFF] transition-colors">Scalable E-Commerce Platform with AI Recommendations</h3>
+                    <p class="text-[#4A5568] mb-6">Developed a custom e-commerce solution with AI-powered product recommendations, increasing conversion rates by 45%.</p>
+                    <button class="text-[#005CFF] flex items-center gap-2 group-hover:gap-3 transition-all">
+                      View Case Study
+                      <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 border border-[#E7E9EF]" onclick="window.location.href='case-study.html?id=iot-monitoring'">
+                  <div class="relative h-64 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1644088379091-d574269d422f?w=800" alt="IoT Monitoring System" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0A0F1C]/80 to-transparent"></div>
+                    <div class="absolute top-4 right-4">
+                      <span class="px-4 py-2 bg-[#005CFF] text-white rounded-full text-sm">Manufacturing</span>
+                    </div>
+                  </div>
+                  <div class="p-8">
+                    <h3 class="text-2xl font-bold text-[#0A0F1C] mb-4 group-hover:text-[#005CFF] transition-colors">IoT-Based Manufacturing Monitoring System</h3>
+                    <p class="text-[#4A5568] mb-6">Implemented real-time sensor monitoring across 50+ machines, reducing downtime by 60% and maintenance costs by 35%.</p>
+                    <button class="text-[#005CFF] flex items-center gap-2 group-hover:gap-3 transition-all">
+                      View Case Study
+                      <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 border border-[#E7E9EF]" onclick="window.location.href='case-study.html?id=healthcare-app'">
+                  <div class="relative h-64 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1737573296361-75315239293a?w=800" alt="Telemedicine App" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0A0F1C]/80 to-transparent"></div>
+                    <div class="absolute top-4 right-4">
+                      <span class="px-4 py-2 bg-[#005CFF] text-white rounded-full text-sm">Healthcare</span>
+                    </div>
+                  </div>
+                  <div class="p-8">
+                    <h3 class="text-2xl font-bold text-[#0A0F1C] mb-4 group-hover:text-[#005CFF] transition-colors">Telemedicine Mobile App with AI Diagnostics</h3>
+                    <p class="text-[#4A5568] mb-6">Created a comprehensive telemedicine platform serving 10,000+ patients with AI-assisted preliminary diagnostics.</p>
+                    <button class="text-[#005CFF] flex items-center gap-2 group-hover:gap-3 transition-all">
+                      View Case Study
+                      <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 border border-[#E7E9EF]" onclick="window.location.href='case-study.html?id=whatsapp-crm'">
+                  <div class="relative h-64 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1737505599159-5ffc1dcbc08f?w=800" alt="WhatsApp CRM" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0A0F1C]/80 to-transparent"></div>
+                    <div class="absolute top-4 right-4">
+                      <span class="px-4 py-2 bg-[#005CFF] text-white rounded-full text-sm">Real Estate</span>
+                    </div>
+                  </div>
+                  <div class="p-8">
+                    <h3 class="text-2xl font-bold text-[#0A0F1C] mb-4 group-hover:text-[#005CFF] transition-colors">WhatsApp-Based CRM for Real Estate Agency</h3>
+                    <p class="text-[#4A5568] mb-6">Developed automated WhatsApp integration handling 500+ daily inquiries, improving response time by 90%.</p>
+                    <button class="text-[#005CFF] flex items-center gap-2 group-hover:gap-3 transition-all">
+                      View Case Study
+                      <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 border border-[#E7E9EF]" onclick="window.location.href='case-study.html?id=smart-agriculture'">
+                  <div class="relative h-64 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1756908992154-c8a89f5e517f?w=800" alt="Smart Agriculture" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0A0F1C]/80 to-transparent"></div>
+                    <div class="absolute top-4 right-4">
+                      <span class="px-4 py-2 bg-[#005CFF] text-white rounded-full text-sm">Agriculture</span>
+                    </div>
+                  </div>
+                  <div class="p-8">
+                    <h3 class="text-2xl font-bold text-[#0A0F1C] mb-4 group-hover:text-[#005CFF] transition-colors">Smart Agriculture IoT Solution</h3>
+                    <p class="text-[#4A5568] mb-6">Deployed sensor network monitoring soil conditions, weather data, and crop health across 1000 acres of farmland.</p>
+                    <button class="text-[#005CFF] flex items-center gap-2 group-hover:gap-3 transition-all">
+                      View Case Study
+                      <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- CTA Section -->
+          <section class="py-24 bg-gradient-to-br from-[#0A0F1C] to-[#1a1f3a]">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+              <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Ready to Create Your Success Story?</h2>
+              <p class="text-xl text-[#E7E9EF] mb-8">Let's discuss how we can help you achieve similar results</p>
+              <a href="contact.html" class="inline-flex items-center justify-center bg-gradient-to-r from-[#005CFF] to-[#7B3FFF] text-white px-8 py-4 rounded-full hover:shadow-2xl hover:shadow-[#005CFF]/50 transition-all">
+                Start Your Project
+                <i data-lucide="arrow-right" class="inline-block ml-2 w-5 h-5"></i>
+              </a>
+            </div>
+          </section>
+        </div>
+      </main>
+      <div id="site-footer"></div>
+    </div>
+    <script defer src="https://unpkg.com/lucide@latest"></script>
+    <script defer src="assets/main.js"></script>
+  </body>
+</html>

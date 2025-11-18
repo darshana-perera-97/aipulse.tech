@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Resources | AI Pulse</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'Segoe UI', 'system-ui', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body data-page="resources" class="bg-white text-[#0A0F1C] font-sans">
+    <script type="application/json" id="resources-data">
+      {
+        "items": {
+          "datasheets": [
+            {
+              "title": "AI Solutions Overview",
+              "description": "Comprehensive guide to our AI and ML capabilities, including chatbots, predictive analytics, and automation.",
+              "size": "2.4 MB",
+              "icon": "file-spreadsheet"
+            },
+            {
+              "title": "Web Development Services",
+              "description": "Detailed information about our WordPress, custom web, and web application development services.",
+              "size": "1.8 MB",
+              "icon": "file-spreadsheet"
+            },
+            {
+              "title": "Mobile App Development",
+              "description": "Features, technologies, and process for iOS and Android app development.",
+              "size": "2.1 MB",
+              "icon": "file-spreadsheet"
+            },
+            {
+              "title": "IoT Solutions Datasheet",
+              "description": "Sensor technologies, monitoring systems, and smart automation capabilities.",
+              "size": "3.2 MB",
+              "icon": "file-spreadsheet"
+            }
+          ],
+          "whitepapers": [
+            {
+              "title": "The Future of AI in Business Operations",
+              "description": "In-depth analysis of AI trends, implementation strategies, and ROI metrics for enterprise applications.",
+              "size": "5.6 MB",
+              "icon": "file-text"
+            },
+            {
+              "title": "Building Scalable Web Applications",
+              "description": "Best practices for architecture, performance optimization, and cloud deployment strategies.",
+              "size": "4.2 MB",
+              "icon": "file-text"
+            },
+            {
+              "title": "IoT Security and Data Privacy",
+              "description": "Comprehensive guide to securing IoT networks and ensuring data compliance.",
+              "size": "3.8 MB",
+              "icon": "file-text"
+            },
+            {
+              "title": "Digital Transformation Roadmap",
+              "description": "Step-by-step guide for organizations embarking on digital transformation journeys.",
+              "size": "6.1 MB",
+              "icon": "file-text"
+            }
+          ],
+          "ebooks": [
+            {
+              "title": "Complete Guide to AI Chatbots",
+              "description": "Everything you need to know about designing, developing, and deploying intelligent chatbots.",
+              "size": "8.4 MB",
+              "icon": "book-open"
+            },
+            {
+              "title": "Modern Web Development Handbook",
+              "description": "Covers React, Node.js, databases, APIs, and deployment for modern web applications.",
+              "size": "12.3 MB",
+              "icon": "book-open"
+            },
+            {
+              "title": "Mobile App Success Stories",
+              "description": "Case studies and lessons learned from successful mobile app projects.",
+              "size": "7.8 MB",
+              "icon": "book-open"
+            },
+            {
+              "title": "SEO Masterclass 2025",
+              "description": "Proven strategies for improving search rankings and driving organic traffic.",
+              "size": "9.2 MB",
+              "icon": "book-open"
+            }
+          ],
+          "casestudies": [
+            {
+              "title": "FinTech AI Analytics Platform",
+              "description": "How we built a platform processing 1M+ daily transactions with 99.2% fraud detection accuracy.",
+              "size": "4.5 MB",
+              "icon": "file-code"
+            },
+            {
+              "title": "E-Commerce Platform Transformation",
+              "description": "Scaling a retail business with custom e-commerce solution achieving 45% conversion increase.",
+              "size": "3.9 MB",
+              "icon": "file-code"
+            },
+            {
+              "title": "Manufacturing IoT Implementation",
+              "description": "Real-time monitoring system reducing downtime by 60% across 50+ machines.",
+              "size": "5.2 MB",
+              "icon": "file-code"
+            },
+            {
+              "title": "Healthcare Telemedicine App",
+              "description": "Mobile platform serving 10,000+ patients with AI-assisted diagnostics.",
+              "size": "4.1 MB",
+              "icon": "file-code"
+            }
+          ]
+        }
+      }
+    </script>
+    <div class="min-h-screen flex flex-col">
+      <div id="site-navbar"></div>
+      <main id="page-content" class="flex-1 bg-white">
+        <div class="pt-20">
+          <!-- Hero Section -->
+          <section class="relative py-32 bg-gradient-to-br from-[#0A0F1C] via-[#1a1f3a] to-[#0A0F1C]">
+            <div class="absolute inset-0 opacity-20">
+              <div class="absolute top-20 left-20 w-72 h-72 bg-[#005CFF] rounded-full filter blur-3xl animate-pulse"></div>
+              <div class="absolute bottom-20 right-20 w-96 h-96 bg-[#7B3FFF] rounded-full filter blur-3xl animate-pulse"></div>
+            </div>
+            <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+              <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">
+                Knowledge
+                <span class="bg-gradient-to-r from-[#005CFF] to-[#7B3FFF] text-transparent bg-clip-text">Resources</span>
+              </h1>
+              <p class="text-xl text-[#E7E9EF]">
+                Download our comprehensive guides, whitepapers, and case studies to learn more about our solutions
+              </p>
+            </div>
+          </section>
+
+          <!-- Resources Section -->
+          <section class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <!-- Tabs -->
+              <div class="flex flex-wrap justify-center gap-4 mb-16">
+                <button data-resource-tab="datasheets" class="flex items-center gap-3 px-8 py-4 rounded-xl border font-semibold bg-gradient-to-r from-[#005CFF] to-[#7B3FFF] text-white border-transparent shadow-lg">
+                  <i data-lucide="file-spreadsheet" class="w-5 h-5"></i>
+                  <span>Datasheets</span>
+                </button>
+                <button data-resource-tab="whitepapers" class="flex items-center gap-3 px-8 py-4 rounded-xl border font-semibold bg-[#F7F9FC] text-[#4A5568] border-[#E7E9EF]">
+                  <i data-lucide="file-text" class="w-5 h-5"></i>
+                  <span>Whitepapers</span>
+                </button>
+                <button data-resource-tab="ebooks" class="flex items-center gap-3 px-8 py-4 rounded-xl border font-semibold bg-[#F7F9FC] text-[#4A5568] border-[#E7E9EF]">
+                  <i data-lucide="book-open" class="w-5 h-5"></i>
+                  <span>eBooks</span>
+                </button>
+                <button data-resource-tab="casestudies" class="flex items-center gap-3 px-8 py-4 rounded-xl border font-semibold bg-[#F7F9FC] text-[#4A5568] border-[#E7E9EF]">
+                  <i data-lucide="file-code" class="w-5 h-5"></i>
+                  <span>Case Studies</span>
+                </button>
+              </div>
+
+              <!-- Resources Grid -->
+              <div id="resources-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            </div>
+          </section>
+
+          <!-- Newsletter Section -->
+          <section class="py-24 bg-[#F7F9FC]">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+              <h2 class="text-4xl font-bold text-[#0A0F1C] mb-4">Stay Updated</h2>
+              <p class="text-xl text-[#4A5568] mb-8">Subscribe to receive our latest resources, insights, and updates</p>
+              <form id="newsletter-form" class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                <input type="email" placeholder="Enter your email" class="flex-1 px-6 py-4 rounded-xl border border-[#E7E9EF] bg-white">
+                <button type="submit" class="bg-gradient-to-r from-[#005CFF] to-[#7B3FFF] text-white px-8 py-4 rounded-xl font-semibold">Subscribe</button>
+              </form>
+            </div>
+          </section>
+
+          <!-- CTA Section -->
+          <section class="py-24 bg-gradient-to-br from-[#0A0F1C] to-[#1a1f3a]">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+              <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Need Custom Solutions?</h2>
+              <p class="text-xl text-[#E7E9EF] mb-8">Let's discuss how we can help transform your business</p>
+              <a href="contact.html" class="inline-flex items-center justify-center bg-gradient-to-r from-[#005CFF] to-[#7B3FFF] text-white px-8 py-4 rounded-full font-semibold">
+                Contact Our Team
+              </a>
+            </div>
+          </section>
+        </div>
+      </main>
+      <div id="site-footer"></div>
+    </div>
+    <script defer src="https://unpkg.com/lucide@latest"></script>
+    <script defer src="assets/main.js"></script>
+  </body>
+</html>

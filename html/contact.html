@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact | AI Pulse</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'Segoe UI', 'system-ui', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body data-page="contact" class="bg-white text-[#0A0F1C] font-sans">
+    <div class="min-h-screen flex flex-col">
+      <div id="site-navbar"></div>
+      <main id="page-content" class="flex-1 bg-white">
+        <div class="pt-20">
+          <!-- Hero Section -->
+          <section class="relative py-32 bg-gradient-to-br from-[#0A0F1C] via-[#1a1f3a] to-[#0A0F1C]">
+            <div class="absolute inset-0 opacity-20">
+              <div class="absolute top-20 left-20 w-72 h-72 bg-[#005CFF] rounded-full filter blur-3xl animate-pulse"></div>
+              <div class="absolute bottom-20 right-20 w-96 h-96 bg-[#7B3FFF] rounded-full filter blur-3xl animate-pulse"></div>
+            </div>
+            <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+              <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">
+                Let's Build Something
+                <span class="bg-gradient-to-r from-[#005CFF] to-[#7B3FFF] text-transparent bg-clip-text">Intelligent Together</span>
+              </h1>
+              <p class="text-xl text-[#E7E9EF]">
+                Have a project in mind? Get in touch with our team of experts
+              </p>
+            </div>
+          </section>
+
+          <!-- Contact Form & Info -->
+          <section class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <!-- Contact Form -->
+                <div>
+                  <h2 class="text-3xl font-bold text-[#0A0F1C] mb-8">Send us a Message</h2>
+                  <form id="contact-form" class="space-y-6">
+                    <div>
+                      <label class="block text-[#0A0F1C] mb-2">Name *</label>
+                      <input type="text" required placeholder="Your full name" class="w-full px-4 py-3 rounded-xl border border-[#E7E9EF] bg-white text-[#0A0F1C]">
+                    </div>
+                    <div>
+                      <label class="block text-[#0A0F1C] mb-2">Email *</label>
+                      <input type="email" required placeholder="your@email.com" class="w-full px-4 py-3 rounded-xl border border-[#E7E9EF] bg-white text-[#0A0F1C]">
+                    </div>
+                    <div>
+                      <label class="block text-[#0A0F1C] mb-2">Phone</label>
+                      <input type="tel" placeholder="+94 XXX XXX XXX" class="w-full px-4 py-3 rounded-xl border border-[#E7E9EF] bg-white text-[#0A0F1C]">
+                    </div>
+                    <div>
+                      <label class="block text-[#0A0F1C] mb-2">Company</label>
+                      <input type="text" placeholder="Your company name" class="w-full px-4 py-3 rounded-xl border border-[#E7E9EF] bg-white text-[#0A0F1C]">
+                    </div>
+                    <div>
+                      <label class="block text-[#0A0F1C] mb-2">Project Type</label>
+                      <select class="w-full px-4 py-3 rounded-xl border border-[#E7E9EF] bg-white text-[#0A0F1C]">
+                        <option value="">Select a service</option>
+                        <option value="website">Website Development</option>
+                        <option value="mobile-app">Mobile App Development</option>
+                        <option value="web-app">Web Application</option>
+                        <option value="ai-ml">AI & ML Solutions</option>
+                        <option value="whatsapp">WhatsApp Integration</option>
+                        <option value="iot">IoT Solutions</option>
+                        <option value="desktop">Desktop Application</option>
+                        <option value="social-media">Social Media Management</option>
+                        <option value="seo">SEO Services</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label class="block text-[#0A0F1C] mb-2">Message *</label>
+                      <textarea required class="w-full min-h-[150px] px-4 py-3 rounded-xl border border-[#E7E9EF] bg-white text-[#0A0F1C]" placeholder="Tell us about your project..."></textarea>
+                    </div>
+                    <button type="submit" class="w-full inline-flex items-center justify-center bg-gradient-to-r from-[#005CFF] to-[#7B3FFF] text-white py-6 rounded-xl font-semibold">
+                      <i data-lucide="send" class="w-5 h-5 mr-2"></i>
+                      Send Message
+                    </button>
+                  </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="space-y-8">
+                  <div>
+                    <h2 class="text-3xl font-bold text-[#0A0F1C] mb-8">Get in Touch</h2>
+                    <p class="text-[#4A5568] mb-8">
+                      We're here to answer your questions and discuss how we can help transform your business with intelligent technology solutions.
+                    </p>
+                  </div>
+
+                  <div class="space-y-6">
+                    <div class="flex items-start gap-4">
+                      <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#005CFF] to-[#7B3FFF] flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="mail" class="w-6 h-6 text-white"></i>
+                      </div>
+                      <div>
+                        <h3 class="font-bold text-[#0A0F1C] mb-1">Email</h3>
+                        <a href="mailto:contact@aipulse.tech" class="text-[#005CFF] hover:underline">contact@aipulse.tech</a>
+                      </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                      <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#005CFF] to-[#7B3FFF] flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="phone" class="w-6 h-6 text-white"></i>
+                      </div>
+                      <div>
+                        <h3 class="font-bold text-[#0A0F1C] mb-1">Phone</h3>
+                        <a href="tel:+94123456789" class="text-[#005CFF] hover:underline">+94 123 456 789</a>
+                      </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                      <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#005CFF] to-[#7B3FFF] flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="map-pin" class="w-6 h-6 text-white"></i>
+                      </div>
+                      <div>
+                        <h3 class="font-bold text-[#0A0F1C] mb-1">Office</h3>
+                        <p class="text-[#4A5568]">
+                          Colombo, Sri Lanka<br />
+                          www.aipulse.tech
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Map Placeholder -->
+                  <div class="mt-8 rounded-2xl overflow-hidden border border-[#E7E9EF] h-64 bg-[#F7F9FC] flex items-center justify-center">
+                    <p class="text-[#4A5568]">📍 Google Map Integration</p>
+                  </div>
+
+                  <!-- Business Hours -->
+                  <div class="bg-[#F7F9FC] rounded-2xl p-6 border border-[#E7E9EF]">
+                    <h3 class="font-bold text-[#0A0F1C] mb-4">Business Hours</h3>
+                    <div class="space-y-2 text-[#4A5568]">
+                      <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                      <p>Saturday: 10:00 AM - 2:00 PM</p>
+                      <p>Sunday: Closed</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+      <div id="site-footer"></div>
+    </div>
+    <script defer src="https://unpkg.com/lucide@latest"></script>
+    <script defer src="assets/main.js"></script>
+  </body>
+</html>

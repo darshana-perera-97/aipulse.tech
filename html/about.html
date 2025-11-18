@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About | AI Pulse</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'Segoe UI', 'system-ui', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body data-page="about" class="bg-white text-[#0A0F1C] font-sans">
+    <div class="min-h-screen flex flex-col">
+      <div id="site-navbar"></div>
+      <main id="page-content" class="flex-1 bg-white">
+        <div class="pt-20">
+          <!-- Hero Section -->
+          <section class="relative py-32 bg-gradient-to-br from-[#0A0F1C] via-[#1a1f3a] to-[#0A0F1C] overflow-hidden">
+            <div class="absolute inset-0 opacity-20">
+              <div class="absolute top-20 right-10 w-72 h-72 bg-[#005CFF] rounded-full filter blur-3xl animate-pulse"></div>
+              <div class="absolute bottom-20 left-10 w-96 h-96 bg-[#7B3FFF] rounded-full filter blur-3xl animate-pulse" style="animation-delay: 1s"></div>
+            </div>
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+              <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">
+                Driving Innovation Through
+                <span class="bg-gradient-to-r from-[#005CFF] to-[#7B3FFF] text-transparent bg-clip-text">AI-Powered Engineering</span>
+              </h1>
+              <p class="text-xl text-[#E7E9EF] max-w-3xl mx-auto">
+                We are a Sri Lanka–based AI software company delivering intelligent digital solutions globally.
+              </p>
+            </div>
+          </section>
+
+          <!-- Mission & Vision -->
+          <section class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+                <div class="relative">
+                  <div class="absolute -top-4 -left-4 w-16 h-16 rounded-2xl bg-gradient-to-br from-[#005CFF] to-[#7B3FFF] opacity-20"></div>
+                  <div class="relative bg-[#F7F9FC] rounded-3xl p-12 border border-[#E7E9EF]">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#005CFF] to-[#7B3FFF] flex items-center justify-center mb-6">
+                      <i data-lucide="target" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-[#0A0F1C] mb-4">Our Mission</h2>
+                    <p class="text-xl text-[#4A5568]">
+                      "To transform business processes through AI, automation, and advanced engineering."
+                    </p>
+                  </div>
+                </div>
+                <div class="relative">
+                  <div class="absolute -top-4 -right-4 w-16 h-16 rounded-2xl bg-gradient-to-br from-[#7B3FFF] to-[#005CFF] opacity-20"></div>
+                  <div class="relative bg-[#F7F9FC] rounded-3xl p-12 border border-[#E7E9EF]">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#7B3FFF] to-[#005CFF] flex items-center justify-center mb-6">
+                      <i data-lucide="eye" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-[#0A0F1C] mb-4">Our Vision</h2>
+                    <p class="text-xl text-[#4A5568]">
+                      "A world where organizations operate smarter with intelligent technology."
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Why Choose Us -->
+          <section class="py-24 bg-[#F7F9FC]">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-[#0A0F1C] mb-4">Why Choose Us</h2>
+                <p class="text-xl text-[#4A5568]">Excellence in every aspect of software development</p>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-[#E7E9EF]">
+                  <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[#005CFF] to-[#7B3FFF] flex items-center justify-center mb-6">
+                    <i data-lucide="brain" class="w-7 h-7 text-white"></i>
+                  </div>
+                  <h3 class="text-xl font-bold text-[#0A0F1C] mb-3">AI-Driven Engineering</h3>
+                  <p class="text-[#4A5568]">Leveraging artificial intelligence to build smarter solutions</p>
+                </div>
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-[#E7E9EF]">
+                  <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[#005CFF] to-[#7B3FFF] flex items-center justify-center mb-6">
+                    <i data-lucide="code" class="w-7 h-7 text-white"></i>
+                  </div>
+                  <h3 class="text-xl font-bold text-[#0A0F1C] mb-3">Full-Stack Development</h3>
+                  <p class="text-[#4A5568]">Complete end-to-end software development expertise</p>
+                </div>
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-[#E7E9EF]">
+                  <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[#005CFF] to-[#7B3FFF] flex items-center justify-center mb-6">
+                    <i data-lucide="shield" class="w-7 h-7 text-white"></i>
+                  </div>
+                  <h3 class="text-xl font-bold text-[#0A0F1C] mb-3">Enterprise-Grade Solutions</h3>
+                  <p class="text-[#4A5568]">Robust, secure, and scalable applications for businesses</p>
+                </div>
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-[#E7E9EF]">
+                  <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[#005CFF] to-[#7B3FFF] flex items-center justify-center mb-6">
+                    <i data-lucide="cloud" class="w-7 h-7 text-white"></i>
+                  </div>
+                  <h3 class="text-xl font-bold text-[#0A0F1C] mb-3">Scalable Cloud Architecture</h3>
+                  <p class="text-[#4A5568]">Cloud-native solutions that grow with your business</p>
+                </div>
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-[#E7E9EF]">
+                  <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[#005CFF] to-[#7B3FFF] flex items-center justify-center mb-6">
+                    <i data-lucide="headphones" class="w-7 h-7 text-white"></i>
+                  </div>
+                  <h3 class="text-xl font-bold text-[#0A0F1C] mb-3">Dedicated Support & Consultation</h3>
+                  <p class="text-[#4A5568]">24/7 support and expert technical consultation</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Team Section -->
+          <section class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-[#0A0F1C] mb-4">Meet Our Team</h2>
+                <p class="text-xl text-[#4A5568]">Talented professionals driving innovation</p>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="group cursor-pointer">
+                  <div class="relative mb-6 overflow-hidden rounded-2xl">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop" alt="Sarah Chen" class="w-full aspect-square object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0A0F1C]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  </div>
+                  <h3 class="text-xl font-bold text-[#0A0F1C] mb-1">Sarah Chen</h3>
+                  <p class="text-[#4A5568]">Chief Technology Officer</p>
+                </div>
+                <div class="group cursor-pointer">
+                  <div class="relative mb-6 overflow-hidden rounded-2xl">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop" alt="Michael Rodriguez" class="w-full aspect-square object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0A0F1C]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  </div>
+                  <h3 class="text-xl font-bold text-[#0A0F1C] mb-1">Michael Rodriguez</h3>
+                  <p class="text-[#4A5568]">Lead AI Engineer</p>
+                </div>
+                <div class="group cursor-pointer">
+                  <div class="relative mb-6 overflow-hidden rounded-2xl">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop" alt="Priya Sharma" class="w-full aspect-square object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0A0F1C]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  </div>
+                  <h3 class="text-xl font-bold text-[#0A0F1C] mb-1">Priya Sharma</h3>
+                  <p class="text-[#4A5568]">Product Design Lead</p>
+                </div>
+                <div class="group cursor-pointer">
+                  <div class="relative mb-6 overflow-hidden rounded-2xl">
+                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop" alt="David Kim" class="w-full aspect-square object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0A0F1C]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  </div>
+                  <h3 class="text-xl font-bold text-[#0A0F1C] mb-1">David Kim</h3>
+                  <p class="text-[#4A5568]">Solutions Architect</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Stats Section -->
+          <section class="py-24 bg-gradient-to-br from-[#0A0F1C] to-[#1a1f3a]">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                  <div class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#005CFF] to-[#7B3FFF] text-transparent bg-clip-text mb-2">150+</div>
+                  <div class="text-[#E7E9EF]">Projects Delivered</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#005CFF] to-[#7B3FFF] text-transparent bg-clip-text mb-2">50+</div>
+                  <div class="text-[#E7E9EF]">Happy Clients</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#005CFF] to-[#7B3FFF] text-transparent bg-clip-text mb-2">15+</div>
+                  <div class="text-[#E7E9EF]">Team Members</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#005CFF] to-[#7B3FFF] text-transparent bg-clip-text mb-2">8+</div>
+                  <div class="text-[#E7E9EF]">Years Experience</div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+      <div id="site-footer"></div>
+    </div>
+    <script defer src="https://unpkg.com/lucide@latest"></script>
+    <script defer src="assets/main.js"></script>
+  </body>
+</html>

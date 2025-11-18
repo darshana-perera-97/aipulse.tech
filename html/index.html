@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI Pulse | Intelligent Software</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'Segoe UI', 'system-ui', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body data-page="home" class="bg-white text-[#0A0F1C] font-sans">
+    <div class="min-h-screen flex flex-col">
+      <div id="site-navbar"></div>
+      <main id="page-content" class="flex-1 bg-white">
+        <div class="pt-20 overflow-x-hidden">
+          <!-- Hero Section -->
+          <section class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0A0F1C] via-[#1a1f3a] to-[#0A0F1C] overflow-hidden">
+            <div class="absolute inset-0 opacity-20">
+              <div class="absolute top-20 left-10 w-72 h-72 bg-[#005CFF] rounded-full filter blur-3xl animate-pulse"></div>
+              <div class="absolute bottom-20 right-10 w-96 h-96 bg-[#7B3FFF] rounded-full filter blur-3xl animate-pulse" style="animation-delay: 1s"></div>
+            </div>
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                  <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+                    Empowering Digital Future with
+                    <span class="bg-gradient-to-r from-[#005CFF] to-[#7B3FFF] text-transparent bg-clip-text">AI-Driven Software</span>
+                  </h1>
+                  <p class="text-xl text-[#E7E9EF] mb-8 max-w-2xl">
+                    We build intelligent software solutions that accelerate business growth through AI, automation, and cutting-edge engineering.
+                  </p>
+                  <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="solutions.html" class="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#005CFF] to-[#7B3FFF] px-8 py-6 text-white font-semibold hover:shadow-2xl hover:shadow-[#005CFF]/50 transition-all">
+                      Explore Solutions
+                      <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
+                    </a>
+                    <a href="contact.html" class="inline-flex items-center justify-center rounded-full border-2 border-white px-8 py-6 text-white font-semibold hover:bg-white hover:text-[#0A0F1C] transition-all">
+                      Contact Us
+                    </a>
+                  </div>
+                </div>
+                <div class="relative">
+                  <div class="relative z-10 rounded-3xl overflow-hidden shadow-2xl shadow-[#005CFF]/30">
+                    <img src="https://images.unsplash.com/photo-1756908992154-c8a89f5e517f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080" alt="AI Technology" class="w-full h-full object-cover">
+                  </div>
+                  <div class="absolute -bottom-6 -right-6 w-72 h-72 bg-gradient-to-br from-[#005CFF] to-[#7B3FFF] rounded-3xl opacity-20 blur-2xl"></div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Trusted By Section -->
+          <section class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <p class="text-center text-[#4A5568] mb-8">Trusted By Leading Organizations</p>
+              <div class="flex flex-wrap justify-center items-center gap-12">
+                <div class="text-2xl font-bold text-[#2A2F3A] opacity-50 hover:opacity-100 transition-opacity">TechCorp</div>
+                <div class="text-2xl font-bold text-[#2A2F3A] opacity-50 hover:opacity-100 transition-opacity">NovaAI</div>
+                <div class="text-2xl font-bold text-[#2A2F3A] opacity-50 hover:opacity-100 transition-opacity">CloudEdge</div>
+                <div class="text-2xl font-bold text-[#2A2F3A] opacity-50 hover:opacity-100 transition-opacity">VectorLabs</div>
+                <div class="text-2xl font-bold text-[#2A2F3A] opacity-50 hover:opacity-100 transition-opacity">SmartPulse Systems</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Solutions Preview -->
+          <section class="py-24 bg-[#F7F9FC]">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-[#0A0F1C] mb-4">Our Intelligent Solutions</h2>
+                <p class="text-xl text-[#4A5568] max-w-3xl mx-auto">
+                  Comprehensive technology services designed to transform your business
+                </p>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <article class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-[#E7E9EF] group cursor-pointer" onclick="window.location.href='solution.html?id=wordpress'">
+                  <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[#005CFF] to-[#7B3FFF] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <i data-lucide="globe" class="w-7 h-7 text-white"></i>
+                  </div>
+                  <h3 class="text-xl font-bold text-[#0A0F1C] mb-3">Website Development (WordPress)</h3>
+                  <p class="text-[#4A5568] mb-4">Fast, secure, SEO-friendly websites powered by WordPress.</p>
+                  <button class="text-[#005CFF] flex items-center gap-2 group-hover:gap-3 transition-all">
+                    Learn More
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                  </button>
+                </article>
+                <article class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-[#E7E9EF] group cursor-pointer" onclick="window.location.href='solution.html?id=custom-web'">
+                  <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[#005CFF] to-[#7B3FFF] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <i data-lucide="code" class="w-7 h-7 text-white"></i>
+                  </div>
+                  <h3 class="text-xl font-bold text-[#0A0F1C] mb-3">Custom Web Page Development</h3>
+                  <p class="text-[#4A5568] mb-4">Tailor-made websites for business-specific requirements.</p>
+                  <button class="text-[#005CFF] flex items-center gap-2 group-hover:gap-3 transition-all">
+                    Learn More
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                  </button>
+                </article>
+                <article class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-[#E7E9EF] group cursor-pointer" onclick="window.location.href='solution.html?id=mobile-app'">
+                  <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[#005CFF] to-[#7B3FFF] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <i data-lucide="smartphone" class="w-7 h-7 text-white"></i>
+                  </div>
+                  <h3 class="text-xl font-bold text-[#0A0F1C] mb-3">Mobile App Development</h3>
+                  <p class="text-[#4A5568] mb-4">Android & iOS applications with modern UI/UX.</p>
+                  <button class="text-[#005CFF] flex items-center gap-2 group-hover:gap-3 transition-all">
+                    Learn More
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                  </button>
+                </article>
+                <article class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-[#E7E9EF] group cursor-pointer" onclick="window.location.href='solution.html?id=web-app'">
+                  <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[#005CFF] to-[#7B3FFF] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <i data-lucide="monitor" class="w-7 h-7 text-white"></i>
+                  </div>
+                  <h3 class="text-xl font-bold text-[#0A0F1C] mb-3">Web Application Creation</h3>
+                  <p class="text-[#4A5568] mb-4">Cloud-ready, scalable web applications for startups & enterprises.</p>
+                  <button class="text-[#005CFF] flex items-center gap-2 group-hover:gap-3 transition-all">
+                    Learn More
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                  </button>
+                </article>
+                <article class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-[#E7E9EF] group cursor-pointer" onclick="window.location.href='solution.html?id=ai-ml'">
+                  <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[#005CFF] to-[#7B3FFF] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <i data-lucide="brain" class="w-7 h-7 text-white"></i>
+                  </div>
+                  <h3 class="text-xl font-bold text-[#0A0F1C] mb-3">AI & ML Solutions</h3>
+                  <p class="text-[#4A5568] mb-4">Data-driven automation using AI chatbots, ML models & analytics dashboards.</p>
+                  <button class="text-[#005CFF] flex items-center gap-2 group-hover:gap-3 transition-all">
+                    Learn More
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                  </button>
+                </article>
+                <article class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-[#E7E9EF] group cursor-pointer" onclick="window.location.href='solution.html?id=whatsapp'">
+                  <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[#005CFF] to-[#7B3FFF] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <i data-lucide="message-square" class="w-7 h-7 text-white"></i>
+                  </div>
+                  <h3 class="text-xl font-bold text-[#0A0F1C] mb-3">WhatsApp Messaging Gateways</h3>
+                  <p class="text-[#4A5568] mb-4">Automated WhatsApp APIs, bot systems & customer engagement flows.</p>
+                  <button class="text-[#005CFF] flex items-center gap-2 group-hover:gap-3 transition-all">
+                    Learn More
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                  </button>
+                </article>
+                <article class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-[#E7E9EF] group cursor-pointer" onclick="window.location.href='solution.html?id=iot'">
+                  <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[#005CFF] to-[#7B3FFF] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <i data-lucide="cpu" class="w-7 h-7 text-white"></i>
+                  </div>
+                  <h3 class="text-xl font-bold text-[#0A0F1C] mb-3">IoT Solutions</h3>
+                  <p class="text-[#4A5568] mb-4">Sensor-based monitoring, tracking & smart automation.</p>
+                  <button class="text-[#005CFF] flex items-center gap-2 group-hover:gap-3 transition-all">
+                    Learn More
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                  </button>
+                </article>
+                <article class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-[#E7E9EF] group cursor-pointer" onclick="window.location.href='solution.html?id=desktop'">
+                  <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[#005CFF] to-[#7B3FFF] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <i data-lucide="monitor" class="w-7 h-7 text-white"></i>
+                  </div>
+                  <h3 class="text-xl font-bold text-[#0A0F1C] mb-3">Windows Desktop Applications</h3>
+                  <p class="text-[#4A5568] mb-4">Standalone software for internal business operations.</p>
+                  <button class="text-[#005CFF] flex items-center gap-2 group-hover:gap-3 transition-all">
+                    Learn More
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                  </button>
+                </article>
+                <article class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-[#E7E9EF] group cursor-pointer" onclick="window.location.href='solution.html?id=social-media'">
+                  <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[#005CFF] to-[#7B3FFF] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <i data-lucide="share-2" class="w-7 h-7 text-white"></i>
+                  </div>
+                  <h3 class="text-xl font-bold text-[#0A0F1C] mb-3">Social Media Handling & Design</h3>
+                  <p class="text-[#4A5568] mb-4">Creative content, branding & monthly social media management.</p>
+                  <button class="text-[#005CFF] flex items-center gap-2 group-hover:gap-3 transition-all">
+                    Learn More
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                  </button>
+                </article>
+                <article class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-[#E7E9EF] group cursor-pointer" onclick="window.location.href='solution.html?id=seo'">
+                  <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[#005CFF] to-[#7B3FFF] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <i data-lucide="search" class="w-7 h-7 text-white"></i>
+                  </div>
+                  <h3 class="text-xl font-bold text-[#0A0F1C] mb-3">Website SEO Optimization</h3>
+                  <p class="text-[#4A5568] mb-4">Search-engine optimization for organic traffic & long-term ranking.</p>
+                  <button class="text-[#005CFF] flex items-center gap-2 group-hover:gap-3 transition-all">
+                    Learn More
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                  </button>
+                </article>
+              </div>
+            </div>
+          </section>
+
+          <!-- How We Work -->
+          <section class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-[#0A0F1C] mb-4">How We Work</h2>
+                <p class="text-xl text-[#4A5568]">Our proven process for delivering exceptional results</p>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
+                <div class="text-center">
+                  <div class="relative mb-6">
+                    <div class="w-20 h-20 rounded-full bg-gradient-to-br from-[#005CFF] to-[#7B3FFF] flex items-center justify-center mx-auto shadow-lg shadow-[#005CFF]/30">
+                      <i data-lucide="lightbulb" class="w-10 h-10 text-white"></i>
+                    </div>
+                    <div class="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-white border-2 border-[#005CFF] flex items-center justify-center">
+                      <span class="text-sm font-bold text-[#005CFF]">1</span>
+                    </div>
+                  </div>
+                  <h3 class="font-bold text-[#0A0F1C] mb-2">Strategy & Planning</h3>
+                  <p class="text-sm text-[#4A5568]">Understanding your business goals and requirements</p>
+                </div>
+                <div class="text-center">
+                  <div class="relative mb-6">
+                    <div class="w-20 h-20 rounded-full bg-gradient-to-br from-[#005CFF] to-[#7B3FFF] flex items-center justify-center mx-auto shadow-lg shadow-[#005CFF]/30">
+                      <i data-lucide="target" class="w-10 h-10 text-white"></i>
+                    </div>
+                    <div class="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-white border-2 border-[#005CFF] flex items-center justify-center">
+                      <span class="text-sm font-bold text-[#005CFF]">2</span>
+                    </div>
+                  </div>
+                  <h3 class="font-bold text-[#0A0F1C] mb-2">Design & Prototype</h3>
+                  <p class="text-sm text-[#4A5568]">Creating intuitive and modern user experiences</p>
+                </div>
+                <div class="text-center">
+                  <div class="relative mb-6">
+                    <div class="w-20 h-20 rounded-full bg-gradient-to-br from-[#005CFF] to-[#7B3FFF] flex items-center justify-center mx-auto shadow-lg shadow-[#005CFF]/30">
+                      <i data-lucide="code" class="w-10 h-10 text-white"></i>
+                    </div>
+                    <div class="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-white border-2 border-[#005CFF] flex items-center justify-center">
+                      <span class="text-sm font-bold text-[#005CFF]">3</span>
+                    </div>
+                  </div>
+                  <h3 class="font-bold text-[#0A0F1C] mb-2">Development & Engineering</h3>
+                  <p class="text-sm text-[#4A5568]">Building robust and scalable solutions</p>
+                </div>
+                <div class="text-center">
+                  <div class="relative mb-6">
+                    <div class="w-20 h-20 rounded-full bg-gradient-to-br from-[#005CFF] to-[#7B3FFF] flex items-center justify-center mx-auto shadow-lg shadow-[#005CFF]/30">
+                      <i data-lucide="check-circle" class="w-10 h-10 text-white"></i>
+                    </div>
+                    <div class="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-white border-2 border-[#005CFF] flex items-center justify-center">
+                      <span class="text-sm font-bold text-[#005CFF]">4</span>
+                    </div>
+                  </div>
+                  <h3 class="font-bold text-[#0A0F1C] mb-2">Testing & Optimization</h3>
+                  <p class="text-sm text-[#4A5568]">Ensuring quality and performance</p>
+                </div>
+                <div class="text-center">
+                  <div class="relative mb-6">
+                    <div class="w-20 h-20 rounded-full bg-gradient-to-br from-[#005CFF] to-[#7B3FFF] flex items-center justify-center mx-auto shadow-lg shadow-[#005CFF]/30">
+                      <i data-lucide="rocket" class="w-10 h-10 text-white"></i>
+                    </div>
+                    <div class="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-white border-2 border-[#005CFF] flex items-center justify-center">
+                      <span class="text-sm font-bold text-[#005CFF]">5</span>
+                    </div>
+                  </div>
+                  <h3 class="font-bold text-[#0A0F1C] mb-2">Launch & Support</h3>
+                  <p class="text-sm text-[#4A5568]">Deployment and ongoing maintenance</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Case Studies Highlight -->
+          <section class="py-24 bg-[#F7F9FC]">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-[#0A0F1C] mb-4">Case Studies Highlight</h2>
+                <p class="text-xl text-[#4A5568]">Real results from our intelligent solutions</p>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group cursor-pointer" onclick="window.location.href='case-study.html?id=ai-dashboard'">
+                  <div class="relative h-64 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1759661966728-4a02e3c6ed91?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080" alt="AI Analytics Dashboard" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute top-4 right-4 px-3 py-1 bg-[#005CFF] text-white rounded-full text-sm">FinTech</div>
+                  </div>
+                  <div class="p-6">
+                    <h3 class="text-xl font-bold text-[#0A0F1C] mb-2">AI Analytics Dashboard</h3>
+                    <p class="text-[#4A5568] mb-4">Built an intelligent analytics platform processing 1M+ data points daily with real-time insights.</p>
+                    <button class="text-[#005CFF] flex items-center gap-2 group-hover:gap-3 transition-all">
+                      Read Case Study
+                      <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                  </div>
+                </article>
+                <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group cursor-pointer" onclick="window.location.href='case-study.html?id=ecommerce-platform'">
+                  <div class="relative h-64 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1660810731526-0720827cbd38?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080" alt="E-Commerce Platform" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute top-4 right-4 px-3 py-1 bg-[#005CFF] text-white rounded-full text-sm">Retail</div>
+                  </div>
+                  <div class="p-6">
+                    <h3 class="text-xl font-bold text-[#0A0F1C] mb-2">E-Commerce Platform</h3>
+                    <p class="text-[#4A5568] mb-4">Developed a scalable e-commerce solution that increased conversion rates by 45%.</p>
+                    <button class="text-[#005CFF] flex items-center gap-2 group-hover:gap-3 transition-all">
+                      Read Case Study
+                      <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                  </div>
+                </article>
+                <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group cursor-pointer" onclick="window.location.href='case-study.html?id=iot-monitoring'">
+                  <div class="relative h-64 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1644088379091-d574269d422f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080" alt="IoT Monitoring System" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute top-4 right-4 px-3 py-1 bg-[#005CFF] text-white rounded-full text-sm">Manufacturing</div>
+                  </div>
+                  <div class="p-6">
+                    <h3 class="text-xl font-bold text-[#0A0F1C] mb-2">IoT Monitoring System</h3>
+                    <p class="text-[#4A5568] mb-4">Implemented real-time sensor monitoring reducing downtime by 60%.</p>
+                    <button class="text-[#005CFF] flex items-center gap-2 group-hover:gap-3 transition-all">
+                      Read Case Study
+                      <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </section>
+
+          <!-- Resources Preview -->
+          <section class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold text-[#0A0F1C] mb-4">Resources Preview</h2>
+                <p class="text-xl text-[#4A5568] mb-8">Explore our collection of insights, whitepapers, and case studies</p>
+              </div>
+              <div class="flex flex-wrap justify-center gap-6 mb-8">
+                <div class="flex items-center gap-3 px-6 py-4 bg-[#F7F9FC] rounded-xl border border-[#E7E9EF]">
+                  <i data-lucide="file-text" class="w-6 h-6 text-[#005CFF]"></i>
+                  <span class="font-bold text-[#0A0F1C]">Datasheets</span>
+                </div>
+                <div class="flex items-center gap-3 px-6 py-4 bg-[#F7F9FC] rounded-xl border border-[#E7E9EF]">
+                  <i data-lucide="file-text" class="w-6 h-6 text-[#005CFF]"></i>
+                  <span class="font-bold text-[#0A0F1C]">Whitepapers</span>
+                </div>
+                <div class="flex items-center gap-3 px-6 py-4 bg-[#F7F9FC] rounded-xl border border-[#E7E9EF]">
+                  <i data-lucide="file-text" class="w-6 h-6 text-[#005CFF]"></i>
+                  <span class="font-bold text-[#0A0F1C]">eBooks</span>
+                </div>
+                <div class="flex items-center gap-3 px-6 py-4 bg-[#F7F9FC] rounded-xl border border-[#E7E9EF]">
+                  <i data-lucide="file-text" class="w-6 h-6 text-[#005CFF]"></i>
+                  <span class="font-bold text-[#0A0F1C]">Case Studies</span>
+                </div>
+              </div>
+              <div class="text-center">
+                <a href="resources.html" class="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#005CFF] to-[#7B3FFF] px-8 py-4 text-white font-semibold">
+                  Browse Resources
+                  <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
+                </a>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+      <div id="site-footer"></div>
+    </div>
+    <script defer src="https://unpkg.com/lucide@latest"></script>
+    <script defer src="assets/main.js"></script>
+  </body>
+</html>

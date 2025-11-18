@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Solution Detail | AI Pulse</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'Segoe UI', 'system-ui', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body data-page="solution-detail" class="bg-white text-[#0A0F1C] font-sans">
+    <script type="application/json" id="solutions-data">
+      {
+        "wordpress": {
+          "title": "Professional WordPress Websites Built for Speed & Growth",
+          "subtitle": "We create secure, SEO-optimized WordPress websites tailored to your industry and business goals.",
+          "overview": "Our WordPress development service helps businesses launch high-performing websites that are easy to manage and built for long-term scalability. From corporate sites to eCommerce platforms, we deliver clean, responsive, and conversion-focused experiences.",
+          "features": ["Fully responsive designs", "SEO-optimized structure", "Custom themes & plugin development", "WooCommerce integration", "Speed improvements & security hardening", "Easy admin dashboard management"],
+          "technologies": ["WordPress", "WooCommerce", "PHP", "MySQL", "Elementor", "WP Bakery", "Figma"],
+          "benefits": ["Fast deployment", "Budget-friendly", "Highly customizable", "Easy content management"],
+          "process": ["Discovery", "Design", "Development", "Testing", "Deployment", "Support"]
+        },
+        "custom-web": {
+          "title": "Custom Web Experiences Tailored to Your Business",
+          "subtitle": "Pixel-perfect UI, fast performance, and advanced functionalities",
+          "overview": "We build custom-designed websites with pixel-perfect UI, fast performance, and advanced functionalities for brands that need unique digital experiences.",
+          "features": ["Fully custom UI & UX", "Advanced animations", "Backend integrations", "Dashboard-based CMS", "High-speed optimization", "Modern frameworks"],
+          "technologies": ["React", "Next.js", "Node.js", "MongoDB", "PHP", "Laravel"],
+          "benefits": ["Unique design", "Scalable architecture", "Enterprise-grade performance", "Full ownership"],
+          "process": ["Requirements", "Design", "Development", "Testing", "Launch", "Maintenance"]
+        },
+        "mobile-app": {
+          "title": "Native & Hybrid Mobile Apps for iOS and Android",
+          "subtitle": "Performance-driven mobile apps with seamless user experiences",
+          "overview": "We design and develop performance-driven mobile apps that deliver seamless user experiences across devices.",
+          "features": ["UI/UX-focused design", "Android & iOS support", "API integration", "Push notifications", "Secure authentication", "Offline functionality"],
+          "technologies": ["Flutter", "React Native", "Kotlin", "Swift", "Firebase", "Node.js"],
+          "benefits": ["Scalable", "Multi-platform", "Consistent performance", "Native feel"],
+          "process": ["Planning", "UI/UX Design", "Development", "Testing", "Launch", "Updates"]
+        },
+        "web-app": {
+          "title": "Powerful Web Applications Built for the Future",
+          "subtitle": "Robust, scalable web applications with cloud readiness",
+          "overview": "We develop robust, scalable web applications with cloud readiness and enterprise-grade performance.",
+          "features": ["Cloud integration", "Real-time dashboards", "User authentication", "Data automation", "High-speed backend", "API development"],
+          "technologies": ["React", "Node.js", "Express", "PostgreSQL", "AWS", "Docker"],
+          "benefits": ["Scalable", "Secure", "High performance", "Cloud-ready"],
+          "process": ["Analysis", "Architecture", "Development", "Testing", "Deployment", "Monitoring"]
+        },
+        "ai-ml": {
+          "title": "AI-Driven Chatbots & Intelligent Dashboards",
+          "subtitle": "Automate workflows and gain insights from data",
+          "overview": "We create fully automated chatbots, ML-based systems, and AI dashboards to help businesses automate workflows and gain insights from data.",
+          "features": ["WhatsApp & Web chatbots", "NLP-based AI assistants", "Predictive analytics", "Custom ML models", "Smart dashboards", "Data visualization"],
+          "technologies": ["Python", "TensorFlow", "OpenAI", "LangChain", "Node.js", "Power BI"],
+          "benefits": ["Automate business processes", "Reduce human workload", "Gain real-time insights", "Data-driven decisions"],
+          "process": ["Data Analysis", "Model Training", "Integration", "Testing", "Deployment", "Optimization"]
+        },
+        "whatsapp": {
+          "title": "Automated WhatsApp Messaging Gateways for Business",
+          "subtitle": "Send automated messages and run campaigns via WhatsApp",
+          "overview": "Send automated messages, run campaigns, integrate chatbots, and manage customer communication via WhatsApp API.",
+          "features": ["Auto-replies", "Chatbot integration", "Broadcast campaigns", "CRM sync", "Rich-media messages", "Analytics dashboard"],
+          "technologies": ["WhatsApp Cloud API", "Node.js", "Meta Graph API", "DialogFlow"],
+          "benefits": ["Instant customer reach", "High engagement rate", "Scalable automation", "Cost-effective"],
+          "process": ["Setup", "Configuration", "Bot Development", "Testing", "Launch", "Monitoring"]
+        },
+        "iot": {
+          "title": "Smart IoT Solutions for Real-World Automation",
+          "subtitle": "Sensor networks, dashboards, and data automation",
+          "overview": "We build IoT systems powered by sensor networks, dashboards, and data automation for industries, agriculture, and smart infrastructure.",
+          "features": ["Sensor-based monitoring", "Real-time dashboards", "Alerts & analytics", "API connectivity", "Cloud data logging", "Remote control"],
+          "technologies": ["ESP32", "Arduino", "MQTT", "Firebase", "AWS IoT", "Python"],
+          "benefits": ["Real-time visibility", "Predictive insights", "Smart automation", "Cost savings"],
+          "process": ["Design", "Hardware Setup", "Software Development", "Integration", "Testing", "Deployment"]
+        },
+        "desktop": {
+          "title": "Custom Windows Software for Business Productivity",
+          "subtitle": "Smooth, efficient desktop applications",
+          "overview": "We create smooth, efficient Windows desktop applications for internal business operations.",
+          "features": ["Inventory systems", "POS software", "Employee management", "Automation tools", "Offline support", "Database integration"],
+          "technologies": ["C#", ".NET", "Electron.js", "Python"],
+          "benefits": ["Reliable offline apps", "Fast performance", "Custom workflows", "Secure"],
+          "process": ["Requirements", "Design", "Development", "Testing", "Deployment", "Support"]
+        },
+        "social-media": {
+          "title": "Creative Social Media Management & Branding",
+          "subtitle": "Professional social media presence",
+          "overview": "We manage your social media, design modern content, and build online visibility.",
+          "features": ["Monthly content planning", "Post & reel designs", "Branding & strategy", "Community management", "Analytics reporting", "Campaign management"],
+          "technologies": ["Photoshop", "Illustrator", "Canva", "Meta Business Suite"],
+          "benefits": ["Strong brand visibility", "Professional presence", "Consistent posting", "Engagement growth"],
+          "process": ["Strategy", "Content Planning", "Design", "Scheduling", "Monitoring", "Reporting"]
+        },
+        "seo": {
+          "title": "SEO That Boosts Visibility and Drives Growth",
+          "subtitle": "Rank higher with proven SEO strategies",
+          "overview": "We help businesses rank higher with on-page, off-page, and technical SEO strategies.",
+          "features": ["Keyword research", "Technical SEO fixes", "Backlink building", "Page speed optimization", "Content optimization", "Local SEO"],
+          "technologies": ["Ahrefs", "SEMrush", "Google Search Console", "RankMath"],
+          "benefits": ["Long-term organic traffic", "Better ranking positions", "Increased visibility", "Higher conversions"],
+          "process": ["Audit", "Strategy", "Implementation", "Monitoring", "Reporting", "Optimization"]
+        }
+      }
+    </script>
+    <div class="min-h-screen flex flex-col">
+      <div id="site-navbar"></div>
+      <main id="page-content" class="flex-1 bg-white"></main>
+      <div id="site-footer"></div>
+    </div>
+    <script defer src="https://unpkg.com/lucide@latest"></script>
+    <script defer src="assets/main.js"></script>
+  </body>
+</html>

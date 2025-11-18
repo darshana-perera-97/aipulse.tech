@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Case Study Detail | AI Pulse</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'Segoe UI', 'system-ui', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body data-page="case-study-detail" class="bg-white text-[#0A0F1C] font-sans">
+    <script type="application/json" id="case-studies-data">
+      {
+        "ai-dashboard": {
+          "industry": "FinTech",
+          "title": "AI Analytics Dashboard for Financial Services",
+          "summary": "How we built an intelligent analytics platform that processes over 1 million data points daily",
+          "heroImage": "https://images.unsplash.com/photo-1759661966728-4a02e3c6ed91?w=1400&h=700&fit=crop",
+          "client": "Global FinTech Corp",
+          "timeline": "6 Months",
+          "teamSize": "8 Experts",
+          "overview": "A leading financial services company needed a sophisticated analytics platform to process vast amounts of transaction data in real-time. They were struggling with slow data processing, delayed insights, and difficulty identifying fraud patterns. Our team was brought in to design and develop an AI-powered solution that could handle their complex requirements.",
+          "challenges": [
+            "Processing over 1 million transactions daily with minimal latency",
+            "Detecting fraudulent activities in real-time using machine learning",
+            "Providing intuitive visualizations for complex financial data",
+            "Ensuring compliance with strict financial regulations and data security",
+            "Integrating with existing legacy systems without disruption"
+          ],
+          "solution": [
+            "Real-time data processing pipeline using Apache Kafka",
+            "Machine learning models for fraud detection with 99.2% accuracy",
+            "Interactive dashboard with customizable widgets",
+            "Automated alert system for anomaly detection",
+            "Role-based access control and audit logging"
+          ],
+          "stats": [
+            {"number": "80%", "label": "Faster Analysis"},
+            {"number": "99.2%", "label": "Fraud Detection Accuracy"},
+            {"number": "1M+", "label": "Daily Transactions"},
+            {"number": "$2.5M", "label": "Annual Cost Savings"}
+          ]
+        },
+        "ecommerce-platform": {
+          "industry": "Retail",
+          "title": "Scalable E-Commerce Platform with AI Recommendations",
+          "summary": "Developed a custom e-commerce solution with AI-powered product recommendations, increasing conversion rates by 45%",
+          "heroImage": "https://images.unsplash.com/photo-1660810731526-0720827cbd38?w=1400&h=700&fit=crop",
+          "client": "Retail Innovations Inc",
+          "timeline": "4 Months",
+          "teamSize": "6 Experts",
+          "overview": "A growing retail business needed a scalable e-commerce platform that could handle increasing traffic and provide personalized shopping experiences.",
+          "challenges": [
+            "Handling high traffic volumes during peak seasons",
+            "Implementing AI-powered product recommendations",
+            "Creating seamless checkout experience",
+            "Integrating with multiple payment gateways",
+            "Managing inventory across multiple warehouses"
+          ],
+          "solution": [
+            "Cloud-based scalable architecture",
+            "AI recommendation engine using machine learning",
+            "Optimized checkout flow reducing cart abandonment",
+            "Multi-payment gateway integration",
+            "Real-time inventory management system"
+          ],
+          "stats": [
+            {"number": "45%", "label": "Conversion Increase"},
+            {"number": "3x", "label": "Traffic Capacity"},
+            {"number": "60%", "label": "Faster Load Time"},
+            {"number": "2M+", "label": "Monthly Visitors"}
+          ]
+        },
+        "iot-monitoring": {
+          "industry": "Manufacturing",
+          "title": "IoT-Based Manufacturing Monitoring System",
+          "summary": "Implemented real-time sensor monitoring across 50+ machines, reducing downtime by 60% and maintenance costs by 35%",
+          "heroImage": "https://images.unsplash.com/photo-1644088379091-d574269d422f?w=1400&h=700&fit=crop",
+          "client": "Manufacturing Solutions Ltd",
+          "timeline": "5 Months",
+          "teamSize": "7 Experts",
+          "overview": "A manufacturing company needed real-time monitoring of their production equipment to prevent unexpected failures and optimize maintenance schedules.",
+          "challenges": [
+            "Monitoring 50+ machines in real-time",
+            "Predicting equipment failures before they occur",
+            "Reducing unplanned downtime",
+            "Integrating with existing manufacturing systems",
+            "Ensuring data security and reliability"
+          ],
+          "solution": [
+            "IoT sensor network with wireless connectivity",
+            "Predictive maintenance algorithms using ML",
+            "Real-time dashboard for monitoring",
+            "Automated alert system for anomalies",
+            "Integration with existing ERP systems"
+          ],
+          "stats": [
+            {"number": "60%", "label": "Downtime Reduction"},
+            {"number": "35%", "label": "Cost Savings"},
+            {"number": "50+", "label": "Machines Monitored"},
+            {"number": "24/7", "label": "Real-time Monitoring"}
+          ]
+        },
+        "healthcare-app": {
+          "industry": "Healthcare",
+          "title": "Telemedicine Mobile App with AI Diagnostics",
+          "summary": "Created a comprehensive telemedicine platform serving 10,000+ patients with AI-assisted preliminary diagnostics",
+          "heroImage": "https://images.unsplash.com/photo-1737573296361-75315239293a?w=1400&h=700&fit=crop",
+          "client": "HealthCare Connect",
+          "timeline": "7 Months",
+          "teamSize": "10 Experts",
+          "overview": "A healthcare provider needed a telemedicine platform to serve patients remotely with AI-assisted diagnostic capabilities.",
+          "challenges": [
+            "Ensuring HIPAA compliance and data security",
+            "Implementing AI diagnostic assistance",
+            "Creating intuitive user experience",
+            "Handling video consultations reliably",
+            "Integrating with existing medical records systems"
+          ],
+          "solution": [
+            "HIPAA-compliant secure platform",
+            "AI-powered symptom analysis",
+            "Intuitive mobile app design",
+            "Reliable video consultation system",
+            "EHR integration for seamless workflows"
+          ],
+          "stats": [
+            {"number": "10K+", "label": "Patients Served"},
+            {"number": "85%", "label": "Patient Satisfaction"},
+            {"number": "40%", "label": "Faster Consultations"},
+            {"number": "99.9%", "label": "Uptime"}
+          ]
+        },
+        "whatsapp-crm": {
+          "industry": "Real Estate",
+          "title": "WhatsApp-Based CRM for Real Estate Agency",
+          "summary": "Developed automated WhatsApp integration handling 500+ daily inquiries, improving response time by 90%",
+          "heroImage": "https://images.unsplash.com/photo-1737505599159-5ffc1dcbc08f?w=1400&h=700&fit=crop",
+          "client": "Prime Real Estate Group",
+          "timeline": "3 Months",
+          "teamSize": "5 Experts",
+          "overview": "A real estate agency needed to automate customer inquiries and manage leads through WhatsApp while maintaining personal touch.",
+          "challenges": [
+            "Handling 500+ daily inquiries efficiently",
+            "Automating responses while maintaining personalization",
+            "Integrating with existing CRM system",
+            "Managing multiple property listings",
+            "Tracking lead conversion rates"
+          ],
+          "solution": [
+            "WhatsApp Business API integration",
+            "AI chatbot for initial inquiries",
+            "CRM synchronization",
+            "Automated property recommendations",
+            "Analytics dashboard for lead tracking"
+          ],
+          "stats": [
+            {"number": "90%", "label": "Faster Response"},
+            {"number": "500+", "label": "Daily Inquiries"},
+            {"number": "35%", "label": "Lead Conversion"},
+            {"number": "24/7", "label": "Availability"}
+          ]
+        },
+        "smart-agriculture": {
+          "industry": "Agriculture",
+          "title": "Smart Agriculture IoT Solution",
+          "summary": "Deployed sensor network monitoring soil conditions, weather data, and crop health across 1000 acres of farmland",
+          "heroImage": "https://images.unsplash.com/photo-1756908992154-c8a89f5e517f?w=1400&h=700&fit=crop",
+          "client": "AgriTech Solutions",
+          "timeline": "6 Months",
+          "teamSize": "8 Experts",
+          "overview": "An agricultural company needed to monitor soil conditions, weather patterns, and crop health across large farmland to optimize yields.",
+          "challenges": [
+            "Monitoring 1000 acres of farmland",
+            "Collecting real-time soil and weather data",
+            "Predicting optimal irrigation schedules",
+            "Detecting crop diseases early",
+            "Operating in remote locations with limited connectivity"
+          ],
+          "solution": [
+            "IoT sensor network with solar power",
+            "Real-time data collection and analysis",
+            "AI-powered irrigation recommendations",
+            "Disease detection using image recognition",
+            "Offline-capable mobile dashboard"
+          ],
+          "stats": [
+            {"number": "1000", "label": "Acres Monitored"},
+            {"number": "25%", "label": "Yield Increase"},
+            {"number": "30%", "label": "Water Savings"},
+            {"number": "50+", "label": "Sensors Deployed"}
+          ]
+        }
+      }
+    </script>
+    <div class="min-h-screen flex flex-col">
+      <div id="site-navbar"></div>
+      <main id="page-content" class="flex-1 bg-white"></main>
+      <div id="site-footer"></div>
+    </div>
+    <script defer src="https://unpkg.com/lucide@latest"></script>
+    <script defer src="assets/main.js"></script>
+  </body>
+</html>

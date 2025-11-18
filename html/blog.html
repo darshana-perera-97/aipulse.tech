@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Blog | AI Pulse</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'Segoe UI', 'system-ui', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body data-page="blog" class="bg-white text-[#0A0F1C] font-sans">
+    <script type="application/json" id="blog-posts-data">
+      [
+        {
+          "id": "ai-transformation",
+          "title": "How AI is Transforming Business Operations in 2025",
+          "description": "Explore the latest trends in artificial intelligence and how businesses are leveraging AI to optimize processes, reduce costs, and enhance customer experiences.",
+          "image": "https://images.unsplash.com/photo-1756908992154-c8a89f5e517f?w=800",
+          "category": "AI & Technology",
+          "date": "November 15, 2025",
+          "readTime": "8 min read"
+        },
+        {
+          "id": "web-dev-trends",
+          "title": "Top 10 Web Development Trends to Watch",
+          "description": "Discover the cutting-edge technologies and frameworks shaping modern web development, from serverless architecture to progressive web apps.",
+          "image": "https://images.unsplash.com/photo-1660810731526-0720827cbd38?w=800",
+          "category": "Web Development",
+          "date": "November 10, 2025",
+          "readTime": "6 min read"
+        },
+        {
+          "id": "iot-smart-cities",
+          "title": "IoT Solutions for Smart Cities and Infrastructure",
+          "description": "Learn how IoT sensors and real-time data analytics are revolutionizing urban planning and creating more efficient, sustainable cities.",
+          "image": "https://images.unsplash.com/photo-1644088379091-d574269d422f?w=800",
+          "category": "IoT",
+          "date": "November 5, 2025",
+          "readTime": "7 min read"
+        },
+        {
+          "id": "mobile-ux",
+          "title": "Best Practices for Mobile App UX Design",
+          "description": "Essential principles and techniques for creating intuitive, engaging mobile experiences that users love.",
+          "image": "https://images.unsplash.com/photo-1737573296361-75315239293a?w=800",
+          "category": "Mobile Development",
+          "date": "October 28, 2025",
+          "readTime": "5 min read"
+        },
+        {
+          "id": "chatbot-guide",
+          "title": "Building Intelligent Chatbots with NLP",
+          "description": "A comprehensive guide to creating conversational AI chatbots using natural language processing and machine learning.",
+          "image": "https://images.unsplash.com/photo-1737505599159-5ffc1dcbc08f?w=800",
+          "category": "AI & ML",
+          "date": "October 20, 2025",
+          "readTime": "10 min read"
+        },
+        {
+          "id": "seo-2025",
+          "title": "SEO Strategies That Actually Work in 2025",
+          "description": "Evidence-based SEO techniques for improving search rankings, driving organic traffic, and growing your online presence.",
+          "image": "https://images.unsplash.com/photo-1759661966728-4a02e3c6ed91?w=800",
+          "category": "Digital Marketing",
+          "date": "October 15, 2025",
+          "readTime": "9 min read"
+        }
+      ]
+    </script>
+    <div class="min-h-screen flex flex-col">
+      <div id="site-navbar"></div>
+      <main id="page-content" class="flex-1 bg-white">
+        <div class="pt-20">
+          <!-- Hero Section -->
+          <section class="relative py-32 bg-gradient-to-br from-[#0A0F1C] via-[#1a1f3a] to-[#0A0F1C]">
+            <div class="absolute inset-0 opacity-20">
+              <div class="absolute top-20 right-20 w-72 h-72 bg-[#005CFF] rounded-full filter blur-3xl animate-pulse"></div>
+              <div class="absolute bottom-20 left-20 w-96 h-96 bg-[#7B3FFF] rounded-full filter blur-3xl animate-pulse"></div>
+            </div>
+            <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+              <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">
+                Insights & Innovations in
+                <span class="bg-gradient-to-r from-[#005CFF] to-[#7B3FFF] text-transparent bg-clip-text">Artificial Intelligence</span>
+              </h1>
+              <p class="text-xl text-[#E7E9EF]">
+                Stay updated with the latest trends, tutorials, and insights from the world of AI and software development
+              </p>
+            </div>
+          </section>
+
+          <!-- Blog Content -->
+          <section class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div class="flex flex-col lg:flex-row gap-12">
+                <!-- Main Content -->
+                <div class="flex-1">
+                  <!-- Category Filter -->
+                  <div class="mb-12 flex flex-wrap gap-3">
+                    <button data-category="All" class="px-6 py-2 rounded-full transition-all bg-gradient-to-r from-[#005CFF] to-[#7B3FFF] text-white border-transparent">All</button>
+                    <button data-category="AI & Technology" class="px-6 py-2 rounded-full transition-all bg-[#F7F9FC] text-[#4A5568] border border-[#E7E9EF]">AI & Technology</button>
+                    <button data-category="Web Development" class="px-6 py-2 rounded-full transition-all bg-[#F7F9FC] text-[#4A5568] border border-[#E7E9EF]">Web Development</button>
+                    <button data-category="Mobile Development" class="px-6 py-2 rounded-full transition-all bg-[#F7F9FC] text-[#4A5568] border border-[#E7E9EF]">Mobile Development</button>
+                    <button data-category="IoT" class="px-6 py-2 rounded-full transition-all bg-[#F7F9FC] text-[#4A5568] border border-[#E7E9EF]">IoT</button>
+                    <button data-category="AI & ML" class="px-6 py-2 rounded-full transition-all bg-[#F7F9FC] text-[#4A5568] border border-[#E7E9EF]">AI & ML</button>
+                    <button data-category="Digital Marketing" class="px-6 py-2 rounded-full transition-all bg-[#F7F9FC] text-[#4A5568] border border-[#E7E9EF]">Digital Marketing</button>
+                  </div>
+
+                  <!-- Blog Grid -->
+                  <div id="blog-list" class="space-y-8"></div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="lg:w-80 space-y-8">
+                  <!-- Recent Posts -->
+                  <div class="bg-[#F7F9FC] rounded-2xl p-6 border border-[#E7E9EF]">
+                    <h3 class="text-xl font-bold text-[#0A0F1C] mb-6">Recent Posts</h3>
+                    <div id="recent-posts" class="space-y-4"></div>
+                  </div>
+
+                  <!-- Popular Tags -->
+                  <div class="bg-[#F7F9FC] rounded-2xl p-6 border border-[#E7E9EF]">
+                    <h3 class="text-xl font-bold text-[#0A0F1C] mb-6">Popular Tags</h3>
+                    <div id="popular-tags" class="flex flex-wrap gap-2"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+      <div id="site-footer"></div>
+    </div>
+    <script defer src="https://unpkg.com/lucide@latest"></script>
+    <script defer src="assets/main.js"></script>
+  </body>
+</html>
