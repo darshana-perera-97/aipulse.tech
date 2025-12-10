@@ -104,7 +104,7 @@ function renderNavbar(currentPage) {
                         </a>
                       </div>
                       <div class="flex-1 flex items-center justify-center">
-                        <img src="assets/images/mega-nav-image.png" alt="Solutions" class="w-full h-auto object-contain rounded-xl">
+                        <img src="assets/mega-nav-image.svg" alt="Solutions" class="w-full h-auto object-contain rounded-xl">
                       </div>
                     </div>
                   </div>
@@ -125,21 +125,45 @@ function renderNavbar(currentPage) {
             </a>
           </div>
 
-          <button class="md:hidden text-[#0A0F1C]" data-mobile-toggle>
+          <button class="md:hidden text-[#0A0F1C] z-[60] relative" data-mobile-toggle>
             <i data-lucide="menu" class="w-6 h-6"></i>
           </button>
         </div>
+      </div>
 
-        <div class="md:hidden py-4 border-t border-[#E7E9EF] hidden" data-mobile-menu>
-          <div class="flex flex-col gap-4">
-            <a href="index.html" class="text-[#0A0F1C] text-left">Home</a>
-            <a href="solutions.html" class="text-[#0A0F1C] text-left">Solutions</a>
-            <a href="about.html" class="text-[#0A0F1C] text-left">About Us</a>
-            <a href="case-studies.html" class="text-[#0A0F1C] text-left">Case Studies</a>
-            <a href="blog.html" class="text-[#0A0F1C] text-left">Blog</a>
-            <a href="resources.html" class="text-[#0A0F1C] text-left">Resources</a>
-            <a href="contact.html" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-sm font-medium transition-all bg-gradient-to-r from-[#005CFF] to-[#7B3FFF] text-white">
+      <!-- Full Screen Mobile Menu -->
+      <div class="md:hidden fixed inset-0 z-[55] bg-white transform translate-x-full transition-transform duration-300 ease-in-out" data-mobile-menu>
+        <div class="h-full flex flex-col">
+          <!-- Header with close button -->
+          <div class="flex justify-between items-center h-20 px-4 sm:px-6 border-b border-[#E7E9EF]">
+            <a href="index.html" class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#005CFF] to-[#7B3FFF] flex items-center justify-center">
+                <span class="text-white font-bold text-xl">${siteData.brand.short}</span>
+              </div>
+              <span class="text-2xl font-bold text-[#0A0F1C]">${siteData.brand.name}</span>
+            </a>
+            <button class="text-[#0A0F1C]" data-mobile-close>
+              <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+          </div>
+          
+          <!-- Menu Items -->
+          <div class="flex-1 overflow-y-auto px-4 sm:px-6 py-8">
+            <nav class="flex flex-col gap-2">
+              <a href="index.html" class="mobile-menu-item text-[#0A0F1C] text-xl font-semibold py-4 px-4 rounded-xl hover:bg-[#F7F9FC] transition-colors ${currentPage === 'home' ? 'text-[#005CFF] bg-[#F7F9FC]' : ''}">Home</a>
+              <a href="solutions.html" class="mobile-menu-item text-[#0A0F1C] text-xl font-semibold py-4 px-4 rounded-xl hover:bg-[#F7F9FC] transition-colors ${currentPage === 'solutions' || currentPage === 'solution-detail' ? 'text-[#005CFF] bg-[#F7F9FC]' : ''}">Solutions</a>
+              <a href="about.html" class="mobile-menu-item text-[#0A0F1C] text-xl font-semibold py-4 px-4 rounded-xl hover:bg-[#F7F9FC] transition-colors ${currentPage === 'about' ? 'text-[#005CFF] bg-[#F7F9FC]' : ''}">About Us</a>
+              <a href="case-studies.html" class="mobile-menu-item text-[#0A0F1C] text-xl font-semibold py-4 px-4 rounded-xl hover:bg-[#F7F9FC] transition-colors ${currentPage === 'case-studies' || currentPage === 'case-study-detail' ? 'text-[#005CFF] bg-[#F7F9FC]' : ''}">Case Studies</a>
+              <a href="blog.html" class="mobile-menu-item text-[#0A0F1C] text-xl font-semibold py-4 px-4 rounded-xl hover:bg-[#F7F9FC] transition-colors ${currentPage === 'blog' || currentPage === 'blog-article' ? 'text-[#005CFF] bg-[#F7F9FC]' : ''}">Blog</a>
+              <a href="resources.html" class="mobile-menu-item text-[#0A0F1C] text-xl font-semibold py-4 px-4 rounded-xl hover:bg-[#F7F9FC] transition-colors ${currentPage === 'resources' ? 'text-[#005CFF] bg-[#F7F9FC]' : ''}">Resources</a>
+            </nav>
+          </div>
+          
+          <!-- Footer with CTA -->
+          <div class="px-4 sm:px-6 py-6 border-t border-[#E7E9EF]">
+            <a href="contact.html" class="mobile-menu-item inline-flex items-center justify-center gap-2 w-full rounded-full text-base font-semibold transition-all bg-[#0A0F1C] text-white px-8 py-4 hover:bg-[#1a1f3a]">
               Contact Us
+              <i data-lucide="arrow-right" class="w-5 h-5"></i>
             </a>
           </div>
         </div>
@@ -226,6 +250,9 @@ function renderFooter() {
 function initializeInteractions(page) {
   attachNavbarHandlers();
   switch (page) {
+    case "home":
+      setupHeroCarousel();
+      break;
     case "blog":
       setupBlogFilters();
       break;
@@ -244,15 +271,62 @@ function initializeInteractions(page) {
 function attachNavbarHandlers() {
   const mobileToggle = document.querySelector("[data-mobile-toggle]");
   const mobileMenu = document.querySelector("[data-mobile-menu]");
+  const mobileClose = document.querySelector("[data-mobile-close]");
+  const body = document.body;
+  
   if (mobileToggle && mobileMenu) {
-    mobileToggle.addEventListener("click", () => {
-      const isCurrentlyOpen = !mobileMenu.classList.contains("hidden");
-      mobileMenu.classList.toggle("hidden");
-      // After toggle: if it was open (now closed), show menu icon; if it was closed (now open), show X icon
-      mobileToggle.innerHTML = isCurrentlyOpen
-        ? '<i data-lucide="menu" class="w-6 h-6"></i>'
-        : '<i data-lucide="x" class="w-6 h-6"></i>';
+    const openMenu = () => {
+      mobileMenu.classList.remove("translate-x-full");
+      body.style.overflow = "hidden";
+      mobileToggle.innerHTML = '<i data-lucide="x" class="w-6 h-6"></i>';
       if (window.lucide) lucide.createIcons();
+      
+      // Animate menu items with stagger
+      const menuItems = mobileMenu.querySelectorAll(".mobile-menu-item");
+      menuItems.forEach((item, index) => {
+        item.style.opacity = "0";
+        item.style.transform = "translateY(20px)";
+        setTimeout(() => {
+          item.style.transition = "opacity 0.3s ease, transform 0.3s ease";
+          item.style.opacity = "1";
+          item.style.transform = "translateY(0)";
+        }, index * 50);
+      });
+    };
+    
+    const closeMenu = () => {
+      mobileMenu.classList.add("translate-x-full");
+      body.style.overflow = "";
+      mobileToggle.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+      if (window.lucide) lucide.createIcons();
+      
+      // Reset menu items
+      const menuItems = mobileMenu.querySelectorAll(".mobile-menu-item");
+      menuItems.forEach((item) => {
+        item.style.opacity = "0";
+        item.style.transform = "translateY(20px)";
+      });
+    };
+    
+    mobileToggle.addEventListener("click", () => {
+      const isOpen = !mobileMenu.classList.contains("translate-x-full");
+      if (isOpen) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+    
+    if (mobileClose) {
+      mobileClose.addEventListener("click", closeMenu);
+    }
+    
+    // Close menu when clicking on a link
+    const menuLinks = mobileMenu.querySelectorAll("a");
+    menuLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        setTimeout(closeMenu, 100);
+      });
     });
   }
 
@@ -384,6 +458,96 @@ function attachNavbarHandlers() {
   }
 }
 
+function setupHeroCarousel() {
+  const carousel = document.querySelector("[data-hero-carousel]");
+  if (!carousel) return;
+
+  const slides = Array.from(carousel.querySelectorAll("[data-hero-slide]"));
+  const dots = Array.from(document.querySelectorAll("[data-hero-dot]"));
+  const prevButton = document.querySelector("[data-hero-prev]");
+  const nextButton = document.querySelector("[data-hero-next]");
+
+  if (!slides.length) return;
+
+  let activeIndex = 0;
+  let autoTimer = null;
+  const intervalDuration = 5000;
+
+  const applyActiveState = (index) => {
+    activeIndex = (index + slides.length) % slides.length;
+    slides.forEach((slide, slideIndex) => {
+      const isActive = slideIndex === activeIndex;
+      slide.classList.toggle("opacity-100", isActive);
+      slide.classList.toggle("opacity-0", !isActive);
+      slide.classList.toggle("pointer-events-auto", isActive);
+      slide.classList.toggle("pointer-events-none", !isActive);
+      slide.classList.toggle("scale-100", isActive);
+      slide.classList.toggle("scale-95", !isActive);
+    });
+
+    dots.forEach((dot, dotIndex) => {
+      const isActive = dotIndex === activeIndex;
+      dot.setAttribute("aria-current", isActive ? "true" : "false");
+      dot.classList.toggle("w-6", isActive);
+      dot.classList.toggle("bg-white", isActive);
+      dot.classList.toggle("bg-white/40", !isActive);
+    });
+  };
+
+  const goToSlide = (nextIndex) => {
+    applyActiveState(nextIndex);
+  };
+
+  const startAutoPlay = () => {
+    stopAutoPlay();
+    autoTimer = setInterval(() => {
+      goToSlide(activeIndex + 1);
+    }, intervalDuration);
+  };
+
+  const stopAutoPlay = () => {
+    if (autoTimer) {
+      clearInterval(autoTimer);
+      autoTimer = null;
+    }
+  };
+
+  const restartAutoPlay = () => {
+    stopAutoPlay();
+    startAutoPlay();
+  };
+
+  if (prevButton) {
+    prevButton.addEventListener("click", () => {
+      goToSlide(activeIndex - 1);
+      restartAutoPlay();
+    });
+  }
+
+  if (nextButton) {
+    nextButton.addEventListener("click", () => {
+      goToSlide(activeIndex + 1);
+      restartAutoPlay();
+    });
+  }
+
+  dots.forEach((dot) => {
+    dot.addEventListener("click", () => {
+      const targetIndex = Number(dot.dataset.heroIndex);
+      if (!Number.isNaN(targetIndex)) {
+        goToSlide(targetIndex);
+        restartAutoPlay();
+      }
+    });
+  });
+
+  carousel.addEventListener("mouseenter", stopAutoPlay);
+  carousel.addEventListener("mouseleave", startAutoPlay);
+
+  applyActiveState(0);
+  startAutoPlay();
+}
+
 function setupBlogFilters() {
   const buttons = document.querySelectorAll("[data-category]");
   const container = document.getElementById("blog-list");
@@ -471,15 +635,15 @@ function setupResourceTabs() {
     grid.innerHTML = items
       .map(
         (resource) => `
-          <article class="bg-white rounded-2xl p-8 shadow-sm border border-[#E7E9EF] flex flex-col">
-            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[#005CFF] to-[#7B3FFF] flex items-center justify-center mb-6">
+          <article class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl hover:shadow-[#005CFF]/20 hover:ring-2 hover:ring-[#005CFF] hover:ring-opacity-50 transition-all duration-300 border border-[#E7E9EF] flex flex-col group cursor-pointer">
+            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[#6B7280] to-[#0A0F1C] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
               <i data-lucide="${resource.icon}" class="w-7 h-7 text-white"></i>
             </div>
             <h3 class="text-xl font-bold text-[#0A0F1C] mb-3">${resource.title}</h3>
             <p class="text-[#4A5568] mb-4 flex-1">${resource.description}</p>
             <div class="flex items-center justify-between text-sm text-[#4A5568]">
               <span>${resource.size}</span>
-              <button class="inline-flex items-center gap-2 text-[#005CFF] font-semibold">
+              <button class="inline-flex items-center gap-2 text-[#6B7280] font-semibold group-hover:gap-3 transition-all">
                 <i data-lucide="download" class="w-4 h-4"></i>
                 Download
               </button>
