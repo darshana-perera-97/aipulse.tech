@@ -244,6 +244,65 @@ a {
   transform: translateY(0);
 }
 
+/* Core Web Vitals Optimizations */
+img {
+  height: auto;
+  max-width: 100%;
+  display: block;
+}
+
+/* Prevent layout shift for images */
+img[loading="lazy"] {
+  min-height: 200px;
+  /* background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%); */
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Optimize font loading */
+@font-face {
+  font-family: 'Inter';
+  font-display: swap;
+}
+
+/* Reduce CLS for dynamic content */
+article, section {
+  contain: layout style;
+}
+
+/* Code block styling */
+pre {
+  margin: 0;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  background: #0A0F1C;
+  color: #E7E9EF;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+pre code {
+  display: block;
+  white-space: pre;
+  overflow-x: auto;
+}
+
+code {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.875rem;
+}
+
 /* Hero ECG Pulse Animation */
 .hero-ecg-pulse {
   position: absolute;

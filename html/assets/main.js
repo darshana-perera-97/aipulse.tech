@@ -3,7 +3,8 @@ const siteData = {
   brand: {
     short: "AI",
     name: "AI Pulse",
-    tagline: "Empowering Digital Future with AI-Driven Software"
+    tagline: "Enterprise Software Development Company | AI-Powered Solutions",
+    description: "Leading software development company specializing in AI-powered solutions, custom software, and enterprise applications."
   },
   navLinks: [
     { id: "home", label: "Home", href: "index.html" },
@@ -187,7 +188,7 @@ function renderFooter() {
               </div>
               <span class="text-2xl font-bold">${siteData.brand.name}</span>
             </div>
-            <p class="text-[#E7E9EF] mb-6">${siteData.brand.tagline}</p>
+            <p class="text-[#E7E9EF] mb-6">${siteData.brand.description || siteData.brand.tagline}</p>
             <div class="flex justify-center md:justify-start gap-3">
               ${["linkedin", "twitter", "github", "mail"]
                 .map(
@@ -815,7 +816,7 @@ function renderCaseStudyDetail() {
       <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="rounded-2xl overflow-hidden">
-            <img src="${caseStudy.heroImage}" alt="${caseStudy.title}" class="w-full h-[500px] object-cover">
+            <img src="${caseStudy.heroImage}" alt="${caseStudy.title}" class="w-full h-[500px] object-cover" loading="lazy" decoding="async" width="1400" height="700">
           </div>
         </div>
       </section>
@@ -868,6 +869,89 @@ function renderCaseStudyDetail() {
           </div>
         </div>
       </section>
+      
+      ${caseStudy.techStack ? `
+      <section class="py-16 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-3xl font-bold text-[#0A0F1C] mb-8">Tech Stack</h2>
+          <div class="flex flex-wrap gap-3">
+            ${caseStudy.techStack.map(tech => `
+              <span class="px-4 py-2 bg-[#F7F9FC] rounded-xl text-[#0A0F1C] border border-[#E7E9EF] font-semibold">${tech}</span>
+            `).join("")}
+          </div>
+        </div>
+      </section>
+      ` : ""}
+      
+      ${caseStudy.codeSnippets ? `
+      <section class="py-16 bg-[#F7F9FC]">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-3xl font-bold text-[#0A0F1C] mb-8">Code Examples</h2>
+          <div class="space-y-8">
+            ${caseStudy.codeSnippets.map((snippet, idx) => `
+              <div class="bg-white rounded-xl p-6 border border-[#E7E9EF]">
+                <div class="flex items-center justify-between mb-4">
+                  <h3 class="text-lg font-semibold text-[#0A0F1C]">${snippet.title}</h3>
+                  <span class="px-3 py-1 bg-[#F7F9FC] rounded-lg text-sm text-[#6B7280] font-medium">${snippet.language}</span>
+                </div>
+                <pre class="bg-[#0A0F1C] rounded-lg p-4 overflow-x-auto"><code class="text-sm text-[#E7E9EF] font-mono">${snippet.code}</code></pre>
+              </div>
+            `).join("")}
+          </div>
+        </div>
+      </section>
+      ` : ""}
+      
+      ${caseStudy.architecture ? `
+      <section class="py-16 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-3xl font-bold text-[#0A0F1C] mb-6">Architecture</h2>
+          <div class="bg-[#F7F9FC] rounded-xl p-8 border border-[#E7E9EF]">
+            <p class="text-lg text-[#4A5568] leading-relaxed">${caseStudy.architecture}</p>
+          </div>
+        </div>
+      </section>
+      ` : ""}
+      
+      ${caseStudy.performance ? `
+      <section class="py-16 bg-[#F7F9FC]">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-3xl font-bold text-[#0A0F1C] mb-6">Performance Metrics</h2>
+          <div class="bg-white rounded-xl p-8 border border-[#E7E9EF]">
+            <p class="text-lg text-[#4A5568] leading-relaxed">${caseStudy.performance}</p>
+          </div>
+        </div>
+      </section>
+      ` : ""}
+      
+      ${caseStudy.lessonsLearned ? `
+      <section class="py-16 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-3xl font-bold text-[#0A0F1C] mb-8">Lessons Learned</h2>
+          <div class="space-y-4">
+            ${caseStudy.lessonsLearned.map((lesson, idx) => `
+              <div class="flex items-start gap-4 bg-[#F7F9FC] p-6 rounded-xl border border-[#E7E9EF]">
+                <div class="w-8 h-8 rounded-full bg-[#005CFF]/10 flex items-center justify-center flex-shrink-0">
+                  <i data-lucide="lightbulb" class="w-5 h-5 text-[#005CFF]"></i>
+                </div>
+                <p class="text-[#0A0F1C] flex-1">${lesson}</p>
+              </div>
+            `).join("")}
+          </div>
+        </div>
+      </section>
+      ` : ""}
+      
+      <section class="py-16 bg-gradient-to-br from-[#0A0F1C] to-[#1a1f3a]">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Ready to Build Something Similar?</h2>
+          <p class="text-xl text-[#E7E9EF] mb-8">Let's discuss how we can help transform your business with AI</p>
+          <a href="contact.html" class="inline-flex items-center justify-center bg-gradient-to-r from-[#005CFF] to-[#7B3FFF] text-white px-8 py-4 rounded-full font-semibold hover:shadow-2xl hover:shadow-[#005CFF]/50 transition-all">
+            Contact Our Team
+            <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+          </a>
+        </div>
+      </section>
     </div>
   `;
   
@@ -896,6 +980,8 @@ function renderBlogArticle() {
       return `<ul class="list-disc pl-6 space-y-2 text-[#4A5568] mb-8">${item.content.map(li => `<li>${li}</li>`).join("")}</ul>`;
     } else if (item.type === "quote") {
       return `<div class="bg-[#F7F9FC] border-l-4 border-[#005CFF] p-6 rounded-r-xl my-8"><p class="text-[#0A0F1C] italic">"${item.content}"</p></div>`;
+    } else if (item.type === "code") {
+      return `<div class="bg-[#0A0F1C] rounded-lg p-4 overflow-x-auto my-6"><pre class="text-sm text-[#E7E9EF] font-mono"><code>${item.content}</code></pre></div>`;
     }
     return "";
   }).join("");
@@ -927,7 +1013,7 @@ function renderBlogArticle() {
       <section class="py-16 bg-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="rounded-2xl overflow-hidden mb-12">
-            <img src="${blog.image}" alt="${blog.title}" class="w-full h-[500px] object-cover">
+            <img src="${blog.image}" alt="${blog.title}" class="w-full h-[500px] object-cover" loading="lazy" decoding="async" width="800" height="500">
           </div>
 
           <div class="flex items-center gap-4 mb-12 pb-8 border-b border-[#E7E9EF]">

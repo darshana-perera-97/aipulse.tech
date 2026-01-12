@@ -100,6 +100,39 @@
           "readTime": "9 min read",
           "author": "Priya Sharma",
           "authorRole": "Product Design Lead"
+        },
+        {
+          "id": "ollama-raspberry-pi",
+          "title": "Deploying LLMs on Raspberry Pi with Ollama in 2026",
+          "description": "Step-by-step guide to running lightweight language models on edge devices, including optimization techniques and performance benchmarks.",
+          "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800",
+          "category": "Tutorial",
+          "date": "December 20, 2025",
+          "readTime": "12 min read",
+          "author": "Michael Rodriguez",
+          "authorRole": "Lead AI Engineer"
+        },
+        {
+          "id": "flutter-ai-dashboard",
+          "title": "Flutter + AI for Cross-Platform Dashboards",
+          "description": "Building intelligent mobile dashboards with Flutter, integrating AI-powered analytics and real-time data visualization across iOS and Android.",
+          "image": "https://images.unsplash.com/photo-1660810731526-0720827cbd38?w=800",
+          "category": "Tutorial",
+          "date": "December 15, 2025",
+          "readTime": "15 min read",
+          "author": "Priya Sharma",
+          "authorRole": "Product Design Lead"
+        },
+        {
+          "id": "nodejs-ai-integration",
+          "title": "Node.js AI Integration Patterns",
+          "description": "Best practices for integrating AI services into Node.js applications, covering REST APIs, WebSockets, and microservices architecture.",
+          "image": "https://images.unsplash.com/photo-1759661966728-4a02e3c6ed91?w=800",
+          "category": "Guide",
+          "date": "December 10, 2025",
+          "readTime": "10 min read",
+          "author": "David Kim",
+          "authorRole": "Solutions Architect"
         }
       ]
     </script>
@@ -143,6 +176,52 @@
           {"type": "paragraph", "content": "SEO continues to evolve, with search engines placing greater emphasis on user experience, content quality, and technical excellence."},
           {"type": "heading", "content": "Modern SEO Strategies"},
           {"type": "paragraph", "content": "Focus on creating valuable content, optimizing for user intent, and ensuring technical excellence across all aspects of your website."}
+        ],
+        "ollama-raspberry-pi": [
+          {"type": "paragraph", "content": "Running large language models (LLMs) on edge devices like Raspberry Pi has become increasingly feasible with optimized frameworks like Ollama. This tutorial walks you through deploying lightweight LLMs for offline AI capabilities in IoT applications."},
+          {"type": "heading", "content": "Why Raspberry Pi for LLM Deployment?"},
+          {"type": "paragraph", "content": "Raspberry Pi offers an affordable platform for edge AI deployment, enabling offline inference capabilities without relying on cloud services. This is crucial for IoT applications in remote locations or scenarios requiring data privacy."},
+          {"type": "heading", "content": "Prerequisites"},
+          {"type": "list", "content": ["Raspberry Pi 4 (4GB RAM minimum, 8GB recommended)", "MicroSD card (32GB+)", "Python 3.11 or later", "Basic knowledge of Linux command line"]},
+          {"type": "heading", "content": "Step 1: Installing Ollama"},
+          {"type": "paragraph", "content": "Ollama simplifies LLM deployment by providing optimized model variants and an easy-to-use API. Install it using the official installation script:"},
+          {"type": "code", "content": "curl -fsSL https://ollama.com/install.sh | sh"},
+          {"type": "heading", "content": "Step 2: Choosing the Right Model"},
+          {"type": "paragraph", "content": "For Raspberry Pi, we recommend quantized models like llama3.2:1b or phi-3:mini. These models are optimized for resource-constrained devices while maintaining reasonable accuracy."},
+          {"type": "code", "content": "ollama pull llama3.2:1b"},
+          {"type": "heading", "content": "Step 3: Building a FastAPI Server"},
+          {"type": "paragraph", "content": "Create a Python API server to handle LLM requests efficiently. Use async processing to manage concurrent requests without blocking."},
+          {"type": "heading", "content": "Performance Optimization"},
+          {"type": "list", "content": ["Use Q4 quantization to reduce model size by 60%", "Implement response caching for repeated queries", "Set appropriate temperature and max tokens", "Monitor RAM usage and implement request queuing"]},
+          {"type": "heading", "content": "Benchmarking Results"},
+          {"type": "paragraph", "content": "On a Raspberry Pi 4 with 4GB RAM, we achieved an average response time of 2.5 seconds for 150-token responses. The quantized model (Q4) reduced size from 7GB to 2.8GB while maintaining 95% of original accuracy."},
+          {"type": "quote", "content": "Edge AI deployment opens new possibilities for offline intelligent applications, from smart sensors to autonomous devices."},
+          {"type": "heading", "content": "Integration with Arduino"},
+          {"type": "paragraph", "content": "Connect Arduino sensors to send data to your Raspberry Pi LLM server. The Arduino can collect sensor readings and send them as prompts for AI analysis."},
+          {"type": "heading", "content": "Best Practices"},
+          {"type": "list", "content": ["Always monitor memory usage", "Implement proper error handling", "Use async/await for non-blocking operations", "Cache frequent queries", "Consider model quantization trade-offs"]}
+        ],
+        "flutter-ai-dashboard": [
+          {"type": "paragraph", "content": "Flutter's cross-platform capabilities make it ideal for building AI-powered dashboards that work seamlessly on both iOS and Android. This tutorial covers integrating AI services with Flutter for real-time analytics visualization."},
+          {"type": "heading", "content": "Setting Up Flutter Project"},
+          {"type": "paragraph", "content": "Start by creating a new Flutter project and adding necessary dependencies for HTTP requests and state management."},
+          {"type": "heading", "content": "AI Service Integration"},
+          {"type": "paragraph", "content": "Integrate with AI APIs using HTTP clients, handling async operations with FutureBuilder and StreamBuilder widgets."},
+          {"type": "heading", "content": "Real-Time Data Visualization"},
+          {"type": "paragraph", "content": "Use Flutter's chart libraries to create interactive dashboards that update in real-time as AI processes data."},
+          {"type": "heading", "content": "Cross-Platform Considerations"},
+          {"type": "list", "content": ["Handle platform-specific UI differences", "Optimize for both iOS and Android performance", "Test on multiple device sizes", "Implement proper error handling"]}
+        ],
+        "nodejs-ai-integration": [
+          {"type": "paragraph", "content": "Node.js excels at building scalable backend services for AI applications. This guide covers best practices for integrating AI services into Node.js applications."},
+          {"type": "heading", "content": "REST API Integration"},
+          {"type": "paragraph", "content": "Use Express.js to create RESTful endpoints that communicate with AI services, handling requests and responses efficiently."},
+          {"type": "heading", "content": "WebSocket for Real-Time AI"},
+          {"type": "paragraph", "content": "Implement WebSocket connections for real-time AI interactions, perfect for chatbots and live data processing."},
+          {"type": "heading", "content": "Microservices Architecture"},
+          {"type": "paragraph", "content": "Structure your Node.js application as microservices, separating AI processing from business logic for better scalability."},
+          {"type": "heading", "content": "Error Handling and Retries"},
+          {"type": "list", "content": ["Implement exponential backoff for API calls", "Use proper error middleware", "Log all AI service interactions", "Set up monitoring and alerts"]}
         ]
       }
     </script>

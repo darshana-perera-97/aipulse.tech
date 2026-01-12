@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Case Study Detail | AI Pulse</title>
+    <meta name="description" content="Detailed case studies showcasing real-world AI implementations with metrics, tech stacks, and code examples" />
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+    <link rel="dns-prefetch" href="https://images.unsplash.com" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MCKR8BBEP6"></script>
     <script>
@@ -213,6 +216,118 @@
             {"number": "25%", "label": "Yield Increase"},
             {"number": "30%", "label": "Water Savings"},
             {"number": "50+", "label": "Sensors Deployed"}
+          ]
+        },
+        "raspberry-pi-llm": {
+          "industry": "Embedded Systems",
+          "title": "Raspberry Pi LLM Deployment with Ollama",
+          "summary": "Optimized lightweight LLM models for edge deployment on Raspberry Pi devices, enabling offline AI capabilities for IoT applications",
+          "heroImage": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1400&h=700&fit=crop",
+          "client": "IoT Solutions Provider",
+          "timeline": "3 Months",
+          "teamSize": "4 Experts",
+          "overview": "A client needed to deploy AI language models on Raspberry Pi devices for offline IoT applications. The challenge was running resource-intensive LLMs on limited hardware while maintaining acceptable response times.",
+          "challenges": [
+            "Running LLMs on Raspberry Pi 4 with 4GB RAM",
+            "Achieving sub-3 second response times",
+            "Reducing model size by 60% without significant accuracy loss",
+            "Handling concurrent requests efficiently",
+            "Managing memory constraints on embedded devices"
+          ],
+          "solution": [
+            "Ollama framework for optimized model deployment",
+            "Quantized model variants (Q4, Q5) for reduced size",
+            "Python-based API server with async processing",
+            "Model caching and request queuing system",
+            "Arduino integration for sensor data processing"
+          ],
+          "stats": [
+            {"number": "2.5s", "label": "Avg Response Time"},
+            {"number": "60%", "label": "Model Size Reduction"},
+            {"number": "4GB", "label": "RAM Usage"},
+            {"number": "99%", "label": "Uptime"}
+          ],
+          "techStack": ["Ollama", "Python 3.11", "FastAPI", "TensorFlow Lite", "Arduino", "Raspberry Pi 4"],
+          "codeSnippets": [
+            {
+              "title": "Ollama Model Setup",
+              "language": "bash",
+              "code": "#!/bin/bash\n# Install Ollama on Raspberry Pi\ncurl -fsSL https://ollama.com/install.sh | sh\n\n# Pull optimized model\nollama pull llama3.2:1b\n\n# Run with quantization\nollama run llama3.2:1b"
+            },
+            {
+              "title": "FastAPI Server",
+              "language": "python",
+              "code": "from fastapi import FastAPI\nfrom ollama import Client\nimport asyncio\n\napp = FastAPI()\nclient = Client(host='http://localhost:11434')\n\n@app.post('/generate')\nasync def generate(prompt: str):\n    response = client.generate(\n        model='llama3.2:1b',\n        prompt=prompt,\n        options={\n            'temperature': 0.7,\n            'num_predict': 150\n        }\n    )\n    return {'response': response['response']}"
+            },
+            {
+              "title": "Arduino Sensor Integration",
+              "language": "cpp",
+              "code": "// Arduino code for sensor data collection\n#include <WiFi.h>\n#include <HTTPClient.h>\n\nvoid setup() {\n  Serial.begin(115200);\n  WiFi.begin(\"SSID\", \"PASSWORD\");\n}\n\nvoid loop() {\n  float sensorValue = analogRead(A0);\n  String prompt = \"Analyze sensor reading: \" + String(sensorValue);\n  \n  HTTPClient http;\n  http.begin(\"http://raspberry-pi:8000/generate\");\n  http.POST(prompt);\n  \n  delay(5000);\n}"
+            }
+          ],
+          "architecture": "The system uses a microservices architecture with Ollama running the LLM inference, FastAPI handling HTTP requests, and Arduino devices collecting sensor data. Model responses are cached to reduce computation for similar queries.",
+          "performance": "After optimization, we achieved 2.5s average response time with 4GB RAM usage. The quantized model (Q4) reduced size from 7GB to 2.8GB while maintaining 95% of original accuracy.",
+          "lessonsLearned": [
+            "Quantization (Q4/Q5) is essential for edge deployment",
+            "Async processing prevents blocking on concurrent requests",
+            "Model caching significantly improves repeat query performance",
+            "Memory management is critical on resource-constrained devices"
+          ]
+        },
+        "sinhala-nlp": {
+          "industry": "Tourism",
+          "title": "Sinhala NLP Chatbot for Tourism Platform",
+          "summary": "Deployed a Sinhala language processing chatbot for a Sri Lankan tourism application, increasing user retention by 35%",
+          "heroImage": "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1400&h=700&fit=crop",
+          "client": "Tourism Platform",
+          "timeline": "4 Months",
+          "teamSize": "6 Experts",
+          "overview": "A Sri Lankan tourism platform needed a chatbot that could understand and respond in Sinhala to serve local users better. The challenge was implementing NLP for a low-resource language with limited training data.",
+          "challenges": [
+            "Limited Sinhala NLP training datasets",
+            "Handling Sinhala script encoding and tokenization",
+            "Integrating with existing Node.js/React frontend",
+            "Deploying Flutter mobile app with real-time chat",
+            "Achieving 85%+ query resolution rate"
+          ],
+          "solution": [
+            "Custom Sinhala tokenizer using TensorFlow",
+            "Fine-tuned multilingual BERT model for Sinhala",
+            "Node.js backend with Express and Socket.io",
+            "React web interface with real-time messaging",
+            "Flutter mobile app with offline support"
+          ],
+          "stats": [
+            {"number": "35%", "label": "User Retention Increase"},
+            {"number": "85%", "label": "Query Resolution Rate"},
+            {"number": "1.2s", "label": "Avg Response Time"},
+            {"number": "10K+", "label": "Daily Queries"}
+          ],
+          "techStack": ["Node.js", "React", "Flutter", "TensorFlow", "BERT", "Socket.io", "Express"],
+          "codeSnippets": [
+            {
+              "title": "Sinhala Tokenizer",
+              "language": "python",
+              "code": "import tensorflow as tf\nfrom transformers import AutoTokenizer\n\n# Load multilingual tokenizer\ntokenizer = AutoTokenizer.from_pretrained('bert-base-multilingual-cased')\n\ndef tokenize_sinhala(text):\n    # Sinhala text preprocessing\n    text = text.strip()\n    tokens = tokenizer.encode(text, add_special_tokens=True)\n    return tokens\n\n# Example usage\nsinhala_text = \"කොහෙද යන්නේ?\"  # Where are you going?\ntokens = tokenize_sinhala(sinhala_text)"
+            },
+            {
+              "title": "Node.js Chat API",
+              "language": "javascript",
+              "code": "const express = require('express');\nconst { spawn } = require('child_process');\n\nconst app = express();\napp.use(express.json());\n\napp.post('/api/chat', async (req, res) => {\n  const { message } = req.body;\n  \n  // Call Python NLP service\n  const python = spawn('python', ['nlp_service.py', message]);\n  \n  python.stdout.on('data', (data) => {\n    const response = JSON.parse(data.toString());\n    res.json({ reply: response.reply });\n  });\n});\n\napp.listen(3000);"
+            },
+            {
+              "title": "Flutter Chat Widget",
+              "language": "dart",
+              "code": "import 'package:flutter/material.dart';\nimport 'package:http/http.dart' as http;\n\nclass ChatWidget extends StatefulWidget {\n  @override\n  _ChatWidgetState createState() => _ChatWidgetState();\n}\n\nclass _ChatWidgetState extends State<ChatWidget> {\n  Future<String> sendMessage(String message) async {\n    final response = await http.post(\n      Uri.parse('https://api.example.com/chat'),\n      body: {'message': message},\n    );\n    return jsonDecode(response.body)['reply'];\n  }\n}"
+            }
+          ],
+          "architecture": "Three-tier architecture: Python NLP service for language processing, Node.js API server for business logic, and React/Flutter clients for user interaction. Real-time communication via WebSockets.",
+          "performance": "Achieved 1.2s average response time with 85% query resolution. The fine-tuned BERT model achieved 92% accuracy on Sinhala intent classification.",
+          "lessonsLearned": [
+            "Multilingual models work well for low-resource languages with fine-tuning",
+            "Real-time WebSocket communication improves user experience",
+            "Offline support in Flutter app was crucial for areas with poor connectivity",
+            "Custom tokenization significantly improved Sinhala text understanding"
           ]
         }
       }
