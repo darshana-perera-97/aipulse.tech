@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Items - Nexus Auto Care</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="min-h-screen bg-white">
+  <!-- Header -->
+  <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/25 backdrop-blur-sm py-6">
+    <div class="container mx-auto px-6 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
+          <span class="text-white text-xl font-bold">N</span>
+        </div>
+        <span class="text-xl font-semibold text-[#1A1A1A]">Nexus Auto Care</span>
+      </div>
+
+      <nav class="hidden md:flex items-center gap-8">
+        <a
+          href="index.html#home"
+          class="text-[#1A1A1A] hover:text-blue-600 transition-colors outline-none focus:outline-none"
+        >
+          Home
+        </a>
+        <a
+          href="index.html#services"
+          class="text-[#1A1A1A] hover:text-blue-600 transition-colors outline-none focus:outline-none"
+        >
+          Services
+        </a>
+        <a
+          href="index.html#about"
+          class="text-[#1A1A1A] hover:text-blue-600 transition-colors outline-none focus:outline-none"
+        >
+          About
+        </a>
+        <a
+          href="index.html#contact"
+          class="text-[#1A1A1A] hover:text-blue-600 transition-colors outline-none focus:outline-none"
+        >
+          Contact
+        </a>
+        <a
+          href="blogposts.html"
+          class="text-[#1A1A1A] hover:text-blue-600 transition-colors outline-none focus:outline-none"
+        >
+          Blog
+        </a>
+        <a
+          href="items.html"
+          class="text-[#1A1A1A] hover:text-blue-600 transition-colors outline-none focus:outline-none"
+        >
+          Items
+        </a>
+      </nav>
+
+      <a
+        href="index.html#contact"
+        class="bg-blue-600 text-white px-6 py-2.5 rounded-lg hover:bg-blue-700 transition-all hover:shadow-lg hover:scale-105"
+      >
+        Book Now
+      </a>
+    </div>
+  </header>
+
+  <main class="pt-24">
+    <!-- Hero Section -->
+    <section class="relative py-20 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
+      <div class="container mx-auto px-6">
+        <div class="max-w-3xl mx-auto text-center">
+          <h1 class="text-4xl md:text-6xl font-bold mb-6 items-hero-title">
+            Our Products & Services
+          </h1>
+          <p class="text-xl md:text-2xl text-white/90 mb-8 items-hero-subtitle">
+            Premium automotive products and accessories for your vehicle
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="py-8 bg-white border-b border-[#F2F2F2]">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <div class="flex items-center gap-4">
+            <span class="text-[#717182] font-medium">Filter by:</span>
+            <button class="px-4 py-2 rounded-lg bg-blue-600 text-white font-semibold">All Items</button>
+            <button class="px-4 py-2 rounded-lg border border-[#F2F2F2] text-[#1A1A1A] hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all">Parts</button>
+            <button class="px-4 py-2 rounded-lg border border-[#F2F2F2] text-[#1A1A1A] hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all">Accessories</button>
+            <button class="px-4 py-2 rounded-lg border border-[#F2F2F2] text-[#1A1A1A] hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all">Tools</button>
+          </div>
+          <div class="flex items-center gap-2">
+            <i data-lucide="search" class="w-5 h-5 text-[#717182]"></i>
+            <input
+              type="text"
+              placeholder="Search items..."
+              class="px-4 py-2 rounded-lg border border-[#F2F2F2] focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-100"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Items Grid Section -->
+    <section class="py-24 bg-[#F9FAFB]">
+      <div class="container mx-auto px-6">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Item 1 -->
+          <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all item-card">
+            <div class="relative h-48 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
+              <img
+                src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=400&q=80"
+                alt="Premium Engine Oil"
+                class="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                loading="lazy"
+                onerror="handleImageError(this)"
+              />
+              <div class="absolute top-3 right-3">
+                <button class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-blue-600 hover:text-white transition-colors">
+                  <i data-lucide="heart" class="w-5 h-5"></i>
+                </button>
+              </div>
+            </div>
+            <div class="p-5">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded-full font-semibold">Parts</span>
+                <span class="text-xs text-[#717182]">In Stock</span>
+              </div>
+              <h3 class="text-lg font-bold text-[#1A1A1A] mb-2">Premium Synthetic Engine Oil</h3>
+              <p class="text-sm text-[#717182] mb-4 line-clamp-2">High-performance synthetic oil for maximum engine protection and efficiency.</p>
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-2xl font-bold text-[#1A1A1A]">$49.99</span>
+                  <span class="text-sm text-[#717182] line-through ml-2">$59.99</span>
+                </div>
+                <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                  <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all item-card">
+            <div class="relative h-48 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
+              <img
+                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=400&q=80"
+                alt="Ceramic Coating Kit"
+                class="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                loading="lazy"
+                onerror="handleImageError(this)"
+              />
+              <div class="absolute top-3 right-3">
+                <button class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-blue-600 hover:text-white transition-colors">
+                  <i data-lucide="heart" class="w-5 h-5"></i>
+                </button>
+              </div>
+            </div>
+            <div class="p-5">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-xs bg-green-100 text-green-600 px-2 py-1 rounded-full font-semibold">Accessories</span>
+                <span class="text-xs text-[#717182]">In Stock</span>
+              </div>
+              <h3 class="text-lg font-bold text-[#1A1A1A] mb-2">Professional Ceramic Coating Kit</h3>
+              <p class="text-sm text-[#717182] mb-4 line-clamp-2">Complete ceramic coating system for long-lasting paint protection.</p>
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-2xl font-bold text-[#1A1A1A]">$299.99</span>
+                </div>
+                <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                  <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all item-card">
+            <div class="relative h-48 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
+              <img
+                src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=400&q=80"
+                alt="OBD2 Scanner"
+                class="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                loading="lazy"
+                onerror="handleImageError(this)"
+              />
+              <div class="absolute top-3 right-3">
+                <button class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-blue-600 hover:text-white transition-colors">
+                  <i data-lucide="heart" class="w-5 h-5"></i>
+                </button>
+              </div>
+            </div>
+            <div class="p-5">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-xs bg-purple-100 text-purple-600 px-2 py-1 rounded-full font-semibold">Tools</span>
+                <span class="text-xs text-[#717182]">In Stock</span>
+              </div>
+              <h3 class="text-lg font-bold text-[#1A1A1A] mb-2">Professional OBD2 Diagnostic Scanner</h3>
+              <p class="text-sm text-[#717182] mb-4 line-clamp-2">Advanced diagnostic tool for reading and clearing vehicle codes.</p>
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-2xl font-bold text-[#1A1A1A]">$179.99</span>
+                </div>
+                <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                  <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all item-card">
+            <div class="relative h-48 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
+              <img
+                src="https://images.unsplash.com/photo-1486754735734-325b5831c3ad?auto=format&fit=crop&w=400&q=80"
+                alt="Car Wash Kit"
+                class="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                loading="lazy"
+                onerror="handleImageError(this)"
+              />
+              <div class="absolute top-3 right-3">
+                <button class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-blue-600 hover:text-white transition-colors">
+                  <i data-lucide="heart" class="w-5 h-5"></i>
+                </button>
+              </div>
+            </div>
+            <div class="p-5">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-xs bg-green-100 text-green-600 px-2 py-1 rounded-full font-semibold">Accessories</span>
+                <span class="text-xs text-[#717182]">In Stock</span>
+              </div>
+              <h3 class="text-lg font-bold text-[#1A1A1A] mb-2">Premium Car Wash & Wax Kit</h3>
+              <p class="text-sm text-[#717182] mb-4 line-clamp-2">Complete car care kit with premium wash, wax, and detailing products.</p>
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-2xl font-bold text-[#1A1A1A]">$89.99</span>
+                  <span class="text-sm text-[#717182] line-through ml-2">$109.99</span>
+                </div>
+                <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                  <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all item-card">
+            <div class="relative h-48 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
+              <img
+                src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=400&q=80"
+                alt="Air Filter"
+                class="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                loading="lazy"
+                onerror="handleImageError(this)"
+              />
+              <div class="absolute top-3 right-3">
+                <button class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-blue-600 hover:text-white transition-colors">
+                  <i data-lucide="heart" class="w-5 h-5"></i>
+                </button>
+              </div>
+            </div>
+            <div class="p-5">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded-full font-semibold">Parts</span>
+                <span class="text-xs text-[#717182]">In Stock</span>
+              </div>
+              <h3 class="text-lg font-bold text-[#1A1A1A] mb-2">High-Performance Air Filter</h3>
+              <p class="text-sm text-[#717182] mb-4 line-clamp-2">Premium air filter for improved engine performance and air quality.</p>
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-2xl font-bold text-[#1A1A1A]">$34.99</span>
+                </div>
+                <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                  <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 6 -->
+          <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all item-card">
+            <div class="relative h-48 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
+              <img
+                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=400&q=80"
+                alt="Battery Charger"
+                class="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                loading="lazy"
+                onerror="handleImageError(this)"
+              />
+              <div class="absolute top-3 right-3">
+                <button class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-blue-600 hover:text-white transition-colors">
+                  <i data-lucide="heart" class="w-5 h-5"></i>
+                </button>
+              </div>
+            </div>
+            <div class="p-5">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-xs bg-purple-100 text-purple-600 px-2 py-1 rounded-full font-semibold">Tools</span>
+                <span class="text-xs text-[#717182]">In Stock</span>
+              </div>
+              <h3 class="text-lg font-bold text-[#1A1A1A] mb-2">Smart Battery Charger & Maintainer</h3>
+              <p class="text-sm text-[#717182] mb-4 line-clamp-2">Intelligent battery charger with automatic maintenance mode.</p>
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-2xl font-bold text-[#1A1A1A]">$129.99</span>
+                </div>
+                <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                  <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 7 -->
+          <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all item-card">
+            <div class="relative h-48 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
+              <img
+                src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=400&q=80"
+                alt="Brake Pads"
+                class="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                loading="lazy"
+                onerror="handleImageError(this)"
+              />
+              <div class="absolute top-3 right-3">
+                <button class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-blue-600 hover:text-white transition-colors">
+                  <i data-lucide="heart" class="w-5 h-5"></i>
+                </button>
+              </div>
+            </div>
+            <div class="p-5">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded-full font-semibold">Parts</span>
+                <span class="text-xs text-[#717182]">In Stock</span>
+              </div>
+              <h3 class="text-lg font-bold text-[#1A1A1A] mb-2">Premium Ceramic Brake Pads</h3>
+              <p class="text-sm text-[#717182] mb-4 line-clamp-2">Low-dust ceramic brake pads for superior stopping power and durability.</p>
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-2xl font-bold text-[#1A1A1A]">$79.99</span>
+                </div>
+                <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                  <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 8 -->
+          <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all item-card">
+            <div class="relative h-48 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
+              <img
+                src="https://images.unsplash.com/photo-1486754735734-325b5831c3ad?auto=format&fit=crop&w=400&q=80"
+                alt="Tire Pressure Gauge"
+                class="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                loading="lazy"
+                onerror="handleImageError(this)"
+              />
+              <div class="absolute top-3 right-3">
+                <button class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-blue-600 hover:text-white transition-colors">
+                  <i data-lucide="heart" class="w-5 h-5"></i>
+                </button>
+              </div>
+            </div>
+            <div class="p-5">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-xs bg-purple-100 text-purple-600 px-2 py-1 rounded-full font-semibold">Tools</span>
+                <span class="text-xs text-[#717182]">In Stock</span>
+              </div>
+              <h3 class="text-lg font-bold text-[#1A1A1A] mb-2">Digital Tire Pressure Gauge</h3>
+              <p class="text-sm text-[#717182] mb-4 line-clamp-2">Precise digital gauge for accurate tire pressure monitoring.</p>
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-2xl font-bold text-[#1A1A1A]">$24.99</span>
+                </div>
+                <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                  <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="mt-16 flex justify-center items-center gap-4">
+          <button class="px-4 py-2 rounded-lg border border-[#F2F2F2] text-[#1A1A1A] hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all">
+            Previous
+          </button>
+          <button class="px-4 py-2 rounded-lg bg-blue-600 text-white">1</button>
+          <button class="px-4 py-2 rounded-lg border border-[#F2F2F2] text-[#1A1A1A] hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all">2</button>
+          <button class="px-4 py-2 rounded-lg border border-[#F2F2F2] text-[#1A1A1A] hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all">3</button>
+          <button class="px-4 py-2 rounded-lg border border-[#F2F2F2] text-[#1A1A1A] hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all">
+            Next
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#1A1A1A] text-white py-16">
+    <div class="container mx-auto px-6">
+      <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
+        <!-- Brand -->
+        <div class="lg:col-span-2">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
+              <span class="text-white text-xl font-bold">N</span>
+            </div>
+            <span class="text-xl font-semibold">Nexus Auto Care</span>
+          </div>
+          <p class="text-white/70 mb-6 max-w-sm">
+            Precision engineering for the modern driver. State-of-the-art diagnostics 
+            and premium care for luxury and electric vehicles.
+          </p>
+          <div class="flex gap-4">
+            <a
+              href="#"
+              aria-label="Facebook"
+              class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors"
+            >
+              <i data-lucide="facebook" class="w-5 h-5"></i>
+            </a>
+            <a
+              href="#"
+              aria-label="Twitter"
+              class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors"
+            >
+              <i data-lucide="twitter" class="w-5 h-5"></i>
+            </a>
+            <a
+              href="#"
+              aria-label="Instagram"
+              class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors"
+            >
+              <i data-lucide="instagram" class="w-5 h-5"></i>
+            </a>
+            <a
+              href="#"
+              aria-label="LinkedIn"
+              class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors"
+            >
+              <i data-lucide="linkedin" class="w-5 h-5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Footer Links -->
+        <div>
+          <h4 class="font-semibold mb-4">Services</h4>
+          <ul class="space-y-2">
+            <li><a href="index.html#services" class="text-white/70 hover:text-white transition-colors">Essential Maintenance</a></li>
+            <li><a href="index.html#services" class="text-white/70 hover:text-white transition-colors">Performance Tune-up</a></li>
+            <li><a href="index.html#services" class="text-white/70 hover:text-white transition-colors">Concierge Detail</a></li>
+            <li><a href="index.html#services" class="text-white/70 hover:text-white transition-colors">Emergency Towing</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Company</h4>
+          <ul class="space-y-2">
+            <li><a href="index.html#about" class="text-white/70 hover:text-white transition-colors">About Us</a></li>
+            <li><a href="#" class="text-white/70 hover:text-white transition-colors">Our Team</a></li>
+            <li><a href="#" class="text-white/70 hover:text-white transition-colors">Careers</a></li>
+            <li><a href="blogposts.html" class="text-white/70 hover:text-white transition-colors">Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Support</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-white/70 hover:text-white transition-colors">FAQ</a></li>
+            <li><a href="index.html#contact" class="text-white/70 hover:text-white transition-colors">Contact</a></li>
+            <li><a href="#" class="text-white/70 hover:text-white transition-colors">Privacy Policy</a></li>
+            <li><a href="#" class="text-white/70 hover:text-white transition-colors">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-white/70 text-sm">
+          © 2026 Nexus Auto Care. All rights reserved.
+        </p>
+        <div class="flex gap-6 text-sm">
+          <a href="#" class="text-white/70 hover:text-white transition-colors">
+            Privacy Policy
+          </a>
+          <a href="#" class="text-white/70 hover:text-white transition-colors">
+            Terms of Service
+          </a>
+          <a href="#" class="text-white/70 hover:text-white transition-colors">
+            Cookies
+          </a>
+        </div>
+      </div>
+
+      <!-- Emergency Hotline -->
+      <div class="mt-8 p-6 bg-blue-600/10 border border-blue-600/20 rounded-xl text-center">
+        <p class="text-white/90 mb-2">24/7 Emergency Towing Hotline</p>
+        <a href="tel:555-987-6543" class="text-2xl font-bold text-blue-400 hover:text-blue-300 transition-colors">
+          (555) 987-6543
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+  </script>
+</body>
+</html>
+

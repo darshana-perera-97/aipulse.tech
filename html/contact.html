@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Contact | AI Pulse</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="apple-touch-icon" href="assets/favicon.svg" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MCKR8BBEP6"></script>
     <script>
@@ -31,6 +34,8 @@
       };
     </script>
     <link rel="stylesheet" href="assets/styles.css" />
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   </head>
   <body data-page="contact" class="bg-white text-[#0A0F1C] font-sans">
     <div class="min-h-screen flex flex-col">
@@ -64,23 +69,23 @@
                   <form id="contact-form" class="space-y-6">
                     <div>
                       <label class="block text-[#0A0F1C] mb-2">Name *</label>
-                      <input type="text" required placeholder="Your full name" class="w-full px-4 py-3 rounded-xl border border-[#E7E9EF] bg-white text-[#0A0F1C]">
+                      <input type="text" name="name" id="contact-name" required placeholder="Your full name" class="w-full px-4 py-3 rounded-xl border border-[#E7E9EF] bg-white text-[#0A0F1C]">
                     </div>
                     <div>
                       <label class="block text-[#0A0F1C] mb-2">Email *</label>
-                      <input type="email" required placeholder="your@email.com" class="w-full px-4 py-3 rounded-xl border border-[#E7E9EF] bg-white text-[#0A0F1C]">
+                      <input type="email" name="email" id="contact-email" required placeholder="your@email.com" class="w-full px-4 py-3 rounded-xl border border-[#E7E9EF] bg-white text-[#0A0F1C]">
                     </div>
                     <div>
                       <label class="block text-[#0A0F1C] mb-2">Phone</label>
-                      <input type="tel" placeholder="+94 XXX XXX XXX" class="w-full px-4 py-3 rounded-xl border border-[#E7E9EF] bg-white text-[#0A0F1C]">
+                      <input type="tel" name="phone" id="contact-phone" placeholder="+94 XXX XXX XXX" class="w-full px-4 py-3 rounded-xl border border-[#E7E9EF] bg-white text-[#0A0F1C]">
                     </div>
                     <div>
                       <label class="block text-[#0A0F1C] mb-2">Company</label>
-                      <input type="text" placeholder="Your company name" class="w-full px-4 py-3 rounded-xl border border-[#E7E9EF] bg-white text-[#0A0F1C]">
+                      <input type="text" name="company" id="contact-company" placeholder="Your company name" class="w-full px-4 py-3 rounded-xl border border-[#E7E9EF] bg-white text-[#0A0F1C]">
                     </div>
                     <div>
                       <label class="block text-[#0A0F1C] mb-2">Project Type</label>
-                      <select class="w-full px-4 py-3 rounded-xl border border-[#E7E9EF] bg-white text-[#0A0F1C]">
+                      <select name="project-type" id="contact-project-type" class="w-full px-4 py-3 rounded-xl border border-[#E7E9EF] bg-white text-[#0A0F1C]">
                         <option value="">Select a service</option>
                         <option value="website">Website Development</option>
                         <option value="mobile-app">Mobile App Development</option>
@@ -96,11 +101,12 @@
                     </div>
                     <div>
                       <label class="block text-[#0A0F1C] mb-2">Message *</label>
-                      <textarea required class="w-full min-h-[150px] px-4 py-3 rounded-xl border border-[#E7E9EF] bg-white text-[#0A0F1C]" placeholder="Tell us about your project..."></textarea>
+                      <textarea name="message" id="contact-message" required class="w-full min-h-[150px] px-4 py-3 rounded-xl border border-[#E7E9EF] bg-white text-[#0A0F1C]" placeholder="Tell us about your project..."></textarea>
                     </div>
-                    <button type="submit" class="w-full inline-flex items-center justify-center bg-gradient-to-r from-[#005CFF] to-[#7B3FFF] text-white py-6 rounded-xl font-semibold">
+                    <div id="form-message" class="hidden px-4 py-3 rounded-xl text-sm"></div>
+                    <button type="submit" id="submit-btn" class="w-full inline-flex items-center justify-center bg-gradient-to-r from-[#005CFF] to-[#7B3FFF] text-white py-6 rounded-xl font-semibold hover:shadow-lg transition-all">
                       <i data-lucide="send" class="w-5 h-5 mr-2"></i>
-                      Send Message
+                      <span id="submit-text">Send Message</span>
                     </button>
                   </form>
                 </div>

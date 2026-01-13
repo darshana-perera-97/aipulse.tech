@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VentureEase - Premium Travel Experiences</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'pacific-slate': '#0F172A',
+            'alpine-teal': '#2DD4BF',
+            'ghost-white': '#F8FAFC',
+            'charcoal': '#1E293B',
+            'silver-slate': '#64748B',
+          },
+          fontFamily: {
+            'heading': ['Plus Jakarta Sans', 'sans-serif'],
+            'body': ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles/fonts.css" />
+  <link rel="stylesheet" href="styles/theme.css" />
+  <link rel="stylesheet" href="styles/custom.css" />
+  
+  <!-- Lucide Icons (SVG icons library) -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="min-h-screen bg-white" style="font-family: var(--font-body)">
+  
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo -->
+        <a href="index.html" class="cursor-pointer" style="font-family: var(--font-heading)">
+          <h1 class="text-2xl tracking-tight" style="color: var(--pacific-slate); font-weight: 700">
+            VentureEase
+          </h1>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="our-fleet.html" class="nav-link">Fleet</a>
+          <a href="packages.html" class="nav-link">Packages</a>
+          <a href="about-us.html" class="nav-link">About</a>
+          <button onclick="scrollToSection('contact')" class="nav-link">Contact</button>
+          <a href="#contact" class="btn-primary">BOOK NOW</a>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobileMenuBtn" class="md:hidden" style="color: var(--pacific-slate)">
+          <i data-lucide="menu" id="menuIcon"></i>
+          <i data-lucide="x" id="closeIcon" class="hidden"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <nav id="mobileMenu" class="hidden md:hidden py-4 border-t border-gray-100">
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="our-fleet.html" class="mobile-nav-link">Fleet</a>
+        <a href="packages.html" class="mobile-nav-link">Packages</a>
+        <a href="about-us.html" class="mobile-nav-link">About</a>
+        <button onclick="scrollToSection('contact')" class="mobile-nav-link">Contact</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="relative pt-20 min-h-screen flex items-center justify-center">
+    <div class="absolute inset-0 z-0">
+      <img 
+        id="heroImage"
+        src="https://images.unsplash.com/photo-1543369715-eb5ecb1a4bf0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjB0cmF2ZWwlMjBsYW5kc2NhcGV8ZW58MXx8fHwxNzY3NjkyNTU4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+        alt="Luxury travel landscape"
+        class="w-full h-full object-cover"
+        onerror="handleImageError(this)"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="mb-6 tracking-tight leading-tight hero-title">
+        Your Journey, Masterfully Planned.
+      </h1>
+      <p class="mb-12 mx-auto leading-relaxed hero-subtitle">
+        Premium vehicles, professional drivers, and tailor-made itineraries for the modern traveler.
+      </p>
+
+      <!-- Search Bar -->
+      <div class="bg-white rounded-2xl p-6 mx-auto max-w-4xl search-box">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="relative">
+            <i data-lucide="map-pin" class="absolute left-4 top-1/2 -translate-y-1/2" style="color: var(--silver-slate)"></i>
+            <input
+              type="text"
+              id="destinationInput"
+              placeholder="Destination"
+              class="w-full pl-12 pr-4 py-4 rounded-lg border border-gray-200 focus:outline-none focus:border-[var(--alpine-teal)] transition-colors search-input"
+            />
+          </div>
+          <div class="relative">
+            <i data-lucide="calendar" class="absolute left-4 top-1/2 -translate-y-1/2" style="color: var(--silver-slate)"></i>
+            <input
+              type="date"
+              id="dateInput"
+              placeholder="Date"
+              class="w-full pl-12 pr-4 py-4 rounded-lg border border-gray-200 focus:outline-none focus:border-[var(--alpine-teal)] transition-colors search-input"
+            />
+          </div>
+          <div class="relative">
+            <i data-lucide="car" class="absolute left-4 top-1/2 -translate-y-1/2" style="color: var(--silver-slate)"></i>
+            <select
+              id="vehicleSelect"
+              class="w-full pl-12 pr-4 py-4 rounded-lg border border-gray-200 focus:outline-none focus:border-[var(--alpine-teal)] transition-colors appearance-none search-input"
+            >
+              <option value="">Vehicle Type</option>
+              <option value="suv">Luxury SUV</option>
+              <option value="van">Luxury Van</option>
+              <option value="sedan">Luxury Sedan</option>
+            </select>
+          </div>
+        </div>
+        <button onclick="handleSearch()" class="btn-search">
+          <i data-lucide="search"></i>
+          SEARCH TRIP
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="py-24" style="background-color: var(--ghost-white)">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-center mb-16 section-title">
+        How It Works
+      </h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i data-lucide="circle-check"></i>
+          </div>
+          <h3 class="feature-title">Choose Your Vehicle</h3>
+          <p class="feature-description">
+            Select from our premium fleet of luxury vehicles tailored to your needs.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i data-lucide="shield"></i>
+          </div>
+          <h3 class="feature-title">Verified Drivers</h3>
+          <p class="feature-description">
+            All our drivers are professionally trained and background-checked for your safety.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i data-lucide="users"></i>
+          </div>
+          <h3 class="feature-title">Personalized Service</h3>
+          <p class="feature-description">
+            Enjoy customized itineraries and dedicated support throughout your journey.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vehicle Fleet Section -->
+  <section id="fleet" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-center mb-4 section-title">
+        Our Premium Fleet
+      </h2>
+      <p class="text-center mb-16 max-w-2xl mx-auto section-description">
+        Experience luxury and comfort with our carefully curated selection of premium vehicles.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="vehicle-card">
+          <div class="relative h-56 overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1747414632749-6c8b14ba30fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBTVVYlMjBjYXJ8ZW58MXx8fHwxNzY3NjYzOTMzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+              alt="Luxury Land Cruiser"
+              class="w-full h-full object-cover transition-transform hover:scale-110"
+              onerror="handleImageError(this)"
+            />
+            <div class="vehicle-badge">DRIVER INCLUDED</div>
+          </div>
+          <div class="p-6">
+            <h3 class="vehicle-name">Luxury Land Cruiser</h3>
+            <div class="flex items-center gap-2 mb-4">
+              <i data-lucide="users" style="color: var(--silver-slate)"></i>
+              <span class="vehicle-seats">7 Seats</span>
+            </div>
+            <div class="mb-4 space-y-2">
+              <div class="flex items-center gap-2">
+                <i data-lucide="circle-check" style="color: var(--alpine-teal)"></i>
+                <span class="vehicle-feature">Premium Interior</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="circle-check" style="color: var(--alpine-teal)"></i>
+                <span class="vehicle-feature">GPS Navigation</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="circle-check" style="color: var(--alpine-teal)"></i>
+                <span class="vehicle-feature">Climate Control</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+              <div>
+                <span class="vehicle-price">$120</span>
+                <span class="vehicle-price-label">per day</span>
+              </div>
+              <button class="btn-book">BOOK NOW</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="vehicle-card">
+          <div class="relative h-56 overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1765461734605-34657fa04db2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjB2YW4lMjB2ZWhpY2xlfGVufDF8fHx8MTc2NzY5MjU1OXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+              alt="Executive Van"
+              class="w-full h-full object-cover transition-transform hover:scale-110"
+              onerror="handleImageError(this)"
+            />
+            <div class="vehicle-badge">DRIVER INCLUDED</div>
+          </div>
+          <div class="p-6">
+            <h3 class="vehicle-name">Executive Van</h3>
+            <div class="flex items-center gap-2 mb-4">
+              <i data-lucide="users" style="color: var(--silver-slate)"></i>
+              <span class="vehicle-seats">12 Seats</span>
+            </div>
+            <div class="mb-4 space-y-2">
+              <div class="flex items-center gap-2">
+                <i data-lucide="circle-check" style="color: var(--alpine-teal)"></i>
+                <span class="vehicle-feature">Spacious Interior</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="circle-check" style="color: var(--alpine-teal)"></i>
+                <span class="vehicle-feature">Entertainment System</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="circle-check" style="color: var(--alpine-teal)"></i>
+                <span class="vehicle-feature">Luxury Seating</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+              <div>
+                <span class="vehicle-price">$150</span>
+                <span class="vehicle-price-label">per day</span>
+              </div>
+              <button class="btn-book">BOOK NOW</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="vehicle-card">
+          <div class="relative h-56 overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1758216383800-7023ee8ed42b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBzZWRhbiUyMGNhcnxlbnwxfHx8fDE3Njc2NzU2Mzh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+              alt="Premium Sedan"
+              class="w-full h-full object-cover transition-transform hover:scale-110"
+              onerror="handleImageError(this)"
+            />
+            <div class="vehicle-badge">DRIVER INCLUDED</div>
+          </div>
+          <div class="p-6">
+            <h3 class="vehicle-name">Premium Sedan</h3>
+            <div class="flex items-center gap-2 mb-4">
+              <i data-lucide="users" style="color: var(--silver-slate)"></i>
+              <span class="vehicle-seats">4 Seats</span>
+            </div>
+            <div class="mb-4 space-y-2">
+              <div class="flex items-center gap-2">
+                <i data-lucide="circle-check" style="color: var(--alpine-teal)"></i>
+                <span class="vehicle-feature">Executive Class</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="circle-check" style="color: var(--alpine-teal)"></i>
+                <span class="vehicle-feature">Leather Seats</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="circle-check" style="color: var(--alpine-teal)"></i>
+                <span class="vehicle-feature">Premium Sound</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+              <div>
+                <span class="vehicle-price">$100</span>
+                <span class="vehicle-price-label">per day</span>
+              </div>
+              <button class="btn-book">BOOK NOW</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Curated Packages Section -->
+  <section id="packages" class="py-24" style="background-color: var(--ghost-white)">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-center mb-4 section-title">
+        Curated Travel Packages
+      </h2>
+      <p class="text-center mb-16 max-w-2xl mx-auto section-description">
+        Expertly crafted itineraries for unforgettable journeys.
+      </p>
+
+      <div class="overflow-x-auto pb-4 -mx-4 px-4">
+        <div class="flex gap-6 min-w-max">
+          <div class="package-card">
+            <div class="relative h-52 overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1568920088337-06a9a7e51a73?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2FzdGFsJTIwYmVhY2glMjB0cmF2ZWx8ZW58MXx8fHwxNzY3NjkyNTYwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                alt="Coastal Escape"
+                class="w-full h-full object-cover transition-transform hover:scale-110"
+                onerror="handleImageError(this)"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              <div class="absolute bottom-4 left-4 right-4">
+                <h3 class="package-title-overlay">Coastal Escape</h3>
+                <div class="flex items-center gap-2">
+                  <i data-lucide="clock" style="color: var(--alpine-teal)"></i>
+                  <span class="package-duration">5 Days</span>
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <p class="package-description">
+                Explore pristine beaches and coastal towns with luxury accommodation.
+              </p>
+              <div class="mb-4 space-y-2">
+                <div class="flex items-center gap-2">
+                  <i data-lucide="star" style="color: var(--alpine-teal)"></i>
+                  <span class="package-include">Luxury SUV</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i data-lucide="star" style="color: var(--alpine-teal)"></i>
+                  <span class="package-include">Professional Driver</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i data-lucide="star" style="color: var(--alpine-teal)"></i>
+                  <span class="package-include">Beachfront Hotels</span>
+                </div>
+              </div>
+              <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                <div>
+                  <span class="package-from">From</span>
+                  <span class="package-price">$2,499</span>
+                </div>
+                <button class="btn-package">
+                  VIEW ITINERARY
+                  <i data-lucide="arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="package-card">
+            <div class="relative h-52 overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1598524613976-ec6b2677b747?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb3VudGFpbiUyMHRyZWslMjBoaWtpbmd8ZW58MXx8fHwxNzY3NjkyNTYwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                alt="Mountain Trek"
+                class="w-full h-full object-cover transition-transform hover:scale-110"
+                onerror="handleImageError(this)"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              <div class="absolute bottom-4 left-4 right-4">
+                <h3 class="package-title-overlay">Mountain Trek</h3>
+                <div class="flex items-center gap-2">
+                  <i data-lucide="clock" style="color: var(--alpine-teal)"></i>
+                  <span class="package-duration">7 Days</span>
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <p class="package-description">
+                Journey through highlands with expert guides and all-inclusive services.
+              </p>
+              <div class="mb-4 space-y-2">
+                <div class="flex items-center gap-2">
+                  <i data-lucide="star" style="color: var(--alpine-teal)"></i>
+                  <span class="package-include">4x4 Vehicle</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i data-lucide="star" style="color: var(--alpine-teal)"></i>
+                  <span class="package-include">Local Expert Guide</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i data-lucide="star" style="color: var(--alpine-teal)"></i>
+                  <span class="package-include">Mountain Lodges</span>
+                </div>
+              </div>
+              <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                <div>
+                  <span class="package-from">From</span>
+                  <span class="package-price">$3,299</span>
+                </div>
+                <button class="btn-package">
+                  VIEW ITINERARY
+                  <i data-lucide="arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="package-card">
+            <div class="relative h-52 overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1688048481392-c425462ac4f1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaXR5JTIwc2t5bGluZSUyMHRyYXZlbHxlbnwxfHx8fDE3Njc2MjU2MjJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                alt="Urban Discovery"
+                class="w-full h-full object-cover transition-transform hover:scale-110"
+                onerror="handleImageError(this)"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              <div class="absolute bottom-4 left-4 right-4">
+                <h3 class="package-title-overlay">Urban Discovery</h3>
+                <div class="flex items-center gap-2">
+                  <i data-lucide="clock" style="color: var(--alpine-teal)"></i>
+                  <span class="package-duration">4 Days</span>
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <p class="package-description">
+                Discover vibrant cities with premium transportation and guided tours.
+              </p>
+              <div class="mb-4 space-y-2">
+                <div class="flex items-center gap-2">
+                  <i data-lucide="star" style="color: var(--alpine-teal)"></i>
+                  <span class="package-include">Executive Sedan</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i data-lucide="star" style="color: var(--alpine-teal)"></i>
+                  <span class="package-include">City Tours</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i data-lucide="star" style="color: var(--alpine-teal)"></i>
+                  <span class="package-include">Boutique Hotels</span>
+                </div>
+              </div>
+              <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                <div>
+                  <span class="package-from">From</span>
+                  <span class="package-price">$1,899</span>
+                </div>
+                <button class="btn-package">
+                  VIEW ITINERARY
+                  <i data-lucide="arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-center mb-16 section-title">
+        Get In Touch
+      </h2>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <!-- Contact Form -->
+        <div>
+          <h3 class="contact-section-title">Send Us a Message</h3>
+          <form id="contactForm" class="space-y-6" onsubmit="handleFormSubmit(event)">
+            <div>
+              <label class="form-label">Full Name</label>
+              <input
+                type="text"
+                id="fullName"
+                required
+                class="form-input"
+              />
+            </div>
+            <div>
+              <label class="form-label">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                required
+                class="form-input"
+              />
+            </div>
+            <div>
+              <label class="form-label">Phone Number</label>
+              <input
+                type="tel"
+                id="phone"
+                class="form-input"
+              />
+            </div>
+            <div>
+              <label class="form-label">Message</label>
+              <textarea
+                id="message"
+                rows="5"
+                required
+                class="form-input resize-none"
+              ></textarea>
+            </div>
+            <button type="submit" class="btn-submit">
+              SEND MESSAGE
+            </button>
+          </form>
+        </div>
+
+        <!-- Office Info & Map -->
+        <div>
+          <h3 class="contact-section-title">Visit Our Office</h3>
+          
+          <div class="space-y-6 mb-8">
+            <div class="flex items-start gap-4">
+              <div class="contact-icon">
+                <i data-lucide="map-pin"></i>
+              </div>
+              <div>
+                <h4 class="contact-info-title">Address</h4>
+                <p class="contact-info-text">
+                  123 Travel Boulevard<br />
+                  Premium District, City 10001
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="contact-icon">
+                <i data-lucide="phone"></i>
+              </div>
+              <div>
+                <h4 class="contact-info-title">Phone</h4>
+                <p class="contact-info-text">
+                  +1 (555) 123-4567
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="contact-icon">
+                <i data-lucide="mail"></i>
+              </div>
+              <div>
+                <h4 class="contact-info-title">Email</h4>
+                <p class="contact-info-text">
+                  contact@ventureease.com
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Map Placeholder -->
+          <div class="map-placeholder">
+            <i data-lucide="map-pin"></i>
+            <p>Map View</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12" style="background-color: var(--pacific-slate)">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+        <!-- Brand -->
+        <div>
+          <h3 class="footer-brand">VentureEase</h3>
+          <p class="footer-text">
+            Premium travel experiences with luxury vehicles and professional service.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="about-us.html" class="footer-link">About Us</a></li>
+            <li><a href="our-fleet.html" class="footer-link">Our Fleet</a></li>
+            <li><a href="packages.html" class="footer-link">Packages</a></li>
+            <li><a href="index.html#contact" class="footer-link">Contact</a></li>
+            <li><a href="#" class="footer-link">Terms & Conditions</a></li>
+            <li><a href="#" class="footer-link">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div>
+          <h4 class="footer-heading">Newsletter</h4>
+          <p class="footer-text mb-4">
+            Subscribe for exclusive deals and travel tips.
+          </p>
+          <div class="flex gap-2">
+            <input
+              type="email"
+              id="newsletterEmail"
+              placeholder="Your email"
+              class="newsletter-input"
+            />
+            <button onclick="handleNewsletter()" class="newsletter-btn">
+              <i data-lucide="mail"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="footer-copyright">
+          © 2026 VentureEase. All rights reserved.
+        </p>
+        
+        <!-- Social Icons -->
+        <div class="flex items-center gap-4">
+          <a href="#" class="social-icon" aria-label="Facebook">
+            <i data-lucide="facebook"></i>
+          </a>
+          <a href="#" class="social-icon" aria-label="Twitter">
+            <i data-lucide="twitter"></i>
+          </a>
+          <a href="#" class="social-icon" aria-label="Instagram">
+            <i data-lucide="instagram"></i>
+          </a>
+          <a href="#" class="social-icon" aria-label="LinkedIn">
+            <i data-lucide="linkedin"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>
+

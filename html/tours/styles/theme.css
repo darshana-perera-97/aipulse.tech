@@ -1,0 +1,13 @@
+:root {
+  /* Custom VentureEase Colors */
+  --pacific-slate: #0F172A;
+  --alpine-teal: #2DD4BF;
+  --ghost-white: #F8FAFC;
+  --charcoal: #1E293B;
+  --silver-slate: #64748B;
+
+  /* Custom Typography */
+  --font-heading: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+

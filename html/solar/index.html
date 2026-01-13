@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lumina Solar - Power Your Home with the Sun</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="min-h-screen bg-white font-sans">
+  <!-- Navigation -->
+  <nav id="navigation" class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-[#F2F4F7]">
+    <div class="max-w-7xl mx-auto px-8 py-6 flex items-center justify-between">
+      <a href="#/" class="text-2xl tracking-tight">
+        <span class="bg-gradient-to-r from-[#84CC16] to-[#3B82F6] bg-clip-text text-transparent">Lumina</span>
+        <span class="text-[#101828]"> Solar</span>
+      </a>
+
+      <div class="flex items-center gap-12">
+        <a href="#/" class="nav-link text-[#475467] hover:text-[#101828] transition-colors duration-300" data-path="/">Home</a>
+        <a href="#/packages" class="nav-link text-[#475467] hover:text-[#101828] transition-colors duration-300" data-path="/packages">Packages</a>
+        <a href="#/about" class="nav-link text-[#475467] hover:text-[#101828] transition-colors duration-300" data-path="/about">About</a>
+        <a href="#/contact" class="nav-link text-[#475467] hover:text-[#101828] transition-colors duration-300" data-path="/contact">Contact</a>
+      </div>
+
+      <a href="#/contact" class="px-6 py-3 bg-gradient-to-r from-[#84CC16] to-[#3B82F6] text-white rounded-2xl hover:shadow-lg hover:shadow-[#84CC16]/20 transition-all duration-300 hover:scale-105">
+        Get a Quote
+      </a>
+    </div>
+  </nav>
+
+  <!-- Page Content Container -->
+  <div id="app" class="pt-24">
+    <!-- Pages will be loaded here -->
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gradient-to-b from-white to-[#F9FAFB] border-t border-[#F2F4F7] mt-32">
+    <div class="max-w-7xl mx-auto px-8 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <!-- Company Info -->
+        <div class="lg:col-span-1">
+          <a href="#/" class="text-2xl tracking-tight mb-6 inline-block">
+            <span class="bg-gradient-to-r from-[#84CC16] to-[#3B82F6] bg-clip-text text-transparent">Lumina</span>
+            <span class="text-[#101828]"> Solar</span>
+          </a>
+          <p class="text-[#475467] mb-6 leading-relaxed">
+            Powering homes with clean, renewable energy. Join thousands of families making the switch to sustainable solar power.
+          </p>
+          <div class="flex items-center gap-4">
+            <a href="#" class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#84CC16]/10 to-[#3B82F6]/10 flex items-center justify-center hover:bg-gradient-to-br hover:from-[#84CC16]/20 hover:to-[#3B82F6]/20 transition-all duration-300 group">
+              <i data-lucide="facebook" class="w-5 h-5 text-[#475467] group-hover:text-[#84CC16] transition-colors"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#84CC16]/10 to-[#3B82F6]/10 flex items-center justify-center hover:bg-gradient-to-br hover:from-[#84CC16]/20 hover:to-[#3B82F6]/20 transition-all duration-300 group">
+              <i data-lucide="twitter" class="w-5 h-5 text-[#475467] group-hover:text-[#84CC16] transition-colors"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#84CC16]/10 to-[#3B82F6]/10 flex items-center justify-center hover:bg-gradient-to-br hover:from-[#84CC16]/20 hover:to-[#3B82F6]/20 transition-all duration-300 group">
+              <i data-lucide="instagram" class="w-5 h-5 text-[#475467] group-hover:text-[#84CC16] transition-colors"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#84CC16]/10 to-[#3B82F6]/10 flex items-center justify-center hover:bg-gradient-to-br hover:from-[#84CC16]/20 hover:to-[#3B82F6]/20 transition-all duration-300 group">
+              <i data-lucide="linkedin" class="w-5 h-5 text-[#475467] group-hover:text-[#84CC16] transition-colors"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h3 class="text-lg font-semibold text-[#101828] mb-6">Quick Links</h3>
+          <ul class="space-y-4">
+            <li>
+              <a href="#/" class="text-[#475467] hover:text-[#84CC16] transition-colors duration-300">Home</a>
+            </li>
+            <li>
+              <a href="#/packages" class="text-[#475467] hover:text-[#84CC16] transition-colors duration-300">Packages</a>
+            </li>
+            <li>
+              <a href="#/about" class="text-[#475467] hover:text-[#84CC16] transition-colors duration-300">About Us</a>
+            </li>
+            <li>
+              <a href="#/contact" class="text-[#475467] hover:text-[#84CC16] transition-colors duration-300">Contact</a>
+            </li>
+            <li>
+              <a href="#" class="text-[#475467] hover:text-[#84CC16] transition-colors duration-300">FAQ</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <h3 class="text-lg font-semibold text-[#101828] mb-6">Services</h3>
+          <ul class="space-y-4">
+            <li>
+              <a href="#" class="text-[#475467] hover:text-[#84CC16] transition-colors duration-300">Residential Solar</a>
+            </li>
+            <li>
+              <a href="#" class="text-[#475467] hover:text-[#84CC16] transition-colors duration-300">Commercial Solar</a>
+            </li>
+            <li>
+              <a href="#" class="text-[#475467] hover:text-[#84CC16] transition-colors duration-300">Battery Storage</a>
+            </li>
+            <li>
+              <a href="#" class="text-[#475467] hover:text-[#84CC16] transition-colors duration-300">Maintenance</a>
+            </li>
+            <li>
+              <a href="#" class="text-[#475467] hover:text-[#84CC16] transition-colors duration-300">Energy Consultation</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact & Newsletter -->
+        <div>
+          <h3 class="text-lg font-semibold text-[#101828] mb-6">Stay Connected</h3>
+          <div class="space-y-4 mb-6">
+            <div class="flex items-start gap-3">
+              <i data-lucide="phone" class="w-5 h-5 text-[#84CC16] mt-0.5 flex-shrink-0"></i>
+              <div>
+                <div class="text-sm text-[#475467]">Phone</div>
+                <a href="tel:+15551234567" class="text-[#101828] hover:text-[#84CC16] transition-colors">(555) 123-4567</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <i data-lucide="mail" class="w-5 h-5 text-[#3B82F6] mt-0.5 flex-shrink-0"></i>
+              <div>
+                <div class="text-sm text-[#475467]">Email</div>
+                <a href="mailto:hello@luminasolar.com" class="text-[#101828] hover:text-[#84CC16] transition-colors">hello@luminasolar.com</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <i data-lucide="map-pin" class="w-5 h-5 text-[#84CC16] mt-0.5 flex-shrink-0"></i>
+              <div>
+                <div class="text-sm text-[#475467]">Address</div>
+                <div class="text-[#101828]">123 Solar Street<br>Green City, CA 90210</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Newsletter -->
+          <div class="mt-8">
+            <h4 class="text-sm font-semibold text-[#101828] mb-3">Newsletter</h4>
+            <p class="text-sm text-[#475467] mb-4">Get solar tips and exclusive offers</p>
+            <form id="newsletter-form" class="flex gap-2">
+              <input 
+                type="email" 
+                placeholder="Your email" 
+                required
+                class="flex-1 px-4 py-2.5 border border-[#F2F4F7] rounded-xl focus:border-[#84CC16] focus:outline-none text-sm"
+              >
+              <button 
+                type="submit"
+                class="px-6 py-2.5 bg-gradient-to-r from-[#84CC16] to-[#3B82F6] text-white rounded-xl hover:shadow-lg hover:shadow-[#84CC16]/20 transition-all duration-300"
+              >
+                <i data-lucide="send" class="w-4 h-4"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-8 border-t border-[#F2F4F7]">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+          <div class="text-sm text-[#475467]">
+            © ${new Date().getFullYear()} Lumina Solar. All rights reserved.
+          </div>
+          <div class="flex items-center gap-6 text-sm">
+            <a href="#/privacy" class="text-[#475467] hover:text-[#84CC16] transition-colors duration-300">Privacy Policy</a>
+            <a href="#/terms" class="text-[#475467] hover:text-[#84CC16] transition-colors duration-300">Terms of Service</a>
+            <a href="#/cookies" class="text-[#475467] hover:text-[#84CC16] transition-colors duration-300">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+  <script>
+    // Initialize icons on page load
+    if (typeof lucide !== 'undefined') {
+      lucide.createIcons();
+    }
+    
+    // Newsletter form handling
+    const newsletterForm = document.getElementById('newsletter-form');
+    if (newsletterForm) {
+      newsletterForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = newsletterForm.querySelector('input[type="email"]').value;
+        console.log('Newsletter signup:', email);
+        alert('Thank you for subscribing!');
+        newsletterForm.reset();
+        if (typeof lucide !== 'undefined') {
+          lucide.createIcons();
+        }
+      });
+    }
+  </script>
+</body>
+</html>
+

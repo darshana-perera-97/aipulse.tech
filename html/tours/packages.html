@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travel Packages - VentureEase</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'pacific-slate': '#0F172A',
+            'alpine-teal': '#2DD4BF',
+            'ghost-white': '#F8FAFC',
+            'charcoal': '#1E293B',
+            'silver-slate': '#64748B',
+          },
+          fontFamily: {
+            'heading': ['Plus Jakarta Sans', 'sans-serif'],
+            'body': ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles/fonts.css" />
+  <link rel="stylesheet" href="styles/theme.css" />
+  <link rel="stylesheet" href="styles/custom.css" />
+  
+  <!-- Lucide Icons (SVG icons library) -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="min-h-screen bg-white" style="font-family: var(--font-body)">
+  
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo -->
+        <a href="index.html" class="cursor-pointer" style="font-family: var(--font-heading)">
+          <h1 class="text-2xl tracking-tight" style="color: var(--pacific-slate); font-weight: 700">
+            VentureEase
+          </h1>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="our-fleet.html" class="nav-link">Fleet</a>
+          <a href="packages.html" class="nav-link">Packages</a>
+          <a href="index.html#contact" class="nav-link">Contact</a>
+          <a href="index.html#contact" class="btn-primary">BOOK NOW</a>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobileMenuBtn" class="md:hidden" style="color: var(--pacific-slate)">
+          <i data-lucide="menu" id="menuIcon"></i>
+          <i data-lucide="x" id="closeIcon" class="hidden"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <nav id="mobileMenu" class="hidden md:hidden py-4 border-t border-gray-100">
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="our-fleet.html" class="mobile-nav-link">Fleet</a>
+        <a href="packages.html" class="mobile-nav-link">Packages</a>
+        <a href="index.html#contact" class="mobile-nav-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative pt-32 pb-20 min-h-[60vh] flex items-center justify-center" style="background: linear-gradient(135deg, var(--pacific-slate) 0%, var(--charcoal) 100%);">
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="mb-6 tracking-tight leading-tight" style="font-family: var(--font-heading); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; color: white;">
+        Curated Travel Packages
+      </h1>
+      <p class="mb-12 mx-auto leading-relaxed" style="font-family: var(--font-body); font-size: clamp(1rem, 2vw, 1.25rem); color: rgba(255, 255, 255, 0.9); max-width: 42rem;">
+        Expertly crafted itineraries for unforgettable journeys.
+      </p>
+    </div>
+  </section>
+
+  <!-- Packages Section -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+        
+        <!-- Package 1 - Coastal Escape -->
+        <div class="package-card-detail">
+          <div class="relative h-64 overflow-hidden rounded-t-2xl">
+            <img 
+              src="https://images.unsplash.com/photo-1568920088337-06a9a7e51a73?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2FzdGFsJTIwYmVhY2glMjB0cmF2ZWx8ZW58MXx8fHwxNzY3NjkyNTYwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+              alt="Coastal Escape"
+              class="w-full h-full object-cover transition-transform hover:scale-110"
+              onerror="handleImageError(this)"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+            <div class="absolute bottom-4 left-4 right-4">
+              <h3 class="package-title-overlay">Coastal Escape</h3>
+              <div class="flex items-center gap-4">
+                <div class="flex items-center gap-2">
+                  <i data-lucide="clock" style="color: var(--alpine-teal)"></i>
+                  <span class="package-duration">5 Days</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i data-lucide="map-pin" style="color: var(--alpine-teal)"></i>
+                  <span class="package-duration">Coastal Route</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="p-8 bg-white rounded-b-2xl">
+            <p class="package-description mb-6">
+              Explore pristine beaches and coastal towns with luxury accommodation. This carefully curated journey takes you through the most beautiful coastal destinations with premium transportation and world-class hospitality.
+            </p>
+            <div class="mb-6">
+              <h4 class="mb-3" style="font-family: var(--font-heading); font-weight: 600; color: var(--charcoal);">What's Included:</h4>
+              <div class="space-y-2">
+                <div class="flex items-center gap-2">
+                  <i data-lucide="star" style="color: var(--alpine-teal)"></i>
+                  <span class="package-include">Luxury SUV with Professional Driver</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i data-lucide="star" style="color: var(--alpine-teal)"></i>
+                  <span class="package-include">Beachfront Hotels (4 Nights)</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i data-lucide="star" style="color: var(--alpine-teal)"></i>
+                  <span class="package-include">Daily Breakfast Included</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i data-lucide="star" style="color: var(--alpine-teal)"></i>
+                  <span class="package-include">Guided Coastal Tours</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i data-lucide="star" style="color: var(--alpine-teal)"></i>
+                  <span class="package-include">24/7 Travel Support</span>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-6 border-t border-gray-100">
+              <div>
+                <span class="package-from">Starting from</span>
+                <span class="package-price">$2,499</span>
+              </div>
+              <button class="btn-package" onclick="bookPackage('Coastal Escape')">
+                BOOK NOW
+                <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 2 - Mountain Trek -->
+        <div class="package-card-detail">
+          <div class="relative h-64 overflow-hidden rounded-t-2xl">
+            <img 
+              src="https://images.unsplash.com/photo-1598524613976-ec6b2677b747?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb3VudGFpbiUyMHRyZWslMjBoaWtpbmd8ZW58MXx8fHwxNzY3NjkyNTYwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+              alt="Mountain Trek"
+              class="w-full h-full object-cover transition-transform hover:scale-110"
+              onerror="handleImageError(this)"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+            <div class="absolute bottom-4 left-4 right-4">
+              <h3 class="package-title-overlay">Mountain Trek</h3>
+              <div class="flex items-center gap-4">
+                <div class="flex items-center gap-2">
+                  <i data-lucide="clock" style="color: var(--alpine-teal)"></i>
+                  <span class="package-duration">7 Days</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i data-lucide="map-pin" style="color: var(--alpine-teal)"></i>
+                  <span class="package-duration">Highland Route</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="p-8 bg-white rounded-b-2xl">
+            <p class="package-description mb-6">
+              Journey through highlands with expert guides and all-inclusive services. Experience breathtaking mountain vistas, charming villages, and authentic local culture with premium comfort and safety.
+            </p>
+            <div class="mb-6">
+              <h4 class="mb-3" style="font-family: var(--font-heading); font-weight: 600; color: var(--charcoal);">What's Included:</h4>
+              <div class="space-y-2">
+                <div class="flex items-center gap-2">
+                  <i data-lucide="star" style="color: var(--alpine-teal)"></i>
+                  <span class="package-include">4x4 Vehicle with Expert Driver</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i data-lucide="star" style="color: var(--alpine-teal)"></i>
+                  <span class="package-include">Local Expert Guide</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i data-lucide="star" style="color: var(--alpine-teal)"></i>
+                  <span class="package-include">Mountain Lodges (6 Nights)</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i data-lucide="star" style="color: var(--alpine-teal)"></i>
+                  <span class="package-include">All Meals Included</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i data-lucide="star" style="color: var(--alpine-teal)"></i>
+                  <span class="package-include">Adventure Activities</span>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-6 border-t border-gray-100">
+              <div>
+                <span class="package-from">Starting from</span>
+                <span class="package-price">$3,299</span>
+              </div>
+              <button class="btn-package" onclick="bookPackage('Mountain Trek')">
+                BOOK NOW
+                <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 3 - Urban Discovery -->
+        <div class="package-card-detail">
+          <div class="relative h-64 overflow-hidden rounded-t-2xl">
+            <img 
+              src="https://images.unsplash.com/photo-1688048481392-c425462ac4f1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaXR5JTIwc2t5bGluZSUyMHRyYXZlbHxlbnwxfHx8fDE3Njc2MjU2MjJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+              alt="Urban Discovery"
+              class="w-full h-full object-cover transition-transform hover:scale-110"
+              onerror="handleImageError(this)"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+            <div class="absolute bottom-4 left-4 right-4">
+              <h3 class="package-title-overlay">Urban Discovery</h3>
+              <div class="flex items-center gap-4">
+                <div class="flex items-center gap-2">
+                  <i data-lucide="clock" style="color: var(--alpine-teal)"></i>
+                  <span class="package-duration">4 Days</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i data-lucide="map-pin" style="color: var(--alpine-teal)"></i>
+                  <span class="package-duration">City Tour</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="p-8 bg-white rounded-b-2xl">
+            <p class="package-description mb-6">
+              Discover vibrant cities with premium transportation and guided tours. Immerse yourself in urban culture, visit iconic landmarks, and enjoy the finest dining and entertainment the city has to offer.
+            </p>
+            <div class="mb-6">
+              <h4 class="mb-3" style="font-family: var(--font-heading); font-weight: 600; color: var(--charcoal);">What's Included:</h4>
+              <div class="space-y-2">
+                <div class="flex items-center gap-2">
+                  <i data-lucide="star" style="color: var(--alpine-teal)"></i>
+                  <span class="package-include">Executive Sedan with Driver</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i data-lucide="star" style="color: var(--alpine-teal)"></i>
+                  <span class="package-include">Boutique Hotels (3 Nights)</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i data-lucide="star" style="color: var(--alpine-teal)"></i>
+                  <span class="package-include">City Tours & Attractions</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i data-lucide="star" style="color: var(--alpine-teal)"></i>
+                  <span class="package-include">Fine Dining Experiences</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i data-lucide="star" style="color: var(--alpine-teal)"></i>
+                  <span class="package-include">Cultural Experiences</span>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-6 border-t border-gray-100">
+              <div>
+                <span class="package-from">Starting from</span>
+                <span class="package-price">$1,899</span>
+              </div>
+              <button class="btn-package" onclick="bookPackage('Urban Discovery')">
+                BOOK NOW
+                <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 4 - Cultural Heritage -->
+        <div class="package-card-detail">
+          <div class="relative h-64 overflow-hidden rounded-t-2xl">
+            <img 
+              src="https://images.unsplash.com/photo-1539650116574-75c0c6d73a6e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+              alt="Cultural Heritage"
+              class="w-full h-full object-cover transition-transform hover:scale-110"
+              onerror="handleImageError(this)"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+            <div class="absolute bottom-4 left-4 right-4">
+              <h3 class="package-title-overlay">Cultural Heritage</h3>
+              <div class="flex items-center gap-4">
+                <div class="flex items-center gap-2">
+                  <i data-lucide="clock" style="color: var(--alpine-teal)"></i>
+                  <span class="package-duration">6 Days</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i data-lucide="map-pin" style="color: var(--alpine-teal)"></i>
+                  <span class="package-duration">Heritage Sites</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="p-8 bg-white rounded-b-2xl">
+            <p class="package-description mb-6">
+              Explore rich cultural heritage sites, ancient monuments, and traditional villages. This immersive journey connects you with local traditions, history, and authentic experiences.
+            </p>
+            <div class="mb-6">
+              <h4 class="mb-3" style="font-family: var(--font-heading); font-weight: 600; color: var(--charcoal);">What's Included:</h4>
+              <div class="space-y-2">
+                <div class="flex items-center gap-2">
+                  <i data-lucide="star" style="color: var(--alpine-teal)"></i>
+                  <span class="package-include">Luxury Van with Guide</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i data-lucide="star" style="color: var(--alpine-teal)"></i>
+                  <span class="package-include">Heritage Hotels (5 Nights)</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i data-lucide="star" style="color: var(--alpine-teal)"></i>
+                  <span class="package-include">Cultural Guide & Tours</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i data-lucide="star" style="color: var(--alpine-teal)"></i>
+                  <span class="package-include">Traditional Experiences</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i data-lucide="star" style="color: var(--alpine-teal)"></i>
+                  <span class="package-include">Local Cuisine Tastings</span>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-6 border-t border-gray-100">
+              <div>
+                <span class="package-from">Starting from</span>
+                <span class="package-price">$2,799</span>
+              </div>
+              <button class="btn-package" onclick="bookPackage('Cultural Heritage')">
+                BOOK NOW
+                <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Custom Package CTA -->
+  <section class="py-24" style="background-color: var(--ghost-white)">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="feature-icon mx-auto mb-6">
+        <i data-lucide="wand-2"></i>
+      </div>
+      <h2 class="section-title mb-4">Need a Custom Package?</h2>
+      <p class="section-description mb-8">
+        Our travel experts can create a personalized itinerary tailored to your interests, schedule, and budget. Let us design your perfect journey.
+      </p>
+      <a href="index.html#contact" class="btn-primary inline-block">
+        REQUEST CUSTOM PACKAGE
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12" style="background-color: var(--pacific-slate)">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+        <!-- Brand -->
+        <div>
+          <h3 class="footer-brand">VentureEase</h3>
+          <p class="footer-text">
+            Premium travel experiences with luxury vehicles and professional service.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="about-us.html" class="footer-link">About Us</a></li>
+            <li><a href="our-fleet.html" class="footer-link">Our Fleet</a></li>
+            <li><a href="packages.html" class="footer-link">Packages</a></li>
+            <li><a href="index.html#contact" class="footer-link">Contact</a></li>
+            <li><a href="#" class="footer-link">Terms & Conditions</a></li>
+            <li><a href="#" class="footer-link">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div>
+          <h4 class="footer-heading">Newsletter</h4>
+          <p class="footer-text mb-4">
+            Subscribe for exclusive deals and travel tips.
+          </p>
+          <div class="flex gap-2">
+            <input
+              type="email"
+              id="newsletterEmail"
+              placeholder="Your email"
+              class="newsletter-input"
+            />
+            <button onclick="handleNewsletter()" class="newsletter-btn">
+              <i data-lucide="mail"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="footer-copyright">
+          © 2026 VentureEase. All rights reserved.
+        </p>
+        
+        <!-- Social Icons -->
+        <div class="flex items-center gap-4">
+          <a href="#" class="social-icon" aria-label="Facebook">
+            <i data-lucide="facebook"></i>
+          </a>
+          <a href="#" class="social-icon" aria-label="Twitter">
+            <i data-lucide="twitter"></i>
+          </a>
+          <a href="#" class="social-icon" aria-label="Instagram">
+            <i data-lucide="instagram"></i>
+          </a>
+          <a href="#" class="social-icon" aria-label="LinkedIn">
+            <i data-lucide="linkedin"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+  <script>
+    function bookPackage(packageName) {
+      alert(`Booking ${packageName} package. Redirecting to contact form...`);
+      window.location.href = 'index.html#contact';
+    }
+    window.bookPackage = bookPackage;
+  </script>
+</body>
+</html>
+

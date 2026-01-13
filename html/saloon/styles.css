@@ -1,0 +1,122 @@
+/* Custom CSS for Lumière Salon */
+
+:root {
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Inter', sans-serif;
+  --champagne: #C5B358;
+  --obsidian: #1A1A1A;
+  --text-secondary: #757575;
+  --soft-shell: #F9F8F6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--obsidian);
+  background-color: #FFFFFF;
+  line-height: 1.6;
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Gallery masonry layout */
+#galleryGrid {
+  column-gap: 1.5rem;
+}
+
+#galleryGrid .gallery-item {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  break-inside: avoid;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+}
+
+#galleryGrid .gallery-item:hover {
+  transform: scale(1.05);
+}
+
+#galleryGrid .gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+#galleryGrid .gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Toast notification styles */
+.toast {
+  background-color: #1A1A1A;
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  margin-bottom: 0.5rem;
+  animation: slideIn 0.3s ease-out;
+  max-width: 500px;
+  min-width: 300px;
+}
+
+.toast.success {
+  background-color: #10b981;
+}
+
+.toast.error {
+  background-color: #ef4444;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-50%) translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Image fallback */
+img[data-fallback] {
+  background-color: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #galleryGrid {
+    columns: 1;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  #galleryGrid {
+    columns: 2;
+  }
+}
+
+@media (min-width: 1025px) {
+  #galleryGrid {
+    columns: 3;
+  }
+}
+

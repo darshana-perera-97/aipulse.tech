@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Blog Article | AI Pulse</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="apple-touch-icon" href="assets/favicon.svg" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MCKR8BBEP6"></script>
     <script>
@@ -107,32 +110,32 @@
           "description": "Step-by-step guide to running lightweight language models on edge devices, including optimization techniques and performance benchmarks.",
           "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800",
           "category": "Tutorial",
-          "date": "December 20, 2025",
+          "date": "January 10, 2026",
           "readTime": "12 min read",
-          "author": "Michael Rodriguez",
-          "authorRole": "Lead AI Engineer"
+          "author": "David Kim",
+          "authorRole": "Solutions Architect"
         },
         {
           "id": "flutter-ai-dashboard",
           "title": "Flutter + AI for Cross-Platform Dashboards",
           "description": "Building intelligent mobile dashboards with Flutter, integrating AI-powered analytics and real-time data visualization across iOS and Android.",
-          "image": "https://images.unsplash.com/photo-1660810731526-0720827cbd38?w=800",
+          "image": "https://images.unsplash.com/photo-1737573296361-75315239293a?w=800",
           "category": "Tutorial",
-          "date": "December 15, 2025",
+          "date": "January 5, 2026",
           "readTime": "15 min read",
-          "author": "Priya Sharma",
-          "authorRole": "Product Design Lead"
+          "author": "Sarah Chen",
+          "authorRole": "Chief Technology Officer"
         },
         {
           "id": "nodejs-ai-integration",
           "title": "Node.js AI Integration Patterns",
           "description": "Best practices for integrating AI services into Node.js applications, covering REST APIs, WebSockets, and microservices architecture.",
-          "image": "https://images.unsplash.com/photo-1759661966728-4a02e3c6ed91?w=800",
+          "image": "https://images.unsplash.com/photo-1660810731526-0720827cbd38?w=800",
           "category": "Guide",
-          "date": "December 10, 2025",
+          "date": "December 28, 2025",
           "readTime": "10 min read",
-          "author": "David Kim",
-          "authorRole": "Solutions Architect"
+          "author": "Michael Rodriguez",
+          "authorRole": "Lead AI Engineer"
         }
       ]
     </script>
@@ -178,50 +181,63 @@
           {"type": "paragraph", "content": "Focus on creating valuable content, optimizing for user intent, and ensuring technical excellence across all aspects of your website."}
         ],
         "ollama-raspberry-pi": [
-          {"type": "paragraph", "content": "Running large language models (LLMs) on edge devices like Raspberry Pi has become increasingly feasible with optimized frameworks like Ollama. This tutorial walks you through deploying lightweight LLMs for offline AI capabilities in IoT applications."},
-          {"type": "heading", "content": "Why Raspberry Pi for LLM Deployment?"},
-          {"type": "paragraph", "content": "Raspberry Pi offers an affordable platform for edge AI deployment, enabling offline inference capabilities without relying on cloud services. This is crucial for IoT applications in remote locations or scenarios requiring data privacy."},
-          {"type": "heading", "content": "Prerequisites"},
-          {"type": "list", "content": ["Raspberry Pi 4 (4GB RAM minimum, 8GB recommended)", "MicroSD card (32GB+)", "Python 3.11 or later", "Basic knowledge of Linux command line"]},
-          {"type": "heading", "content": "Step 1: Installing Ollama"},
-          {"type": "paragraph", "content": "Ollama simplifies LLM deployment by providing optimized model variants and an easy-to-use API. Install it using the official installation script:"},
-          {"type": "code", "content": "curl -fsSL https://ollama.com/install.sh | sh"},
-          {"type": "heading", "content": "Step 2: Choosing the Right Model"},
-          {"type": "paragraph", "content": "For Raspberry Pi, we recommend quantized models like llama3.2:1b or phi-3:mini. These models are optimized for resource-constrained devices while maintaining reasonable accuracy."},
-          {"type": "code", "content": "ollama pull llama3.2:1b"},
-          {"type": "heading", "content": "Step 3: Building a FastAPI Server"},
-          {"type": "paragraph", "content": "Create a Python API server to handle LLM requests efficiently. Use async processing to manage concurrent requests without blocking."},
-          {"type": "heading", "content": "Performance Optimization"},
-          {"type": "list", "content": ["Use Q4 quantization to reduce model size by 60%", "Implement response caching for repeated queries", "Set appropriate temperature and max tokens", "Monitor RAM usage and implement request queuing"]},
-          {"type": "heading", "content": "Benchmarking Results"},
-          {"type": "paragraph", "content": "On a Raspberry Pi 4 with 4GB RAM, we achieved an average response time of 2.5 seconds for 150-token responses. The quantized model (Q4) reduced size from 7GB to 2.8GB while maintaining 95% of original accuracy."},
-          {"type": "quote", "content": "Edge AI deployment opens new possibilities for offline intelligent applications, from smart sensors to autonomous devices."},
+          {"type": "paragraph", "content": "Running large language models (LLMs) on edge devices like Raspberry Pi has become increasingly feasible with optimized models and frameworks like Ollama. This tutorial will guide you through deploying LLMs on Raspberry Pi 4, achieving sub-3 second response times with minimal resource usage."},
+          {"type": "heading", "content": "Why Deploy LLMs on Edge Devices?"},
+          {"type": "paragraph", "content": "Edge deployment offers several advantages: offline operation, reduced latency, data privacy, and cost savings. For IoT applications, having AI capabilities directly on the device eliminates the need for constant cloud connectivity."},
+          {"type": "heading", "content": "Hardware Requirements"},
+          {"type": "list", "content": ["Raspberry Pi 4 with 4GB+ RAM (8GB recommended)", "MicroSD card (32GB+ Class 10)", "Stable power supply (5V 3A)", "Optional: External SSD for better performance"]},
+          {"type": "heading", "content": "Installing Ollama"},
+          {"type": "paragraph", "content": "Ollama is an open-source framework that makes it easy to run LLMs locally. Here's how to install it on Raspberry Pi:"},
+          {"type": "paragraph", "content": "First, update your system and install dependencies:"},
+          {"type": "code", "content": "#!/bin/bash\n# Update system\nsudo apt update && sudo apt upgrade -y\n\n# Install Ollama\ncurl -fsSL https://ollama.com/install.sh | sh\n\n# Verify installation\nollama --version"},
+          {"type": "heading", "content": "Choosing the Right Model"},
+          {"type": "paragraph", "content": "For Raspberry Pi, you need lightweight models. Recommended options include:"},
+          {"type": "list", "content": ["llama3.2:1b - Smallest, fastest (1.3GB)", "llama3.2:3b - Balanced performance (2GB)", "phi-3:mini - Microsoft's efficient model (2.3GB)", "gemma:2b - Google's compact model (1.4GB)"]},
+          {"type": "heading", "content": "Pulling and Running Models"},
+          {"type": "paragraph", "content": "Download a model optimized for edge devices:"},
+          {"type": "code", "content": "# Pull the 1B model (best for Pi 4 with 4GB RAM)\nollama pull llama3.2:1b\n\n# Test the model\nollama run llama3.2:1b \"What is AI?\"\n\n# Run with custom parameters\nollama run llama3.2:1b --temperature 0.7 --num-predict 150"},
+          {"type": "heading", "content": "Creating a Python API Server"},
+          {"type": "paragraph", "content": "To integrate Ollama with your applications, create a FastAPI server:"},
+          {"type": "code", "content": "from fastapi import FastAPI\nfrom ollama import Client\nimport asyncio\n\napp = FastAPI()\nclient = Client(host='http://localhost:11434')\n\n@app.post('/generate')\nasync def generate(prompt: str):\n    response = client.generate(\n        model='llama3.2:1b',\n        prompt=prompt,\n        options={\n            'temperature': 0.7,\n            'num_predict': 150,\n            'top_p': 0.9\n        }\n    )\n    return {'response': response['response']}\n\n@app.get('/health')\ndef health():\n    return {'status': 'healthy'}\n\nif __name__ == '__main__':\n    import uvicorn\n    uvicorn.run(app, host='0.0.0.0', port=8000)"},
+          {"type": "heading", "content": "Optimization Techniques"},
+          {"type": "paragraph", "content": "To achieve better performance on resource-constrained devices:"},
+          {"type": "list", "content": ["Use quantized models (Q4/Q5) to reduce memory", "Enable model caching to avoid reloading", "Implement request queuing for concurrent requests", "Use swap space if RAM is limited", "Consider model pruning for further size reduction"]},
+          {"type": "heading", "content": "Performance Benchmarks"},
+          {"type": "paragraph", "content": "On Raspberry Pi 4 (4GB RAM) with llama3.2:1b:"},
+          {"type": "list", "content": ["Average response time: 2.5 seconds", "Memory usage: ~3.5GB", "Model size: 1.3GB", "Tokens per second: ~8-12", "Concurrent requests: 2-3"]},
           {"type": "heading", "content": "Integration with Arduino"},
-          {"type": "paragraph", "content": "Connect Arduino sensors to send data to your Raspberry Pi LLM server. The Arduino can collect sensor readings and send them as prompts for AI analysis."},
+          {"type": "paragraph", "content": "You can connect Arduino sensors to send data to your Raspberry Pi LLM:"},
+          {"type": "code", "content": "// Arduino code for sensor data collection\n#include <WiFi.h>\n#include <HTTPClient.h>\n\nvoid setup() {\n  Serial.begin(115200);\n  WiFi.begin(\"SSID\", \"PASSWORD\");\n  while (WiFi.status() != WL_CONNECTED) delay(500);\n}\n\nvoid loop() {\n  float sensorValue = analogRead(A0);\n  String prompt = \"Analyze sensor reading: \" + String(sensorValue);\n  \n  HTTPClient http;\n  http.begin(\"http://raspberry-pi-ip:8000/generate\");\n  http.addHeader(\"Content-Type\", \"application/json\");\n  http.POST(\"{\\\"prompt\\\": \\\"\" + prompt + \"\\\"}\");\n  \n  delay(5000);\n}"},
           {"type": "heading", "content": "Best Practices"},
-          {"type": "list", "content": ["Always monitor memory usage", "Implement proper error handling", "Use async/await for non-blocking operations", "Cache frequent queries", "Consider model quantization trade-offs"]}
+          {"type": "list", "content": ["Start with the smallest model and scale up if needed", "Monitor temperature and use cooling if necessary", "Implement proper error handling and retries", "Use async processing for better throughput", "Cache frequent queries to reduce computation"]},
+          {"type": "heading", "content": "Conclusion"},
+          {"type": "paragraph", "content": "Deploying LLMs on Raspberry Pi opens up exciting possibilities for edge AI applications. With proper optimization and model selection, you can achieve impressive performance even on resource-constrained devices."}
         ],
         "flutter-ai-dashboard": [
-          {"type": "paragraph", "content": "Flutter's cross-platform capabilities make it ideal for building AI-powered dashboards that work seamlessly on both iOS and Android. This tutorial covers integrating AI services with Flutter for real-time analytics visualization."},
-          {"type": "heading", "content": "Setting Up Flutter Project"},
-          {"type": "paragraph", "content": "Start by creating a new Flutter project and adding necessary dependencies for HTTP requests and state management."},
+          {"type": "paragraph", "content": "Building intelligent mobile dashboards with Flutter allows you to create cross-platform applications that integrate AI-powered analytics and real-time data visualization. This tutorial covers building a production-ready dashboard with Flutter and AI services."},
+          {"type": "heading", "content": "Project Setup"},
+          {"type": "paragraph", "content": "Start by creating a new Flutter project and adding necessary dependencies:"},
+          {"type": "code", "content": "flutter create ai_dashboard\ncd ai_dashboard\n\n# Add dependencies to pubspec.yaml\ndependencies:\n  flutter:\n    sdk: flutter\n  http: ^1.1.0\n  provider: ^6.1.1\n  charts_flutter: ^0.12.0\n  fl_chart: ^0.66.0"},
           {"type": "heading", "content": "AI Service Integration"},
-          {"type": "paragraph", "content": "Integrate with AI APIs using HTTP clients, handling async operations with FutureBuilder and StreamBuilder widgets."},
-          {"type": "heading", "content": "Real-Time Data Visualization"},
-          {"type": "paragraph", "content": "Use Flutter's chart libraries to create interactive dashboards that update in real-time as AI processes data."},
-          {"type": "heading", "content": "Cross-Platform Considerations"},
-          {"type": "list", "content": ["Handle platform-specific UI differences", "Optimize for both iOS and Android performance", "Test on multiple device sizes", "Implement proper error handling"]}
+          {"type": "paragraph", "content": "Create a service class to handle AI API calls:"},
+          {"type": "code", "content": "import 'package:http/http.dart' as http;\nimport 'dart:convert';\n\nclass AIService {\n  final String apiUrl = 'https://api.example.com/ai';\n  \n  Future<Map<String, dynamic>> analyzeData(Map<String, dynamic> data) async {\n    final response = await http.post(\n      Uri.parse(apiUrl + '/analyze'),\n      headers: {'Content-Type': 'application/json'},\n      body: jsonEncode(data),\n    );\n    \n    if (response.statusCode == 200) {\n      return jsonDecode(response.body);\n    } else {\n      throw Exception('Failed to analyze data');\n    }\n  }\n}"},
+          {"type": "heading", "content": "Dashboard Widget"},
+          {"type": "paragraph", "content": "Build a responsive dashboard widget with real-time updates and AI insights."},
+          {"type": "heading", "content": "Best Practices"},
+          {"type": "list", "content": ["Use Provider or Riverpod for state management", "Implement caching for AI responses", "Add loading states and error handling", "Optimize for both iOS and Android", "Use platform-specific UI adaptations"]}
         ],
         "nodejs-ai-integration": [
-          {"type": "paragraph", "content": "Node.js excels at building scalable backend services for AI applications. This guide covers best practices for integrating AI services into Node.js applications."},
+          {"type": "paragraph", "content": "Integrating AI services into Node.js applications requires understanding different patterns and best practices. This guide covers REST APIs, WebSockets, and microservices architecture for AI integration."},
           {"type": "heading", "content": "REST API Integration"},
-          {"type": "paragraph", "content": "Use Express.js to create RESTful endpoints that communicate with AI services, handling requests and responses efficiently."},
-          {"type": "heading", "content": "WebSocket for Real-Time AI"},
-          {"type": "paragraph", "content": "Implement WebSocket connections for real-time AI interactions, perfect for chatbots and live data processing."},
-          {"type": "heading", "content": "Microservices Architecture"},
-          {"type": "paragraph", "content": "Structure your Node.js application as microservices, separating AI processing from business logic for better scalability."},
-          {"type": "heading", "content": "Error Handling and Retries"},
-          {"type": "list", "content": ["Implement exponential backoff for API calls", "Use proper error middleware", "Log all AI service interactions", "Set up monitoring and alerts"]}
+          {"type": "paragraph", "content": "The most common pattern is using REST APIs to communicate with AI services:"},
+          {"type": "code", "content": "const express = require('express');\nconst axios = require('axios');\n\nconst app = express();\napp.use(express.json());\n\napp.post('/api/chat', async (req, res) => {\n  const { message } = req.body;\n  \n  try {\n    const response = await axios.post('https://api.openai.com/v1/chat/completions', {\n      model: 'gpt-3.5-turbo',\n      messages: [{ role: 'user', content: message }]\n    }, {\n      headers: {\n        'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`,\n        'Content-Type': 'application/json'\n      }\n    });\n    \n    res.json({ reply: response.data.choices[0].message.content });\n  } catch (error) {\n    res.status(500).json({ error: error.message });\n  }\n});\n\napp.listen(3000);"},
+          {"type": "heading", "content": "WebSocket Integration"},
+          {"type": "paragraph", "content": "For real-time AI interactions, use WebSockets:"},
+          {"type": "code", "content": "const WebSocket = require('ws');\nconst wss = new WebSocket.Server({ port: 8080 });\n\nwss.on('connection', (ws) => {\n  ws.on('message', async (message) => {\n    // Process AI request\n    const aiResponse = await processAIRequest(message);\n    ws.send(JSON.stringify({ response: aiResponse }));\n  });\n});"},
+          {"type": "heading", "content": "Microservices Pattern"},
+          {"type": "paragraph", "content": "For scalable applications, separate AI services into microservices with proper error handling and retry logic."},
+          {"type": "heading", "content": "Best Practices"},
+          {"type": "list", "content": ["Implement rate limiting", "Use connection pooling", "Add request queuing for high load", "Implement caching strategies", "Monitor API usage and costs"]}
         ]
       }
     </script>

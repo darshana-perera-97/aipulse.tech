@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - VentureEase</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'pacific-slate': '#0F172A',
+            'alpine-teal': '#2DD4BF',
+            'ghost-white': '#F8FAFC',
+            'charcoal': '#1E293B',
+            'silver-slate': '#64748B',
+          },
+          fontFamily: {
+            'heading': ['Plus Jakarta Sans', 'sans-serif'],
+            'body': ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles/fonts.css" />
+  <link rel="stylesheet" href="styles/theme.css" />
+  <link rel="stylesheet" href="styles/custom.css" />
+  
+  <!-- Lucide Icons (SVG icons library) -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="min-h-screen bg-white" style="font-family: var(--font-body)">
+  
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo -->
+        <a href="index.html" class="cursor-pointer" style="font-family: var(--font-heading)">
+          <h1 class="text-2xl tracking-tight" style="color: var(--pacific-slate); font-weight: 700">
+            VentureEase
+          </h1>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="our-fleet.html" class="nav-link">Fleet</a>
+          <a href="packages.html" class="nav-link">Packages</a>
+          <a href="index.html#contact" class="nav-link">Contact</a>
+          <a href="index.html#contact" class="btn-primary">BOOK NOW</a>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobileMenuBtn" class="md:hidden" style="color: var(--pacific-slate)">
+          <i data-lucide="menu" id="menuIcon"></i>
+          <i data-lucide="x" id="closeIcon" class="hidden"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <nav id="mobileMenu" class="hidden md:hidden py-4 border-t border-gray-100">
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="our-fleet.html" class="mobile-nav-link">Fleet</a>
+        <a href="packages.html" class="mobile-nav-link">Packages</a>
+        <a href="index.html#contact" class="mobile-nav-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative pt-32 pb-20 min-h-[60vh] flex items-center justify-center" style="background: linear-gradient(135deg, var(--pacific-slate) 0%, var(--charcoal) 100%);">
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="mb-6 tracking-tight leading-tight" style="font-family: var(--font-heading); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; color: white;">
+        About VentureEase
+      </h1>
+      <p class="mb-12 mx-auto leading-relaxed" style="font-family: var(--font-body); font-size: clamp(1rem, 2vw, 1.25rem); color: rgba(255, 255, 255, 0.9); max-width: 42rem;">
+        Crafting exceptional travel experiences with luxury, comfort, and personalized service.
+      </p>
+    </div>
+  </section>
+
+  <!-- Our Story Section -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="section-title mb-6">Our Story</h2>
+          <p class="section-description mb-4">
+            Founded with a vision to redefine luxury travel, VentureEase has been at the forefront of premium transportation services since our inception. We believe that every journey should be an experience worth remembering.
+          </p>
+          <p class="section-description mb-4">
+            What started as a small fleet of premium vehicles has grown into a comprehensive travel service, offering curated packages, professional drivers, and tailor-made itineraries for discerning travelers.
+          </p>
+          <p class="section-description">
+            Our commitment to excellence and attention to detail has earned us the trust of thousands of clients who choose us for their most important journeys.
+          </p>
+        </div>
+        <div class="relative h-96 rounded-2xl overflow-hidden">
+          <img 
+            src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+            alt="Our team"
+            class="w-full h-full object-cover"
+            onerror="handleImageError(this)"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Values Section -->
+  <section class="py-24" style="background-color: var(--ghost-white)">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="section-title mb-4">Our Mission & Values</h2>
+        <p class="section-description max-w-2xl mx-auto">
+          We are driven by a commitment to excellence and a passion for creating unforgettable travel experiences.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i data-lucide="target"></i>
+          </div>
+          <h3 class="feature-title">Excellence</h3>
+          <p class="feature-description">
+            We strive for perfection in every detail, from vehicle maintenance to customer service, ensuring an unparalleled experience.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i data-lucide="heart"></i>
+          </div>
+          <h3 class="feature-title">Passion</h3>
+          <p class="feature-description">
+            Our love for travel and dedication to service drives us to go above and beyond for every client.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i data-lucide="shield-check"></i>
+          </div>
+          <h3 class="feature-title">Trust</h3>
+          <p class="feature-description">
+            Safety, reliability, and transparency are the foundations of our relationship with every traveler.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i data-lucide="sparkles"></i>
+          </div>
+          <h3 class="feature-title">Innovation</h3>
+          <p class="feature-description">
+            We continuously evolve our services and embrace new technologies to enhance your travel experience.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i data-lucide="users"></i>
+          </div>
+          <h3 class="feature-title">Personalization</h3>
+          <p class="feature-description">
+            Every journey is unique, and we tailor our services to meet your specific needs and preferences.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i data-lucide="award"></i>
+          </div>
+          <h3 class="feature-title">Quality</h3>
+          <p class="feature-description">
+            We maintain the highest standards in vehicle quality, driver professionalism, and service delivery.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="section-title mb-4">Why Choose VentureEase</h2>
+        <p class="section-description max-w-2xl mx-auto">
+          Experience the difference of premium service and attention to detail.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="flex gap-6">
+          <div class="flex-shrink-0">
+            <div class="contact-icon">
+              <i data-lucide="car"></i>
+            </div>
+          </div>
+          <div>
+            <h3 class="contact-info-title mb-2">Premium Fleet</h3>
+            <p class="contact-info-text">
+              Our carefully curated selection of luxury vehicles is maintained to the highest standards, ensuring comfort and reliability on every journey.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex gap-6">
+          <div class="flex-shrink-0">
+            <div class="contact-icon">
+              <i data-lucide="user-check"></i>
+            </div>
+          </div>
+          <div>
+            <h3 class="contact-info-title mb-2">Professional Drivers</h3>
+            <p class="contact-info-text">
+              All our drivers are professionally trained, background-checked, and committed to providing safe, courteous, and knowledgeable service.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex gap-6">
+          <div class="flex-shrink-0">
+            <div class="contact-icon">
+              <i data-lucide="map"></i>
+            </div>
+          </div>
+          <div>
+            <h3 class="contact-info-title mb-2">Expert Planning</h3>
+            <p class="contact-info-text">
+              Our travel experts work with you to create custom itineraries that match your interests, schedule, and preferences perfectly.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex gap-6">
+          <div class="flex-shrink-0">
+            <div class="contact-icon">
+              <i data-lucide="clock"></i>
+            </div>
+          </div>
+          <div>
+            <h3 class="contact-info-title mb-2">24/7 Support</h3>
+            <p class="contact-info-text">
+              Our dedicated support team is available around the clock to assist you with any questions or needs during your journey.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex gap-6">
+          <div class="flex-shrink-0">
+            <div class="contact-icon">
+              <i data-lucide="shield"></i>
+            </div>
+          </div>
+          <div>
+            <h3 class="contact-info-title mb-2">Fully Insured</h3>
+            <p class="contact-info-text">
+              Comprehensive insurance coverage and safety protocols ensure your peace of mind throughout your travel experience.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex gap-6">
+          <div class="flex-shrink-0">
+            <div class="contact-icon">
+              <i data-lucide="star"></i>
+            </div>
+          </div>
+          <div>
+            <h3 class="contact-info-title mb-2">Award-Winning Service</h3>
+            <p class="contact-info-text">
+              Recognized for excellence in luxury travel services, we've earned the trust and satisfaction of thousands of clients.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-24" style="background-color: var(--pacific-slate)">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <div class="text-4xl md:text-5xl font-bold mb-2" style="font-family: var(--font-heading); color: var(--alpine-teal);">10K+</div>
+          <div class="text-white/70" style="font-family: var(--font-body);">Happy Clients</div>
+        </div>
+        <div>
+          <div class="text-4xl md:text-5xl font-bold mb-2" style="font-family: var(--font-heading); color: var(--alpine-teal);">50+</div>
+          <div class="text-white/70" style="font-family: var(--font-body);">Premium Vehicles</div>
+        </div>
+        <div>
+          <div class="text-4xl md:text-5xl font-bold mb-2" style="font-family: var(--font-heading); color: var(--alpine-teal);">100+</div>
+          <div class="text-white/70" style="font-family: var(--font-body);">Expert Drivers</div>
+        </div>
+        <div>
+          <div class="text-4xl md:text-5xl font-bold mb-2" style="font-family: var(--font-heading); color: var(--alpine-teal);">15+</div>
+          <div class="text-white/70" style="font-family: var(--font-body);">Years Experience</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="section-title mb-4">Ready to Start Your Journey?</h2>
+      <p class="section-description mb-8">
+        Experience the VentureEase difference. Contact us today to plan your next adventure.
+      </p>
+      <a href="index.html#contact" class="btn-primary inline-block">
+        GET IN TOUCH
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12" style="background-color: var(--pacific-slate)">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+        <!-- Brand -->
+        <div>
+          <h3 class="footer-brand">VentureEase</h3>
+          <p class="footer-text">
+            Premium travel experiences with luxury vehicles and professional service.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="about-us.html" class="footer-link">About Us</a></li>
+            <li><a href="our-fleet.html" class="footer-link">Our Fleet</a></li>
+            <li><a href="packages.html" class="footer-link">Packages</a></li>
+            <li><a href="index.html#contact" class="footer-link">Contact</a></li>
+            <li><a href="#" class="footer-link">Terms & Conditions</a></li>
+            <li><a href="#" class="footer-link">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div>
+          <h4 class="footer-heading">Newsletter</h4>
+          <p class="footer-text mb-4">
+            Subscribe for exclusive deals and travel tips.
+          </p>
+          <div class="flex gap-2">
+            <input
+              type="email"
+              id="newsletterEmail"
+              placeholder="Your email"
+              class="newsletter-input"
+            />
+            <button onclick="handleNewsletter()" class="newsletter-btn">
+              <i data-lucide="mail"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="footer-copyright">
+          © 2026 VentureEase. All rights reserved.
+        </p>
+        
+        <!-- Social Icons -->
+        <div class="flex items-center gap-4">
+          <a href="#" class="social-icon" aria-label="Facebook">
+            <i data-lucide="facebook"></i>
+          </a>
+          <a href="#" class="social-icon" aria-label="Twitter">
+            <i data-lucide="twitter"></i>
+          </a>
+          <a href="#" class="social-icon" aria-label="Instagram">
+            <i data-lucide="instagram"></i>
+          </a>
+          <a href="#" class="social-icon" aria-label="LinkedIn">
+            <i data-lucide="linkedin"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>
+

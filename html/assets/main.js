@@ -980,8 +980,6 @@ function renderBlogArticle() {
       return `<ul class="list-disc pl-6 space-y-2 text-[#4A5568] mb-8">${item.content.map(li => `<li>${li}</li>`).join("")}</ul>`;
     } else if (item.type === "quote") {
       return `<div class="bg-[#F7F9FC] border-l-4 border-[#005CFF] p-6 rounded-r-xl my-8"><p class="text-[#0A0F1C] italic">"${item.content}"</p></div>`;
-    } else if (item.type === "code") {
-      return `<div class="bg-[#0A0F1C] rounded-lg p-4 overflow-x-auto my-6"><pre class="text-sm text-[#E7E9EF] font-mono"><code>${item.content}</code></pre></div>`;
     }
     return "";
   }).join("");
@@ -1013,7 +1011,7 @@ function renderBlogArticle() {
       <section class="py-16 bg-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="rounded-2xl overflow-hidden mb-12">
-            <img src="${blog.image}" alt="${blog.title}" class="w-full h-[500px] object-cover" loading="lazy" decoding="async" width="800" height="500">
+            <img src="${blog.image}" alt="${blog.title}" class="w-full h-[500px] object-cover">
           </div>
 
           <div class="flex items-center gap-4 mb-12 pb-8 border-b border-[#E7E9EF]">
