@@ -1,0 +1,38 @@
+# Sensitive configuration files
+html/send.php
+
+# Environment and config files
+*.env
+*.env.local
+config.local.php
+*.config.local.*
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Dependencies (if any)
+vendor/
+node_modules/
+
+# Build files
+dist/
+build/
+

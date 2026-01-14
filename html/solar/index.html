@@ -184,6 +184,76 @@
     </div>
   </footer>
 
+  <!-- Floating Button with Message -->
+  <div class="fixed bottom-8 right-8 z-50 flex flex-col items-end gap-3">
+    <!-- Floating Message -->
+    <div id="floatingMessage" onclick="openContactModal()" class="hidden bg-white rounded-2xl shadow-2xl px-6 py-4 mt-2 max-w-xs transform transition-all duration-300 opacity-0 -translate-y-2 relative cursor-pointer hover:shadow-[#84CC16]/20">
+      <p class="text-[#101828] font-semibold text-sm">Want to own this website?</p>
+      <div class="absolute bottom-full right-6 w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-t-8 border-t-white"></div>
+    </div>
+    
+    <!-- Floating Button -->
+    <button id="floatingBtn" onclick="openContactModal()" class="w-16 h-16 bg-gradient-to-r from-[#84CC16] to-[#3B82F6] text-white rounded-full shadow-2xl hover:shadow-[#84CC16]/50 hover:scale-110 transition-all duration-300 flex items-center justify-center group">
+      <i data-lucide="message-circle" class="w-6 h-6"></i>
+    </button>
+  </div>
+
+  <!-- Contact Modal Popup -->
+  <div id="contactModal" class="fixed inset-0 z-[60] hidden items-center justify-center bg-black/50 backdrop-blur-sm">
+    <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full mx-4 p-8 transform transition-all duration-300 scale-95 relative" id="modalContent">
+      <button onclick="closeContactModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+      
+      <!-- Phone Number Display -->
+      <div class="mb-6 pb-6 border-b border-[#F2F4F7]">
+        <div class="flex items-center justify-center gap-3">
+          <i data-lucide="phone" class="w-5 h-5 text-[#84CC16]"></i>
+          <a href="https://wa.me/94742388259" target="_blank" class="text-xl font-bold text-[#84CC16] hover:text-[#65A30D] transition-colors">+94 74 238 8259</a>
+        </div>
+      </div>
+      
+      <div class="text-center mb-6">
+        <div class="w-16 h-16 bg-gradient-to-r from-[#84CC16] to-[#3B82F6] rounded-full flex items-center justify-center mx-auto mb-4">
+          <i data-lucide="sparkles" class="w-8 h-8 text-white"></i>
+        </div>
+        <h3 class="text-2xl font-bold text-[#101828] mb-2">Want to own this website?</h3>
+        <p class="text-[#475467] text-sm">Fill out the form below and we'll get back to you</p>
+      </div>
+
+      <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+        <div>
+          <label for="name" class="block text-sm font-semibold text-[#101828] mb-2">Name</label>
+          <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-[#F2F4F7] rounded-xl focus:border-[#84CC16] focus:outline-none focus:ring-2 focus:ring-[#84CC16]/20 transition-all" placeholder="Your name">
+        </div>
+        
+        <div>
+          <label for="email" class="block text-sm font-semibold text-[#101828] mb-2">Email</label>
+          <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-[#F2F4F7] rounded-xl focus:border-[#84CC16] focus:outline-none focus:ring-2 focus:ring-[#84CC16]/20 transition-all" placeholder="your@email.com">
+        </div>
+        
+        <div>
+          <label for="phone" class="block text-sm font-semibold text-[#101828] mb-2">Phone *</label>
+          <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 border border-[#F2F4F7] rounded-xl focus:border-[#84CC16] focus:outline-none focus:ring-2 focus:ring-[#84CC16]/20 transition-all" placeholder="Your phone number">
+        </div>
+        
+        <div>
+          <label for="message" class="block text-sm font-semibold text-[#101828] mb-2">Message</label>
+          <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 border border-[#F2F4F7] rounded-xl focus:border-[#84CC16] focus:outline-none focus:ring-2 focus:ring-[#84CC16]/20 transition-all resize-none" placeholder="Tell us about your requirements..."></textarea>
+        </div>
+        
+        <div class="flex gap-4 pt-2">
+          <button type="button" onclick="closeContactModal()" class="flex-1 px-6 py-3 border-2 border-[#F2F4F7] text-[#475467] rounded-xl hover:bg-[#F9FAFB] transition-colors font-semibold">
+            Cancel
+          </button>
+          <button type="submit" class="flex-1 px-6 py-3 bg-gradient-to-r from-[#84CC16] to-[#3B82F6] text-white rounded-xl hover:shadow-lg hover:shadow-[#84CC16]/30 transition-all font-semibold">
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
   <!-- Scripts -->
   <script src="app.js"></script>
   <script>
@@ -206,6 +276,111 @@
         }
       });
     }
+
+    // Show floating message
+    function showFloatingMessage() {
+      const message = document.getElementById('floatingMessage');
+      if (message.classList.contains('hidden')) {
+        message.classList.remove('hidden');
+        setTimeout(() => {
+          message.classList.remove('opacity-0', '-translate-y-2');
+          message.classList.add('opacity-100', 'translate-y-0');
+        }, 10);
+      }
+    }
+
+    // Hide floating message
+    function hideFloatingMessage() {
+      const message = document.getElementById('floatingMessage');
+      message.classList.add('opacity-0', '-translate-y-2');
+      setTimeout(() => {
+        message.classList.add('hidden');
+      }, 300);
+    }
+
+    // Open contact modal
+    function openContactModal() {
+      const modal = document.getElementById('contactModal');
+      const content = document.getElementById('modalContent');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      setTimeout(() => {
+        content.classList.remove('scale-95');
+        content.classList.add('scale-100');
+      }, 10);
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
+    }
+
+    // Close contact modal
+    function closeContactModal() {
+      const modal = document.getElementById('contactModal');
+      const content = document.getElementById('modalContent');
+      content.classList.remove('scale-100');
+      content.classList.add('scale-95');
+      setTimeout(() => {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }, 300);
+    }
+
+    // Handle form submission
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      const form = event.target;
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      
+      // Disable submit button and show loading state
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+      
+      const formData = new FormData(form);
+      formData.append('source', 'solar'); // Add source website
+      
+      // Send to send.php
+      fetch('../send.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          alert(data.message || 'Thank you! We will contact you soon.');
+          form.reset();
+          closeContactModal();
+        } else {
+          alert(data.message || 'Sorry, there was an error. Please try again.');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('Sorry, there was an error sending your message. Please try again later.');
+      })
+      .finally(() => {
+        // Re-enable submit button
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+      });
+    }
+
+    // Close modal when clicking outside
+    document.getElementById('contactModal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeContactModal();
+      }
+    });
+
+    // Auto-show message after 15 seconds
+    setTimeout(() => {
+      showFloatingMessage();
+    }, 15000);
+
+    // Auto-hide message after 30 seconds
+    setTimeout(() => {
+      hideFloatingMessage();
+    }, 30000);
   </script>
 </body>
 </html>

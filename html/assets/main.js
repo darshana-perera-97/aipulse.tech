@@ -774,6 +774,57 @@ function renderSolutionDetail() {
         </div>
       </section>
 
+      ${solutionId === "custom-web" ? `
+      <section class="py-24 bg-[#F7F9FC]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold text-[#0A0F1C] mb-4">Our Custom Web Projects</h2>
+            <p class="text-xl text-[#4A5568] max-w-3xl mx-auto">
+              Explore some of our custom web development projects showcasing unique designs and functionalities
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <a href="garage/index.html" class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-[#005CFF]/20 hover:ring-2 hover:ring-[#005CFF] hover:ring-opacity-50 transition-all duration-300 group cursor-pointer">
+              <div class="relative h-48 overflow-hidden bg-gradient-to-br from-[#F7F9FC] to-white">
+                <img src="mailer/garage.png" alt="Garage Website Preview" class="w-full h-full object-cover" loading="lazy" decoding="async">
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-[#0A0F1C] mb-2 group-hover:text-[#005CFF] transition-colors">Garage</h3>
+                <p class="text-[#4A5568] text-sm">Custom web solution for automotive services</p>
+              </div>
+            </a>
+            <a href="saloon/index.html" class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-[#005CFF]/20 hover:ring-2 hover:ring-[#005CFF] hover:ring-opacity-50 transition-all duration-300 group cursor-pointer">
+              <div class="relative h-48 overflow-hidden bg-gradient-to-br from-[#F7F9FC] to-white">
+                <img src="mailer/saloon.png" alt="Saloon Website Preview" class="w-full h-full object-cover" loading="lazy" decoding="async">
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-[#0A0F1C] mb-2 group-hover:text-[#005CFF] transition-colors">Saloon</h3>
+                <p class="text-[#4A5568] text-sm">Elegant web design for beauty and wellness</p>
+              </div>
+            </a>
+            <a href="solar/index.html" class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-[#005CFF]/20 hover:ring-2 hover:ring-[#005CFF] hover:ring-opacity-50 transition-all duration-300 group cursor-pointer">
+              <div class="relative h-48 overflow-hidden bg-gradient-to-br from-[#F7F9FC] to-white">
+                <img src="mailer/solar.png" alt="Solar Website Preview" class="w-full h-full object-cover" loading="lazy" decoding="async">
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-[#0A0F1C] mb-2 group-hover:text-[#005CFF] transition-colors">Solar</h3>
+                <p class="text-[#4A5568] text-sm">Modern web platform for renewable energy</p>
+              </div>
+            </a>
+            <a href="tours/index.html" class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-[#005CFF]/20 hover:ring-2 hover:ring-[#005CFF] hover:ring-opacity-50 transition-all duration-300 group cursor-pointer">
+              <div class="relative h-48 overflow-hidden bg-gradient-to-br from-[#F7F9FC] to-white">
+                <img src="mailer/tours.png" alt="Tours Website Preview" class="w-full h-full object-cover" loading="lazy" decoding="async">
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-[#0A0F1C] mb-2 group-hover:text-[#005CFF] transition-colors">Tours</h3>
+                <p class="text-[#4A5568] text-sm">Dynamic website for travel and tourism</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+      ` : ""}
+
       <section class="py-24 bg-gradient-to-br from-[#0A0F1C] to-[#1a1f3a]">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Ready to Get Started?</h2>
