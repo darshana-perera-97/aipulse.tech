@@ -40,15 +40,15 @@ $phone = isset($_POST['phone']) ? trim($_POST['phone']) : '';
 $message = isset($_POST['message']) ? trim($_POST['message']) : '';
 $source = isset($_POST['source']) ? trim($_POST['source']) : 'unknown'; // garage, solar, saloon, tours
 
-// Validate required fields
-if (empty($name) || empty($email) || empty($phone)) {
+// Validate required fields - only phone is required
+if (empty($phone)) {
     http_response_code(400);
-    echo json_encode(['success' => false, 'message' => 'Please fill in all required fields']);
+    echo json_encode(['success' => false, 'message' => 'Please provide your phone number']);
     exit;
 }
 
-// Validate email format
-if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+// Validate email format only if email is provided
+if (!empty($email) && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
     http_response_code(400);
     echo json_encode(['success' => false, 'message' => 'Invalid email address']);
     exit;
@@ -112,11 +112,11 @@ try {
                 </div>
                 <div class='field'>
                     <div class='label'>Name:</div>
-                    <div class='value'>" . htmlspecialchars($name) . "</div>
+                    <div class='value'>" . (!empty($name) ? htmlspecialchars($name) : '<em>Not provided</em>') . "</div>
                 </div>
                 <div class='field'>
                     <div class='label'>Email:</div>
-                    <div class='value'><a href='mailto:" . htmlspecialchars($email) . "'>" . htmlspecialchars($email) . "</a></div>
+                    <div class='value'>" . (!empty($email) ? "<a href='mailto:" . htmlspecialchars($email) . "'>" . htmlspecialchars($email) . "</a>" : '<em>Not provided</em>') . "</div>
                 </div>
                 <div class='field'>
                     <div class='label'>Phone:</div>
@@ -124,7 +124,7 @@ try {
                 </div>
                 <div class='field'>
                     <div class='label'>Message:</div>
-                    <div class='value'>" . nl2br(htmlspecialchars($message)) . "</div>
+                    <div class='value'>" . (!empty($message) ? nl2br(htmlspecialchars($message)) : '<em>No message provided</em>') . "</div>
                 </div>
                 <div class='field'>
                     <div class='label'>Submitted:</div>
@@ -144,10 +144,10 @@ try {
 New Contact Form Submission - " . ucfirst($source) . " Website
 
 Source Website: " . ucfirst($source) . "
-Name: " . $name . "
-Email: " . $email . "
+Name: " . (!empty($name) ? $name : 'Not provided') . "
+Email: " . (!empty($email) ? $email : 'Not provided') . "
 Phone: " . $phone . "
-Message: " . $message . "
+Message: " . (!empty($message) ? $message : 'No message provided') . "
 
 Submitted: " . date('Y-m-d H:i:s') . "
     ";
@@ -168,7 +168,9 @@ Submitted: " . date('Y-m-d H:i:s') . "
     $autoReply->SMTPDebug = 0; // Set to 2 for debugging
 
     $autoReply->setFrom($config['from_email'], $config['from_name']);
-    $autoReply->addAddress($email, $name);
+    // Only send auto-reply if email is provided
+    if (!empty($email)) {
+        $autoReply->addAddress($email, !empty($name) ? $name : 'Valued Customer');
 
     $autoReply->isHTML(true);
     $autoReply->Subject = "Thank you for contacting us!";
@@ -188,7 +190,7 @@ Submitted: " . date('Y-m-d H:i:s') . "
                 <h2>Thank You!</h2>
             </div>
             <div class='content'>
-                <p>Dear " . htmlspecialchars($name) . ",</p>
+                <p>Dear " . (!empty($name) ? htmlspecialchars($name) : 'Valued Customer') . ",</p>
                 <p>Thank you for contacting us! We have received your message and will get back to you as soon as possible.</p>
                 <p>Best regards,<br>AIPulse Team</p>
             </div>
@@ -197,9 +199,10 @@ Submitted: " . date('Y-m-d H:i:s') . "
     </html>
     ";
 
-    $autoReply->AltBody = "Dear " . $name . ",\n\nThank you for contacting us! We have received your message and will get back to you as soon as possible.\n\nBest regards,\nAIPulse Team";
+    $autoReply->AltBody = "Dear " . (!empty($name) ? $name : 'Valued Customer') . ",\n\nThank you for contacting us! We have received your message and will get back to you as soon as possible.\n\nBest regards,\nAIPulse Team";
 
-    $autoReply->send();
+        $autoReply->send();
+    }
 
     // Success response
     echo json_encode([
