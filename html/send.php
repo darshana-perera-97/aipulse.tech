@@ -22,15 +22,14 @@ require_once __DIR__ . '/phpmailer/src/PHPMailer.php';
 require_once __DIR__ . '/phpmailer/src/SMTP.php';
 
 // Configuration - UPDATE THESE VALUES
-// Copy this file to send.php and update with your actual credentials
 $config = [
     'smtp_host' => 'smtp.gmail.com',        // SMTP server (e.g., smtp.gmail.com, smtp.outlook.com)
     'smtp_port' => 465,                      // SMTP port (587 for TLS, 465 for SSL)
-    'smtp_username' => 'your-email@gmail.com',  // Your email address
-    'smtp_password' => 'your-app-password',      // Your email app password
-    'from_email' => 'your-email@gmail.com',      // From email address
+    'smtp_username' => 'darshana.saluka.pc2@gmail.com',  // Your email address
+    'smtp_password' => 'berb xprp ivyn rmgy',      // Your email app password
+    'from_email' => 'ds.perera.test@gmail.com',      // From email address
     'from_name' => 'AIPulse Contact Form',      // From name
-    'recipient_1' => 'recipient@example.com',     // First recipient email
+    'recipient_1' => 'ds.perera.1997@gmail.com',     // First recipient email
     'recipient_2' => '',      // Second recipient email (optional, leave empty if not needed)
 ];
 
@@ -227,4 +226,3 @@ Submitted: " . date('Y-m-d H:i:s') . "
     ]);
 }
 ?>
-
