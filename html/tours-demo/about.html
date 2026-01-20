@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - TOUR</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'ubuntu': ['Ubuntu', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen bg-gray-50">
+    <div id="header"></div>
+
+    <!-- Page Header -->
+    <div class="bg-gray-200 py-20 border-b border-gray-300">
+        <div class="w-full max-w-[1280px] mx-auto px-8 text-center">
+            <h1 class="font-ubuntu font-bold text-4xl md:text-5xl lg:text-6xl text-gray-800 mb-4">
+                About Us
+            </h1>
+            <p class="font-ubuntu text-xl md:text-2xl text-gray-500">
+                Your trusted travel companion since 2010
+            </p>
+        </div>
+    </div>
+
+    <!-- About Content -->
+    <div class="py-20 px-8 bg-white">
+        <div class="w-full max-w-[1280px] mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
+                <div>
+                    <h2 class="font-ubuntu font-bold text-4xl md:text-5xl text-gray-800 mb-6">
+                        Our Story
+                    </h2>
+                    <div class="space-y-4 font-ubuntu text-lg text-gray-500 leading-relaxed">
+                        <p>
+                            Founded in 2010, TOUR has been dedicated to showcasing the beauty of Sri Lanka to travelers from around the world. What started as a small travel agency in Colombo has grown into one of the most trusted names in Sri Lankan tourism.
+                        </p>
+                        <p>
+                            We believe that travel is not just about visiting new places—it's about creating unforgettable memories, experiencing the rich culture and heritage of Sri Lanka, and discovering the natural wonders of the Pearl of the Indian Ocean. That's why we carefully curate every destination and package to ensure an extraordinary experience.
+                        </p>
+                        <p>
+                            With our team of experienced travel experts and local guides who know Sri Lanka inside and out, we're committed to providing personalized service and exceptional value on every journey through this beautiful island nation.
+                        </p>
+                    </div>
+                </div>
+                <div class="relative h-[400px] rounded-2xl overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1528543606781-2f6e6857f318?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cmF2ZWwlMjBhZHZlbnR1cmV8ZW58MXx8fHwxNzY4ODM2MzQ0fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="About Us" class="w-full h-full object-cover">
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20">
+                <div class="text-center bg-white rounded-2xl p-6 shadow-md border border-gray-100">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    </div>
+                    <p class="font-ubuntu font-bold text-4xl text-gray-800 mb-2">50K+</p>
+                    <p class="font-ubuntu text-base text-gray-500">Happy Travelers</p>
+                </div>
+                <div class="text-center bg-white rounded-2xl p-6 shadow-md border border-gray-100">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <p class="font-ubuntu font-bold text-4xl text-gray-800 mb-2">200+</p>
+                    <p class="font-ubuntu text-base text-gray-500">Destinations</p>
+                </div>
+                <div class="text-center bg-white rounded-2xl p-6 shadow-md border border-gray-100">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>
+                    </div>
+                    <p class="font-ubuntu font-bold text-4xl text-gray-800 mb-2">25+</p>
+                    <p class="font-ubuntu text-base text-gray-500">Awards Won</p>
+                </div>
+                <div class="text-center bg-white rounded-2xl p-6 shadow-md border border-gray-100">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                    </div>
+                    <p class="font-ubuntu font-bold text-4xl text-gray-800 mb-2">98%</p>
+                    <p class="font-ubuntu text-base text-gray-500">Satisfaction Rate</p>
+                </div>
+            </div>
+
+            <!-- Mission & Vision -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-2xl p-8 shadow-md border border-gray-100">
+                    <h3 class="font-ubuntu font-bold text-3xl text-gray-800 mb-4">
+                        Our Mission
+                    </h3>
+                    <p class="font-ubuntu text-base text-gray-500 leading-relaxed">
+                        To inspire and enable travelers to explore the world by providing exceptional travel experiences, outstanding customer service, and the best value for money. We strive to make every journey memorable and stress-free.
+                    </p>
+                </div>
+                <div class="bg-white rounded-2xl p-8 shadow-md border border-gray-100">
+                    <h3 class="font-ubuntu font-bold text-3xl text-gray-800 mb-4">
+                        Our Vision
+                    </h3>
+                    <p class="font-ubuntu text-base text-gray-500 leading-relaxed">
+                        To be the world's most trusted and innovative travel company, recognized for our commitment to excellence, sustainability, and creating positive impact in the communities we serve while delivering unforgettable experiences.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+
+    <script src="js/common.js"></script>
+</body>
+</html>
+

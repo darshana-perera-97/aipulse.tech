@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+.font-ubuntu {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+/* Custom styles for better compatibility */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #FAFAFA;
+    color: #1F2937;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Image optimization */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Modern card styles */
+.modern-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modern-card:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transform: translateY(-4px);
+}
+
+/* Modern button styles */
+.modern-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 32px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.modern-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.modern-btn-secondary {
+    background: white;
+    color: #667eea;
+    border: 2px solid #667eea;
+    border-radius: 12px;
+    padding: 12px 32px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.modern-btn-secondary:hover {
+    background: #667eea;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Header enhancements */
+.header-container {
+    position: relative;
+    z-index: 100;
+}
+
+/* Smooth header transitions */
+header,
+.header-container > div {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Mobile menu animations */
+#mobile-menu {
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Prevent body scroll when mobile menu is open */
+body.menu-open {
+    overflow: hidden;
+}
+
+/* Improved hover effects for navigation links */
+nav a {
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+nav a.border-b-2::after {
+    width: 100%;
+}
+
