@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio - ATELIER</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="font-inter">
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50" id="navigation">
+    <div class="backdrop-blur-md bg-white/80 border-b border-[#87CEEB]/20">
+      <div class="max-w-[1440px] mx-auto px-5 md:px-20">
+        <div class="flex items-center justify-between h-20">
+          <!-- Logo -->
+          <a href="index.html" class="text-2xl tracking-[0.2em] font-light">ATELIER</a>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex items-center gap-12">
+            <a href="index.html" class="text-sm tracking-[0.15em] transition-colors text-gray-600 hover:text-[#87CEEB]">Home</a>
+            <a href="portfolio.html" class="text-sm tracking-[0.15em] transition-colors text-[#87CEEB]">Portfolio</a>
+            <a href="services.html" class="text-sm tracking-[0.15em] transition-colors text-gray-600 hover:text-[#87CEEB]">Services</a>
+            <a href="about.html" class="text-sm tracking-[0.15em] transition-colors text-gray-600 hover:text-[#87CEEB]">About & Contact</a>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button id="mobileMenuBtn" class="md:hidden text-gray-600 hover:text-[#87CEEB] transition-colors">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden backdrop-blur-md bg-white/95 border-b border-[#87CEEB]/20">
+      <div class="px-8 py-6 space-y-4">
+        <a href="index.html" class="block text-sm tracking-[0.15em] transition-colors text-gray-600 hover:text-[#87CEEB]">Home</a>
+        <a href="portfolio.html" class="block text-sm tracking-[0.15em] transition-colors text-[#87CEEB]">Portfolio</a>
+        <a href="services.html" class="block text-sm tracking-[0.15em] transition-colors text-gray-600 hover:text-[#87CEEB]">Services</a>
+        <a href="about.html" class="block text-sm tracking-[0.15em] transition-colors text-gray-600 hover:text-[#87CEEB]">About & Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="pt-20 bg-gradient-to-b from-white via-[#F0F8FF] to-white min-h-screen">
+    <!-- Header -->
+    <section class="py-32 max-w-[1440px] mx-auto px-5 md:px-20">
+      <h1 class="text-5xl md:text-7xl tracking-[0.15em] font-light mb-8">PORTFOLIO</h1>
+      <div class="w-20 h-px bg-[#87CEEB] mb-12"></div>
+      <p class="text-lg text-gray-600 max-w-2xl leading-relaxed">
+        A curated collection of our architectural works, each project
+        reflecting our commitment to timeless design and functional beauty.
+      </p>
+    </section>
+
+    <!-- Filter -->
+    <section class="max-w-[1440px] mx-auto px-5 md:px-20 mb-16">
+      <div class="flex flex-wrap gap-4">
+        <button
+          data-filter="All"
+          class="filter-btn px-6 py-3 text-sm tracking-[0.15em] transition-all bg-[#87CEEB] text-white"
+        >
+          All
+        </button>
+        <button
+          data-filter="Residential"
+          class="filter-btn px-6 py-3 text-sm tracking-[0.15em] transition-all bg-white/60 text-gray-600 hover:bg-[#87CEEB]/10 backdrop-blur-sm border border-[#87CEEB]/20"
+        >
+          Residential
+        </button>
+        <button
+          data-filter="Commercial"
+          class="filter-btn px-6 py-3 text-sm tracking-[0.15em] transition-all bg-white/60 text-gray-600 hover:bg-[#87CEEB]/10 backdrop-blur-sm border border-[#87CEEB]/20"
+        >
+          Commercial
+        </button>
+        <button
+          data-filter="Interior"
+          class="filter-btn px-6 py-3 text-sm tracking-[0.15em] transition-all bg-white/60 text-gray-600 hover:bg-[#87CEEB]/10 backdrop-blur-sm border border-[#87CEEB]/20"
+        >
+          Interior
+        </button>
+      </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="max-w-[1440px] mx-auto px-5 md:px-20 pb-32">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolioGrid">
+        <!-- Projects will be dynamically filtered -->
+      </div>
+    </section>
+
+    <!-- Selected Works - Bento Grid -->
+    <section class="py-32 max-w-[1440px] mx-auto px-5 md:px-20 bg-gradient-to-b from-white to-[#F0F8FF]">
+      <div class="mb-16">
+        <h2 class="text-4xl md:text-5xl tracking-[0.15em] font-light mb-4">FEATURED PROJECTS</h2>
+        <div class="w-20 h-px bg-[#87CEEB]"></div>
+      </div>
+
+      <!-- Bento Grid Layout -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
+        <!-- Large Featured -->
+        <a href="project-detail.html?id=1" class="md:col-span-8 md:row-span-2 group relative overflow-hidden aspect-[4/3] md:aspect-auto block cursor-pointer">
+          <img
+            src="https://images.unsplash.com/photo-1756227584303-f1400daaa69d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBhcmNoaXRlY3R1cmUlMjBidWlsZGluZ3xlbnwxfHx8fDE3NjkzMDM5Njl8MA&ixlib=rb-4.1.0&q=80&w=1080"
+            alt="Skyline Residences"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <div class="absolute bottom-0 left-0 right-0 p-8 text-white">
+              <p class="text-xs tracking-[0.15em] mb-2 text-[#87CEEB]">Residential</p>
+              <h3 class="text-2xl tracking-[0.1em]">Skyline Residences</h3>
+            </div>
+          </div>
+        </a>
+
+        <!-- Medium Cards -->
+        <a href="project-detail.html?id=2" class="md:col-span-4 group relative overflow-hidden aspect-square block cursor-pointer">
+          <img
+            src="https://images.unsplash.com/photo-1571273033940-89c3e9bb18b0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtaW5pbWFsaXN0JTIwYXJjaGl0ZWN0dXJlJTIwaW50ZXJpb3J8ZW58MXx8fHwxNzY5MzQzMTkyfDA&ixlib=rb-4.1.0&q=80&w=1080"
+            alt="Minimal Living"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+              <p class="text-xs tracking-[0.15em] mb-2 text-[#87CEEB]">Interior</p>
+              <h3 class="text-xl tracking-[0.1em]">Minimal Living</h3>
+            </div>
+          </div>
+        </a>
+
+        <a href="project-detail.html?id=3" class="md:col-span-4 group relative overflow-hidden aspect-square block cursor-pointer">
+          <img
+            src="https://images.unsplash.com/photo-1681216868987-b7268753b81c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb250ZW1wb3JhcnklMjBhcmNoaXRlY3R1cmUlMjBleHRlcmlvcnxlbnwxfHx8fDE3NjkzODA4MDJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+            alt="Urban Complex"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+              <p class="text-xs tracking-[0.15em] mb-2 text-[#87CEEB]">Commercial</p>
+              <h3 class="text-xl tracking-[0.1em]">Urban Complex</h3>
+            </div>
+          </div>
+        </a>
+
+        <!-- Wide Card -->
+        <a href="project-detail.html?id=4" class="md:col-span-8 group relative overflow-hidden aspect-[2/1] block cursor-pointer">
+          <img
+            src="https://images.unsplash.com/photo-1640109229792-a26a0ee366ff?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBtb2Rlcm4lMjBob3VzZXxlbnwxfHx8fDE3NjkzODEwODB8MA&ixlib=rb-4.1.0&q=80&w=1080"
+            alt="Luxury Villa"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <div class="absolute bottom-0 left-0 right-0 p-8 text-white">
+              <p class="text-xs tracking-[0.15em] mb-2 text-[#87CEEB]">Residential</p>
+              <h3 class="text-2xl tracking-[0.1em]">Luxury Villa</h3>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="border-t border-[#87CEEB]/20 bg-gradient-to-b from-white to-[#F0F8FF]">
+    <div class="max-w-[1440px] mx-auto px-5 md:px-20 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <!-- Brand -->
+        <div>
+          <h3 class="text-2xl tracking-[0.2em] font-light mb-4">ATELIER</h3>
+          <p class="text-sm text-gray-600 leading-relaxed">
+            Creating timeless architectural spaces with modern minimalism
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-sm tracking-[0.15em] mb-4 text-gray-900">QUICK LINKS</h4>
+          <div class="space-y-2 text-sm text-gray-600">
+            <a href="about.html" class="block hover:text-[#87CEEB] transition-colors cursor-pointer">About Us</a>
+            <a href="services.html" class="block hover:text-[#87CEEB] transition-colors cursor-pointer">Services</a>
+            <a href="portfolio.html" class="block hover:text-[#87CEEB] transition-colors cursor-pointer">Portfolio</a>
+            <a href="about.html" class="block hover:text-[#87CEEB] transition-colors cursor-pointer">Contact</a>
+          </div>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h4 class="text-sm tracking-[0.15em] mb-4 text-gray-900">CONTACT</h4>
+          <div class="space-y-2 text-sm text-gray-600">
+            <p>info@atelier.design</p>
+            <p>+1 (555) 123-4567</p>
+            <p>123 Design Avenue</p>
+            <p>New York, NY 10001</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-16 pt-8 border-t border-[#87CEEB]/20 text-center">
+        <p class="text-xs tracking-[0.15em] text-gray-500">
+          © 2026 ATELIER DESIGN. ALL RIGHTS RESERVED.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Button with Message -->
+  <div class="fixed bottom-8 right-8 z-50 flex flex-col items-end gap-3">
+    <!-- Floating Message -->
+    <div id="floatingMessage" onclick="openContactModal()" class="hidden bg-white rounded-2xl shadow-2xl px-6 py-4 mt-2 max-w-xs transform transition-all duration-300 opacity-0 -translate-y-2 relative cursor-pointer hover:shadow-[#87CEEB]/20">
+      <p class="text-gray-900 font-semibold text-sm">Want to own this website?</p>
+      <div class="absolute bottom-full right-6 w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-t-8 border-t-white"></div>
+    </div>
+    
+    <!-- Floating Button -->
+    <button id="floatingBtn" onclick="openContactModal()" class="w-16 h-16 bg-[#87CEEB] text-white rounded-full shadow-2xl hover:shadow-[#87CEEB]/50 hover:scale-110 transition-all duration-300 flex items-center justify-center group">
+      <i data-lucide="message-circle" class="w-6 h-6"></i>
+    </button>
+  </div>
+
+  <!-- Contact Modal Popup -->
+  <div id="contactModal" class="fixed inset-0 z-[60] hidden items-center justify-center bg-black/50 backdrop-blur-sm">
+    <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full mx-4 p-8 transform transition-all duration-300 scale-95 relative" id="modalContent">
+      <button onclick="closeContactModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+      
+      <!-- Phone Number Display -->
+      <div class="mb-6 pb-6 border-b border-[#87CEEB]/20">
+        <div class="flex items-center justify-center gap-3">
+          <i data-lucide="phone" class="w-5 h-5 text-[#87CEEB]"></i>
+          <a href="https://wa.me/94742388259" target="_blank" class="text-xl font-bold text-[#87CEEB] hover:text-[#6BB6D6] transition-colors">+94 74 238 8259</a>
+        </div>
+      </div>
+      
+      <div class="text-center mb-6">
+        <div class="w-16 h-16 bg-[#87CEEB] rounded-full flex items-center justify-center mx-auto mb-4">
+          <i data-lucide="sparkles" class="w-8 h-8 text-white"></i>
+        </div>
+        <h3 class="text-2xl font-bold text-gray-900 mb-2">Want to own this website?</h3>
+        <p class="text-gray-600 text-sm">Fill out the form below and we'll get back to you</p>
+      </div>
+
+      <form id="contactFormModal" onsubmit="handleFormSubmit(event)" class="space-y-4">
+        <div>
+          <label for="emailModal" class="block text-sm font-semibold text-gray-900 mb-2">Email <span class="text-red-500">*</span></label>
+          <input type="email" id="emailModal" name="email" required class="w-full px-4 py-3 border border-[#87CEEB]/20 rounded-xl focus:border-[#87CEEB] focus:outline-none focus:ring-2 focus:ring-[#87CEEB]/20 transition-all" placeholder="your@email.com">
+        </div>
+        
+        <div>
+          <label for="phoneModal" class="block text-sm font-semibold text-gray-900 mb-2">Phone <span class="text-red-500">*</span></label>
+          <input type="tel" id="phoneModal" name="phone" required class="w-full px-4 py-3 border border-[#87CEEB]/20 rounded-xl focus:border-[#87CEEB] focus:outline-none focus:ring-2 focus:ring-[#87CEEB]/20 transition-all" placeholder="Your phone number">
+        </div>
+        
+        <div>
+          <label for="messageModal" class="block text-sm font-semibold text-gray-900 mb-2">Message</label>
+          <textarea id="messageModal" name="message" rows="4" class="w-full px-4 py-3 border border-[#87CEEB]/20 rounded-xl focus:border-[#87CEEB] focus:outline-none focus:ring-2 focus:ring-[#87CEEB]/20 transition-all resize-none" placeholder="Tell us about your requirements..."></textarea>
+        </div>
+        
+        <div class="flex gap-4 pt-2">
+          <button type="button" onclick="closeContactModal()" class="flex-1 px-6 py-3 border-2 border-[#87CEEB]/20 text-gray-600 rounded-xl hover:bg-gray-50 transition-colors font-semibold">
+            Cancel
+          </button>
+          <button type="submit" class="flex-1 px-6 py-3 bg-[#87CEEB] text-white rounded-xl hover:bg-[#6BB6D6] hover:shadow-lg hover:shadow-[#87CEEB]/30 transition-all font-semibold">
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="portfolio.js"></script>
+  <script src="script.js"></script>
+  <script>
+    // Initialize icons on page load
+    if (typeof lucide !== 'undefined') {
+      lucide.createIcons();
+    }
+
+    // Show floating message
+    function showFloatingMessage() {
+      const message = document.getElementById('floatingMessage');
+      if (message && message.classList.contains('hidden')) {
+        message.classList.remove('hidden');
+        setTimeout(() => {
+          message.classList.remove('opacity-0', '-translate-y-2');
+          message.classList.add('opacity-100', 'translate-y-0');
+        }, 10);
+      }
+    }
+
+    // Hide floating message
+    function hideFloatingMessage() {
+      const message = document.getElementById('floatingMessage');
+      if (message) {
+        message.classList.add('opacity-0', '-translate-y-2');
+        setTimeout(() => {
+          message.classList.add('hidden');
+        }, 300);
+      }
+    }
+
+    // Open contact modal
+    function openContactModal() {
+      const modal = document.getElementById('contactModal');
+      const content = document.getElementById('modalContent');
+      if (modal && content) {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        setTimeout(() => {
+          content.classList.remove('scale-95');
+          content.classList.add('scale-100');
+        }, 10);
+        if (typeof lucide !== 'undefined') {
+          lucide.createIcons();
+        }
+      }
+    }
+
+    // Close contact modal
+    function closeContactModal() {
+      const modal = document.getElementById('contactModal');
+      const content = document.getElementById('modalContent');
+      if (modal && content) {
+        content.classList.remove('scale-100');
+        content.classList.add('scale-95');
+        setTimeout(() => {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+        }, 300);
+      }
+    }
+
+    // Handle form submission
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      const form = event.target;
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      
+      // Disable submit button and show loading state
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+      
+      const formData = new FormData(form);
+      formData.append('source', 'architectural'); // Add source website
+      
+      // Send to send.php
+      fetch('../send.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          alert(data.message || 'Thank you! We will contact you soon.');
+          form.reset();
+          closeContactModal();
+        } else {
+          alert(data.message || 'Sorry, there was an error. Please try again.');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('Sorry, there was an error sending your message. Please try again later.');
+      })
+      .finally(() => {
+        // Re-enable submit button
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+      });
+    }
+
+    // Close modal when clicking outside
+    document.addEventListener('DOMContentLoaded', function() {
+      const modal = document.getElementById('contactModal');
+      if (modal) {
+        modal.addEventListener('click', function(e) {
+          if (e.target === this) {
+            closeContactModal();
+          }
+        });
+      }
+
+      // Auto-show message after 15 seconds
+      setTimeout(() => {
+        showFloatingMessage();
+      }, 15000);
+
+      // Auto-hide message after 30 seconds
+      setTimeout(() => {
+        hideFloatingMessage();
+      }, 30000);
+    });
+  </script>
+</body>
+</html>
+
